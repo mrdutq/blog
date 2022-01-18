@@ -1,1 +1,733 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><link href="/static/css/chunk-libs.eebac533.css" rel="stylesheet"><link href="/static/css/app.0d31776f.css" rel="stylesheet"><!-- hexo injector head_end start --><script rel="prefetch" async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/components/prism-core.js" data-manual></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/themes/prism.min.css"/><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.css"/><link rel="stylesheet" href="https://fonts.loli.net/css?family=Rubik" /><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.css"/><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body id="body-container"><noscript><strong>We're sorry but Aurora Blog doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script>(function(e){function t(t){for(var a,n,u=t[0],i=t[1],c=t[2],l=0,p=[];l<u.length;l++)n=u[l],Object.prototype.hasOwnProperty.call(o,n)&&o[n]&&p.push(o[n][0]),o[n]=0;for(a in i)Object.prototype.hasOwnProperty.call(i,a)&&(e[a]=i[a]);f&&f(t);while(p.length)p.shift()();return s.push.apply(s,c||[]),r()}function r(){for(var e,t=0;t<s.length;t++){for(var r=s[t],a=!0,n=1;n<r.length;n++){var u=r[n];0!==o[u]&&(a=!1)}a&&(s.splice(t--,1),e=i(i.s=r[0]))}return e}var a={},n={runtime:0},o={runtime:0},s=[];function u(e){return i.p+"static/js/"+({404:"404",about:"about",archives:"archives",categories:"categories",page:"page",post:"post",result:"result",tags:"tags"}[e]||e)+"."+{404:"00d640a8",about:"024aacd1",archives:"574ac664",categories:"90aa5475",page:"a02618ad",post:"cebfbaa4",result:"39470350",tags:"2ad613f5"}[e]+".js"}function i(t){if(a[t])return a[t].exports;var r=a[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.e=function(e){var t=[],r={404:1,about:1,archives:1,categories:1,page:1,post:1,result:1,tags:1};n[e]?t.push(n[e]):0!==n[e]&&r[e]&&t.push(n[e]=new Promise((function(t,r){for(var a="static/css/"+({404:"404",about:"about",archives:"archives",categories:"categories",page:"page",post:"post",result:"result",tags:"tags"}[e]||e)+"."+{404:"1a6cd5bd",about:"32dfa3b0",archives:"c0d49bd5",categories:"10e2be12",page:"749ad047",post:"9f951a60",result:"10e2be12",tags:"10e2be12"}[e]+".css",o=i.p+a,s=document.getElementsByTagName("link"),u=0;u<s.length;u++){var c=s[u],l=c.getAttribute("data-href")||c.getAttribute("href");if("stylesheet"===c.rel&&(l===a||l===o))return t()}var p=document.getElementsByTagName("style");for(u=0;u<p.length;u++){c=p[u],l=c.getAttribute("data-href");if(l===a||l===o)return t()}var f=document.createElement("link");f.rel="stylesheet",f.type="text/css",f.onload=t,f.onerror=function(t){var a=t&&t.target&&t.target.src||o,s=new Error("Loading CSS chunk "+e+" failed.\n("+a+")");s.code="CSS_CHUNK_LOAD_FAILED",s.request=a,delete n[e],f.parentNode.removeChild(f),r(s)},f.href=o;var d=document.getElementsByTagName("head")[0];d.appendChild(f)})).then((function(){n[e]=0})));var a=o[e];if(0!==a)if(a)t.push(a[2]);else{var s=new Promise((function(t,r){a=o[e]=[t,r]}));t.push(a[2]=s);var c,l=document.createElement("script");l.charset="utf-8",l.timeout=120,i.nc&&l.setAttribute("nonce",i.nc),l.src=u(e);var p=new Error;c=function(t){l.onerror=l.onload=null,clearTimeout(f);var r=o[e];if(0!==r){if(r){var a=t&&("load"===t.type?"missing":t.type),n=t&&t.target&&t.target.src;p.message="Loading chunk "+e+" failed.\n("+a+": "+n+")",p.name="ChunkLoadError",p.type=a,p.request=n,r[1](p)}o[e]=void 0}};var f=setTimeout((function(){c({type:"timeout",target:l})}),12e4);l.onerror=l.onload=c,document.head.appendChild(l)}return Promise.all(t)},i.m=e,i.c=a,i.d=function(e,t,r){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},i.r=function(e){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"===typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)i.d(r,a,function(t){return e[t]}.bind(null,a));return r},i.n=function(e){var t=e&&e.__esModule?function(){return e["default"]}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="/",i.oe=function(e){throw console.error(e),e};var c=window["webpackJsonp"]=window["webpackJsonp"]||[],l=c.push.bind(c);c.push=t,c=c.slice();for(var p=0;p<c.length;p++)t(c[p]);var f=l;r()})([]);</script><script src="/static/js/chunk-libs.dc6146cd.js"></script><script src="/static/js/app.6d2c358d.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrdutq.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第四章:存储器管理存储器的层次结构多层结构的存储系统 存储器的多层结构 CPU寄存器 主存 辅存   可执行存储器 寄存器和主存的总称 访问速度快，进程可以在很少的时钟周期内用一条load或store指令完成存取。    主存储器与寄存器高速缓存和磁盘缓存程序的装入和链接步骤 编译 源程序 -&gt;目标模块（Object modules）——–Compiler 由编译程序对用户源程序进行编译，形">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统-存储器管理">
+<meta property="og:url" content="http://mrdutq.github.io/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86.html">
+<meta property="og:site_name" content="Jason&#39;s blog">
+<meta property="og:description" content="第四章:存储器管理存储器的层次结构多层结构的存储系统 存储器的多层结构 CPU寄存器 主存 辅存   可执行存储器 寄存器和主存的总称 访问速度快，进程可以在很少的时钟周期内用一条load或store指令完成存取。    主存储器与寄存器高速缓存和磁盘缓存程序的装入和链接步骤 编译 源程序 -&gt;目标模块（Object modules）——–Compiler 由编译程序对用户源程序进行编译，形">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/os/ch4.png">
+<meta property="article:published_time" content="2022-01-17T10:56:41.778Z">
+<meta property="article:modified_time" content="2021-01-18T10:01:23.891Z">
+<meta property="article:author" content="Jason">
+<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="存储器管理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/os/ch4.png">
+
+<link rel="canonical" href="http://mrdutq.github.io/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>操作系统-存储器管理 | Jason's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jason's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/home/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/mrdutq" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrdutq.github.io/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jason">
+      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          操作系统-存储器管理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-01-18 18:01:23" itemprop="dateModified" datetime="2021-01-18T18:01:23+08:00">2021-01-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="第四章-存储器管理"><a href="#第四章-存储器管理" class="headerlink" title="第四章:存储器管理"></a>第四章:存储器管理</h1><h2 id="存储器的层次结构"><a href="#存储器的层次结构" class="headerlink" title="存储器的层次结构"></a>存储器的层次结构</h2><h3 id="多层结构的存储系统"><a href="#多层结构的存储系统" class="headerlink" title="多层结构的存储系统"></a>多层结构的存储系统</h3><ul>
+<li>存储器的多层结构<ul>
+<li>CPU寄存器</li>
+<li>主存</li>
+<li>辅存</li>
+</ul>
+</li>
+<li>可执行存储器<ul>
+<li>寄存器和主存的总称</li>
+<li>访问速度快，进程可以在很少的时钟周期内用一条load或store指令完成存取。</li>
+</ul>
+</li>
+</ul>
+<h3 id="主存储器与寄存器"><a href="#主存储器与寄存器" class="headerlink" title="主存储器与寄存器"></a>主存储器与寄存器</h3><h3 id="高速缓存和磁盘缓存"><a href="#高速缓存和磁盘缓存" class="headerlink" title="高速缓存和磁盘缓存"></a>高速缓存和磁盘缓存</h3><h2 id="程序的装入和链接"><a href="#程序的装入和链接" class="headerlink" title="程序的装入和链接"></a>程序的装入和链接</h2><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ul>
+<li>编译<ul>
+<li>源程序 -&gt;目标模块（Object modules）——–Compiler<ul>
+<li>由编译程序对用户源程序进行编译，形成若干个目标模块</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>链接<ul>
+<li>一组目标模块 -&gt;装入模块 （Load Module）———-Linker<ul>
+<li>由链接程序将编译后形成的一组目标模板以及它们所需要的库函数链接在一起，形成一个完整的装入模块</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>装入<ul>
+<li>装入模块 -&gt;内存  ——–Loader<ul>
+<li>由装入程序将装入模块装入内存</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="程序的装入"><a href="#程序的装入" class="headerlink" title="程序的装入"></a>程序的装入</h3><ul>
+<li>绝对装入方式<ul>
+<li>在编译时，如果知道程序将驻留在内存中指定的位置。编译程序将产生绝对地址的目标代码。</li>
+</ul>
+</li>
+<li>可重定位装入方式<ul>
+<li>在可执行文件中，列出各个需要重定位的地址单元和相对地址值。当用户程序被装入内存时，一次性实现逻辑地址到物理地址的转换，以后不再转换(一般在装入内存时由软件完成)。</li>
+<li>优点：不需硬件支持，可以装入有限多道程序。</li>
+<li>缺点：一个程序通常需要占用连续的内存空间，程序装入内存后不能移动。不易实现共享。</li>
+</ul>
+</li>
+<li>动态运行时的装入方式<ul>
+<li>动态运行时的装入程序在把装入模块装入内存后，并不立即把装入模块中的逻辑地址转换为物理地址，而是把这种地址转换推迟到程序真正要执行时才进行</li>
+<li>优点：<ul>
+<li>OS可以将一个程序分散存放于不连续的内存空间，可以移动程序，有利用实现共享。</li>
+<li>能够支持程序执行中产生的地址引用，如指针变量（而不仅是生成可执行文件时的地址引用）。</li>
+</ul>
+</li>
+<li>缺点：需要硬件支持，OS实现较复杂。</li>
+<li>它是虚拟存储的基础。</li>
+</ul>
+</li>
+</ul>
+<h3 id="程序的链接"><a href="#程序的链接" class="headerlink" title="程序的链接"></a>程序的链接</h3><ul>
+<li>静态链接方式(lib)</li>
+<li>装入时动态链接</li>
+<li>运行时动态链接(dll)</li>
+</ul>
+<h2 id="连续分配存储管理方式"><a href="#连续分配存储管理方式" class="headerlink" title="连续分配存储管理方式"></a>连续分配存储管理方式</h2><h3 id="连续分配"><a href="#连续分配" class="headerlink" title="连续分配"></a>连续分配</h3><ul>
+<li>单一连续分配(DOS)</li>
+<li>固定分区分配(浪费很多空间)</li>
+<li>动态分区分配</li>
+</ul>
+<h3 id="地址映射和存储保护措施"><a href="#地址映射和存储保护措施" class="headerlink" title="地址映射和存储保护措施"></a>地址映射和存储保护措施</h3><ul>
+<li>基址寄存器：程序的最小物理地址</li>
+<li>界限寄存器：程序的逻辑地址范围</li>
+<li>物理地址 = 逻辑地址 + 基址</li>
+</ul>
+<h3 id="内碎片：占用分区之内未被利用的空间"><a href="#内碎片：占用分区之内未被利用的空间" class="headerlink" title="内碎片：占用分区之内未被利用的空间"></a>内碎片：占用分区之内未被利用的空间</h3><h3 id="外碎片：占用分区之间难以利用的空闲分区（通常是小空闲分区）"><a href="#外碎片：占用分区之间难以利用的空闲分区（通常是小空闲分区）" class="headerlink" title="外碎片：占用分区之间难以利用的空闲分区（通常是小空闲分区）"></a>外碎片：占用分区之间难以利用的空闲分区（通常是小空闲分区）</h3><h3 id="把内存划分为若干个固定大小的连续分区。固定式分区又称为静态分区。"><a href="#把内存划分为若干个固定大小的连续分区。固定式分区又称为静态分区。" class="headerlink" title="把内存划分为若干个固定大小的连续分区。固定式分区又称为静态分区。"></a>把内存划分为若干个固定大小的连续分区。固定式分区又称为静态分区。</h3><ul>
+<li>分区大小相等：只适合于多个相同程序的并发执行（处理多个类型相同的对象）。</li>
+<li>分区大小不等：多个小分区、适量的中等分区、少量的大分区。根据程序的大小，分配当前空闲的、适当大小的分区。</li>
+<li>优点：无外碎片、易实现、开销小。</li>
+<li>缺点：<ul>
+<li>存在内碎片，造成浪费</li>
+<li>分区总数固定，限制了并发执行的程序数目。</li>
+<li>通用Os很少采用，部分控制系统中采用</li>
+</ul>
+</li>
+</ul>
+<h3 id="动态创建分区：指在作业装入内存时，从可用的内存中划出一块连续的区域分配给它，且分区大小正好等于该作业的大小。可变式分区中分区的大小和分区的个数都是可变的，而且是根据作业的大小和多少动态地划分。"><a href="#动态创建分区：指在作业装入内存时，从可用的内存中划出一块连续的区域分配给它，且分区大小正好等于该作业的大小。可变式分区中分区的大小和分区的个数都是可变的，而且是根据作业的大小和多少动态地划分。" class="headerlink" title="动态创建分区：指在作业装入内存时，从可用的内存中划出一块连续的区域分配给它，且分区大小正好等于该作业的大小。可变式分区中分区的大小和分区的个数都是可变的，而且是根据作业的大小和多少动态地划分。"></a>动态创建分区：指在作业装入内存时，从可用的内存中划出一块连续的区域分配给它，且分区大小正好等于该作业的大小。可变式分区中分区的大小和分区的个数都是可变的，而且是根据作业的大小和多少动态地划分。</h3><ul>
+<li>基于顺序搜索的动态分区分配算法<ul>
+<li>首次适应算法（first fit,FF）<ul>
+<li>顺序找，找到一个满足的就分配，但是可能存在浪费</li>
+<li>这种方法目的在于减少查找时间。</li>
+<li>空闲分区表（空闲区链）中的空闲分区要按地址由低到高进行排序</li>
+</ul>
+</li>
+<li>循环首次适应算法（next fit，NF）<ul>
+<li>相对上面那种，不是顺序，类似哈希算法中左右交叉排序</li>
+<li>空闲分区分布得更均匀，查找开销小</li>
+<li>从上次找到的空闲区的下一个空闲区开始查找，直到找到第一个能满足要求的的空闲区为止，并从中划出一块与请求大小相等的内存空间分配给作业。</li>
+</ul>
+</li>
+<li>最佳适应算法（best fit，BF）<ul>
+<li>找到最合适的，但是大区域的访问次数减少</li>
+<li>这种方法能使外碎片尽量小。</li>
+<li>空闲分区表（空闲区链）中的空闲分区要按大小从小到大进行排序，自表头开始查找到第一个满足要求的自由分区分配。</li>
+</ul>
+</li>
+<li>最坏适应算法（worst fit，WF）<ul>
+<li>相对于最好而言，找最大的区域下手，导致最大的区域可能很少，也造成许多碎片</li>
+<li>空闲分区按大小由大到小排序</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基于索引搜索的动态分区分配算法<ul>
+<li>快速适应算法（quick fit）</li>
+<li>伙伴系统（buddy system）</li>
+<li>哈希算法</li>
+</ul>
+</li>
+<li>动态可重定位分区分配<ul>
+<li>紧凑</li>
+<li>动态重定位<ul>
+<li>动态运行时装入，地址转化在指令执行时进行，需获得硬件地址变换机制的支持</li>
+<li>内存地址=相对地址+起始地址</li>
+</ul>
+</li>
+<li>动态重定位分区分配算法<ul>
+<li>1、在某个分区被释放后立即进行紧凑，系统总是只有一个连续的分区而无碎片，此法很花费机时。</li>
+<li>2、当“请求分配模块”找不到足够大的自由分区分给用户时再进行紧凑，这样紧缩的次数比上种方法少得多，但管理复杂。采用此法的动态重定位分区分配算法框图如下：</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>优点：没有内碎片。</li>
+<li>缺点：外碎片。</li>
+</ul>
+<h2 id="对换（了解）"><a href="#对换（了解）" class="headerlink" title="对换（了解）"></a>对换（了解）</h2><h3 id="系统把所有的作业放在外存，每次只调用一个作业进入内存运行，当时间片用完时，将它调至外存后备队列上等待，在从后备队列调入另一个作业进入内存运行。"><a href="#系统把所有的作业放在外存，每次只调用一个作业进入内存运行，当时间片用完时，将它调至外存后备队列上等待，在从后备队列调入另一个作业进入内存运行。" class="headerlink" title="系统把所有的作业放在外存，每次只调用一个作业进入内存运行，当时间片用完时，将它调至外存后备队列上等待，在从后备队列调入另一个作业进入内存运行。"></a>系统把所有的作业放在外存，每次只调用一个作业进入内存运行，当时间片用完时，将它调至外存后备队列上等待，在从后备队列调入另一个作业进入内存运行。</h3><h2 id="基本分页存储管理方式"><a href="#基本分页存储管理方式" class="headerlink" title="基本分页存储管理方式"></a>基本分页存储管理方式</h2><h3 id="分页存储管理的基本方式"><a href="#分页存储管理的基本方式" class="headerlink" title="分页存储管理的基本方式"></a>分页存储管理的基本方式</h3><ul>
+<li>页面<ul>
+<li>将一个进程的逻辑地址空间分成若干个大小相等的片</li>
+</ul>
+</li>
+<li>页框（frame）<ul>
+<li>内存空间分成与页面相同大小的存储块</li>
+</ul>
+</li>
+<li>由于进程的最后一页经常装不满一块而形成了不可利用的碎片，称之为“页内碎片”</li>
+<li>地址结构<ul>
+<li>页号P+位移量W(0-31)</li>
+</ul>
+</li>
+<li>页表<ul>
+<li>在分页系统中，允许将进程的各个页离散地存储在内存在内存的任一物理块中，为保证进程仍然能够正确地运行，即能在内存中找到每一个页面所对应的物理块，系统又为每个进程建立了一张页面映像表，简称页表</li>
+<li>页表的作用是实现从页面号到物理块号的地址映射</li>
+</ul>
+</li>
+</ul>
+<h3 id="地址变换机构"><a href="#地址变换机构" class="headerlink" title="地址变换机构"></a>地址变换机构</h3><ul>
+<li>基本的地址变换机构<ul>
+<li>要访问两次内存</li>
+<li>页表大都驻留在内存中</li>
+<li>为了实现地址变换功能，在系统中设置页表寄存器（PTR），用来存放页表的始址和页表的长度。</li>
+<li>在进程未执行时，每个进程对应的页表的始址和长度存放在进程的PCB中，当该进程被调度时，就将它们装入页表寄存器。</li>
+</ul>
+</li>
+<li>具有快表的地址变换机构<ul>
+<li>提高了效率，此处会有计算题</li>
+<li>如果页表存放在内存中，则每次访问内存时，都要先访问内存中的页表，然后根据所形成的物理地址再访问内存。这样CPU存一个数据必须访问两次内存，从而使计算机的处理速度降低了1/2。</li>
+<li>为了提高地址变换的速度，在地址变换机构中增设了一个具有并行查询功能的特殊的高速缓冲存储器，称为“联想存储器”或“快表”，用以存放当前访问的那些页表项。</li>
+<li>地址变换过程为：<ul>
+<li>1、CPU给出有效地址</li>
+<li>2、地址变换机构自动地将页号送入高速缓存，确定所需要的页是否在快表中。</li>
+<li>3、若是，则直接读出该页所对应的物理块号，送入物理地址寄存器；</li>
+<li>4、若快表中未找到对应的页表项，则需再访问内存中的页表</li>
+<li>5、找到后，把从页表中读出的页表项存入快表中的一个寄存器单元中，以取代一个旧的页表项。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="两级和多级页表"><a href="#两级和多级页表" class="headerlink" title="两级和多级页表"></a>两级和多级页表</h3><ul>
+<li>主要是有的时候页表太多了，要化简</li>
+<li>格式：外层页号P1+外层页内地址P2+页内地址d</li>
+<li>基本方法：将页表进行分页，每个页面的大小与内存物理块的大小相同，并为它们进行编号，可以离散地将各个页面分别存放在不同的物理块中。</li>
+</ul>
+<h3 id="反置页表"><a href="#反置页表" class="headerlink" title="反置页表"></a>反置页表</h3><ul>
+<li>反置页表为每一个物理块（页框）设置一个页表项，并按物理块排序，其内容则是页号和其所属进程的标识。</li>
+</ul>
+<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
+<li>没有外碎片，每个内碎片不超过页大小。</li>
+<li>一个程序不必连续存放。</li>
+<li>便于改变程序占用空间的大小。即随着程序运行而动态生成的数据增多，地址空间可相应增长。</li>
+</ul>
+<h3 id="缺点：程序全部装入内存。"><a href="#缺点：程序全部装入内存。" class="headerlink" title="缺点：程序全部装入内存。"></a>缺点：程序全部装入内存。</h3><h2 id="分段存储管理方式"><a href="#分段存储管理方式" class="headerlink" title="分段存储管理方式"></a>分段存储管理方式</h2><h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><ul>
+<li>方便编程</li>
+<li>信息共享</li>
+<li>动态增长</li>
+<li>动态链接</li>
+</ul>
+<h3 id="在分段存储管理方式中，作业的地址空间被划分为若干个段，每个段是一组完整的逻辑信息，每个段都有自己的名字，都是从零开始编址的一段连续的地址空间，各段长度是不等的。"><a href="#在分段存储管理方式中，作业的地址空间被划分为若干个段，每个段是一组完整的逻辑信息，每个段都有自己的名字，都是从零开始编址的一段连续的地址空间，各段长度是不等的。" class="headerlink" title="在分段存储管理方式中，作业的地址空间被划分为若干个段，每个段是一组完整的逻辑信息，每个段都有自己的名字，都是从零开始编址的一段连续的地址空间，各段长度是不等的。"></a>在分段存储管理方式中，作业的地址空间被划分为若干个段，每个段是一组完整的逻辑信息，每个段都有自己的名字，都是从零开始编址的一段连续的地址空间，各段长度是不等的。</h3><h3 id="内存空间被动态的划分为若干个长度不相同的区域，称为物理段，每个物理段由起始地址和长度确定"><a href="#内存空间被动态的划分为若干个长度不相同的区域，称为物理段，每个物理段由起始地址和长度确定" class="headerlink" title="内存空间被动态的划分为若干个长度不相同的区域，称为物理段，每个物理段由起始地址和长度确定"></a>内存空间被动态的划分为若干个长度不相同的区域，称为物理段，每个物理段由起始地址和长度确定</h3><h3 id="分段系统的基本原理"><a href="#分段系统的基本原理" class="headerlink" title="分段系统的基本原理"></a>分段系统的基本原理</h3><ul>
+<li>分段<ul>
+<li>格式：段号+段内地址</li>
+</ul>
+</li>
+<li>段表<ul>
+<li>段表实现了从逻辑段到物理内存区的映射。</li>
+</ul>
+</li>
+<li>地址变换机构</li>
+</ul>
+<h3 id="和分页的区别"><a href="#和分页的区别" class="headerlink" title="和分页的区别"></a>和分页的区别</h3><ul>
+<li>页是信息的物理单位</li>
+<li>页的大小固定且由系统固定</li>
+<li>分页的用户程序地址空间是一维的</li>
+<li>通常段比页大，因而段表比页表短，可以缩短查找时间，提高访问速度。</li>
+<li>分页是系统管理的需要，分段是用户应用的需要。一条指令或一个操作数可能会跨越两个页的分界处，而不会跨越两个段的分界处。</li>
+</ul>
+<h3 id="信息共享"><a href="#信息共享" class="headerlink" title="信息共享"></a>信息共享</h3><ul>
+<li>这是分段最重要的优点</li>
+</ul>
+<h3 id="段页式存储管理方式"><a href="#段页式存储管理方式" class="headerlink" title="段页式存储管理方式"></a>段页式存储管理方式</h3><ul>
+<li>基本原理<ul>
+<li>格式：段号（S）+段内页号（P）+页内地址（W）</li>
+</ul>
+</li>
+<li>地址变换过程<ul>
+<li>需要三次访问过程</li>
+</ul>
+</li>
+<li>在段页式系统中，为了获得一条指令或数据，需三次访问内存：第一次访问内存中的段表，从中取得页表始址；第二次访问内存中的页表，从中取出该页所在的物理块号，并将该块号与页内地址一起形成指令或数据的物理地址；第三次访问才是真正根据所得的物理地址取出指令或数据。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/os/ch4.png" alt="OS—CH4"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"># 操作系统</a>
+              <a href="/tags/%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86/" rel="tag"># 存储器管理</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E4%B8%8E%E6%AD%BB%E9%94%81.html" rel="prev" title="操作系统-处理机调度与死锁">
+      <i class="fa fa-chevron-left"></i> 操作系统-处理机调度与死锁
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E5%BC%95%E8%AE%BA.html" rel="next" title="操作系统-引论">
+      操作系统-引论 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">第四章:存储器管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">存储器的层次结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E7%BB%93%E6%9E%84%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">多层结构的存储系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">主存储器与寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98%E5%92%8C%E7%A3%81%E7%9B%98%E7%BC%93%E5%AD%98"><span class="nav-number">1.1.3.</span> <span class="nav-text">高速缓存和磁盘缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A3%85%E5%85%A5%E5%92%8C%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.</span> <span class="nav-text">程序的装入和链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.2.1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%A3%85%E5%85%A5"><span class="nav-number">1.2.2.</span> <span class="nav-text">程序的装入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%9A%84%E9%93%BE%E6%8E%A5"><span class="nav-number">1.2.3.</span> <span class="nav-text">程序的链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">连续分配存储管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D"><span class="nav-number">1.3.1.</span> <span class="nav-text">连续分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E5%9D%80%E6%98%A0%E5%B0%84%E5%92%8C%E5%AD%98%E5%82%A8%E4%BF%9D%E6%8A%A4%E6%8E%AA%E6%96%BD"><span class="nav-number">1.3.2.</span> <span class="nav-text">地址映射和存储保护措施</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%A2%8E%E7%89%87%EF%BC%9A%E5%8D%A0%E7%94%A8%E5%88%86%E5%8C%BA%E4%B9%8B%E5%86%85%E6%9C%AA%E8%A2%AB%E5%88%A9%E7%94%A8%E7%9A%84%E7%A9%BA%E9%97%B4"><span class="nav-number">1.3.3.</span> <span class="nav-text">内碎片：占用分区之内未被利用的空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E7%A2%8E%E7%89%87%EF%BC%9A%E5%8D%A0%E7%94%A8%E5%88%86%E5%8C%BA%E4%B9%8B%E9%97%B4%E9%9A%BE%E4%BB%A5%E5%88%A9%E7%94%A8%E7%9A%84%E7%A9%BA%E9%97%B2%E5%88%86%E5%8C%BA%EF%BC%88%E9%80%9A%E5%B8%B8%E6%98%AF%E5%B0%8F%E7%A9%BA%E9%97%B2%E5%88%86%E5%8C%BA%EF%BC%89"><span class="nav-number">1.3.4.</span> <span class="nav-text">外碎片：占用分区之间难以利用的空闲分区（通常是小空闲分区）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%8A%E5%86%85%E5%AD%98%E5%88%92%E5%88%86%E4%B8%BA%E8%8B%A5%E5%B9%B2%E4%B8%AA%E5%9B%BA%E5%AE%9A%E5%A4%A7%E5%B0%8F%E7%9A%84%E8%BF%9E%E7%BB%AD%E5%88%86%E5%8C%BA%E3%80%82%E5%9B%BA%E5%AE%9A%E5%BC%8F%E5%88%86%E5%8C%BA%E5%8F%88%E7%A7%B0%E4%B8%BA%E9%9D%99%E6%80%81%E5%88%86%E5%8C%BA%E3%80%82"><span class="nav-number">1.3.5.</span> <span class="nav-text">把内存划分为若干个固定大小的连续分区。固定式分区又称为静态分区。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E5%88%86%E5%8C%BA%EF%BC%9A%E6%8C%87%E5%9C%A8%E4%BD%9C%E4%B8%9A%E8%A3%85%E5%85%A5%E5%86%85%E5%AD%98%E6%97%B6%EF%BC%8C%E4%BB%8E%E5%8F%AF%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98%E4%B8%AD%E5%88%92%E5%87%BA%E4%B8%80%E5%9D%97%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%8C%BA%E5%9F%9F%E5%88%86%E9%85%8D%E7%BB%99%E5%AE%83%EF%BC%8C%E4%B8%94%E5%88%86%E5%8C%BA%E5%A4%A7%E5%B0%8F%E6%AD%A3%E5%A5%BD%E7%AD%89%E4%BA%8E%E8%AF%A5%E4%BD%9C%E4%B8%9A%E7%9A%84%E5%A4%A7%E5%B0%8F%E3%80%82%E5%8F%AF%E5%8F%98%E5%BC%8F%E5%88%86%E5%8C%BA%E4%B8%AD%E5%88%86%E5%8C%BA%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%92%8C%E5%88%86%E5%8C%BA%E7%9A%84%E4%B8%AA%E6%95%B0%E9%83%BD%E6%98%AF%E5%8F%AF%E5%8F%98%E7%9A%84%EF%BC%8C%E8%80%8C%E4%B8%94%E6%98%AF%E6%A0%B9%E6%8D%AE%E4%BD%9C%E4%B8%9A%E7%9A%84%E5%A4%A7%E5%B0%8F%E5%92%8C%E5%A4%9A%E5%B0%91%E5%8A%A8%E6%80%81%E5%9C%B0%E5%88%92%E5%88%86%E3%80%82"><span class="nav-number">1.3.6.</span> <span class="nav-text">动态创建分区：指在作业装入内存时，从可用的内存中划出一块连续的区域分配给它，且分区大小正好等于该作业的大小。可变式分区中分区的大小和分区的个数都是可变的，而且是根据作业的大小和多少动态地划分。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8D%A2%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="nav-number">1.4.</span> <span class="nav-text">对换（了解）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%8A%8A%E6%89%80%E6%9C%89%E7%9A%84%E4%BD%9C%E4%B8%9A%E6%94%BE%E5%9C%A8%E5%A4%96%E5%AD%98%EF%BC%8C%E6%AF%8F%E6%AC%A1%E5%8F%AA%E8%B0%83%E7%94%A8%E4%B8%80%E4%B8%AA%E4%BD%9C%E4%B8%9A%E8%BF%9B%E5%85%A5%E5%86%85%E5%AD%98%E8%BF%90%E8%A1%8C%EF%BC%8C%E5%BD%93%E6%97%B6%E9%97%B4%E7%89%87%E7%94%A8%E5%AE%8C%E6%97%B6%EF%BC%8C%E5%B0%86%E5%AE%83%E8%B0%83%E8%87%B3%E5%A4%96%E5%AD%98%E5%90%8E%E5%A4%87%E9%98%9F%E5%88%97%E4%B8%8A%E7%AD%89%E5%BE%85%EF%BC%8C%E5%9C%A8%E4%BB%8E%E5%90%8E%E5%A4%87%E9%98%9F%E5%88%97%E8%B0%83%E5%85%A5%E5%8F%A6%E4%B8%80%E4%B8%AA%E4%BD%9C%E4%B8%9A%E8%BF%9B%E5%85%A5%E5%86%85%E5%AD%98%E8%BF%90%E8%A1%8C%E3%80%82"><span class="nav-number">1.4.1.</span> <span class="nav-text">系统把所有的作业放在外存，每次只调用一个作业进入内存运行，当时间片用完时，将它调至外存后备队列上等待，在从后备队列调入另一个作业进入内存运行。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.5.</span> <span class="nav-text">基本分页存储管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E9%A1%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E5%BC%8F"><span class="nav-number">1.5.1.</span> <span class="nav-text">分页存储管理的基本方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%B0%E5%9D%80%E5%8F%98%E6%8D%A2%E6%9C%BA%E6%9E%84"><span class="nav-number">1.5.2.</span> <span class="nav-text">地址变换机构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E7%BA%A7%E5%92%8C%E5%A4%9A%E7%BA%A7%E9%A1%B5%E8%A1%A8"><span class="nav-number">1.5.3.</span> <span class="nav-text">两级和多级页表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E7%BD%AE%E9%A1%B5%E8%A1%A8"><span class="nav-number">1.5.4.</span> <span class="nav-text">反置页表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="nav-number">1.5.5.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9%EF%BC%9A%E7%A8%8B%E5%BA%8F%E5%85%A8%E9%83%A8%E8%A3%85%E5%85%A5%E5%86%85%E5%AD%98%E3%80%82"><span class="nav-number">1.5.6.</span> <span class="nav-text">缺点：程序全部装入内存。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%AE%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.6.</span> <span class="nav-text">分段存储管理方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">1.6.1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E5%88%86%E6%AE%B5%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F%E4%B8%AD%EF%BC%8C%E4%BD%9C%E4%B8%9A%E7%9A%84%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%E8%A2%AB%E5%88%92%E5%88%86%E4%B8%BA%E8%8B%A5%E5%B9%B2%E4%B8%AA%E6%AE%B5%EF%BC%8C%E6%AF%8F%E4%B8%AA%E6%AE%B5%E6%98%AF%E4%B8%80%E7%BB%84%E5%AE%8C%E6%95%B4%E7%9A%84%E9%80%BB%E8%BE%91%E4%BF%A1%E6%81%AF%EF%BC%8C%E6%AF%8F%E4%B8%AA%E6%AE%B5%E9%83%BD%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E5%90%8D%E5%AD%97%EF%BC%8C%E9%83%BD%E6%98%AF%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%BC%96%E5%9D%80%E7%9A%84%E4%B8%80%E6%AE%B5%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4%EF%BC%8C%E5%90%84%E6%AE%B5%E9%95%BF%E5%BA%A6%E6%98%AF%E4%B8%8D%E7%AD%89%E7%9A%84%E3%80%82"><span class="nav-number">1.6.2.</span> <span class="nav-text">在分段存储管理方式中，作业的地址空间被划分为若干个段，每个段是一组完整的逻辑信息，每个段都有自己的名字，都是从零开始编址的一段连续的地址空间，各段长度是不等的。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4%E8%A2%AB%E5%8A%A8%E6%80%81%E7%9A%84%E5%88%92%E5%88%86%E4%B8%BA%E8%8B%A5%E5%B9%B2%E4%B8%AA%E9%95%BF%E5%BA%A6%E4%B8%8D%E7%9B%B8%E5%90%8C%E7%9A%84%E5%8C%BA%E5%9F%9F%EF%BC%8C%E7%A7%B0%E4%B8%BA%E7%89%A9%E7%90%86%E6%AE%B5%EF%BC%8C%E6%AF%8F%E4%B8%AA%E7%89%A9%E7%90%86%E6%AE%B5%E7%94%B1%E8%B5%B7%E5%A7%8B%E5%9C%B0%E5%9D%80%E5%92%8C%E9%95%BF%E5%BA%A6%E7%A1%AE%E5%AE%9A"><span class="nav-number">1.6.3.</span> <span class="nav-text">内存空间被动态的划分为若干个长度不相同的区域，称为物理段，每个物理段由起始地址和长度确定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AE%B5%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">1.6.4.</span> <span class="nav-text">分段系统的基本原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%92%8C%E5%88%86%E9%A1%B5%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.6.5.</span> <span class="nav-text">和分页的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%85%B1%E4%BA%AB"><span class="nav-number">1.6.6.</span> <span class="nav-text">信息共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AE%B5%E9%A1%B5%E5%BC%8F%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">1.6.7.</span> <span class="nav-text">段页式存储管理方式</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jason</p>
+  <div class="site-description" itemprop="description">为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mrdutq" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mrdutq" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dutianqi9911@163.com" title="E-Mail → mailto:dutianqi9911@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn" rel="noopener" target="_blank">Jason's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

@@ -1,1 +1,792 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><link href="/static/css/chunk-libs.eebac533.css" rel="stylesheet"><link href="/static/css/app.0d31776f.css" rel="stylesheet"><!-- hexo injector head_end start --><script rel="prefetch" async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/components/prism-core.js" data-manual></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/themes/prism.min.css"/><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.css"/><link rel="stylesheet" href="https://fonts.loli.net/css?family=Rubik" /><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.css"/><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body id="body-container"><noscript><strong>We're sorry but Aurora Blog doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script>(function(e){function t(t){for(var a,n,u=t[0],i=t[1],c=t[2],l=0,p=[];l<u.length;l++)n=u[l],Object.prototype.hasOwnProperty.call(o,n)&&o[n]&&p.push(o[n][0]),o[n]=0;for(a in i)Object.prototype.hasOwnProperty.call(i,a)&&(e[a]=i[a]);f&&f(t);while(p.length)p.shift()();return s.push.apply(s,c||[]),r()}function r(){for(var e,t=0;t<s.length;t++){for(var r=s[t],a=!0,n=1;n<r.length;n++){var u=r[n];0!==o[u]&&(a=!1)}a&&(s.splice(t--,1),e=i(i.s=r[0]))}return e}var a={},n={runtime:0},o={runtime:0},s=[];function u(e){return i.p+"static/js/"+({404:"404",about:"about",archives:"archives",categories:"categories",page:"page",post:"post",result:"result",tags:"tags"}[e]||e)+"."+{404:"00d640a8",about:"024aacd1",archives:"574ac664",categories:"90aa5475",page:"a02618ad",post:"cebfbaa4",result:"39470350",tags:"2ad613f5"}[e]+".js"}function i(t){if(a[t])return a[t].exports;var r=a[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.e=function(e){var t=[],r={404:1,about:1,archives:1,categories:1,page:1,post:1,result:1,tags:1};n[e]?t.push(n[e]):0!==n[e]&&r[e]&&t.push(n[e]=new Promise((function(t,r){for(var a="static/css/"+({404:"404",about:"about",archives:"archives",categories:"categories",page:"page",post:"post",result:"result",tags:"tags"}[e]||e)+"."+{404:"1a6cd5bd",about:"32dfa3b0",archives:"c0d49bd5",categories:"10e2be12",page:"749ad047",post:"9f951a60",result:"10e2be12",tags:"10e2be12"}[e]+".css",o=i.p+a,s=document.getElementsByTagName("link"),u=0;u<s.length;u++){var c=s[u],l=c.getAttribute("data-href")||c.getAttribute("href");if("stylesheet"===c.rel&&(l===a||l===o))return t()}var p=document.getElementsByTagName("style");for(u=0;u<p.length;u++){c=p[u],l=c.getAttribute("data-href");if(l===a||l===o)return t()}var f=document.createElement("link");f.rel="stylesheet",f.type="text/css",f.onload=t,f.onerror=function(t){var a=t&&t.target&&t.target.src||o,s=new Error("Loading CSS chunk "+e+" failed.\n("+a+")");s.code="CSS_CHUNK_LOAD_FAILED",s.request=a,delete n[e],f.parentNode.removeChild(f),r(s)},f.href=o;var d=document.getElementsByTagName("head")[0];d.appendChild(f)})).then((function(){n[e]=0})));var a=o[e];if(0!==a)if(a)t.push(a[2]);else{var s=new Promise((function(t,r){a=o[e]=[t,r]}));t.push(a[2]=s);var c,l=document.createElement("script");l.charset="utf-8",l.timeout=120,i.nc&&l.setAttribute("nonce",i.nc),l.src=u(e);var p=new Error;c=function(t){l.onerror=l.onload=null,clearTimeout(f);var r=o[e];if(0!==r){if(r){var a=t&&("load"===t.type?"missing":t.type),n=t&&t.target&&t.target.src;p.message="Loading chunk "+e+" failed.\n("+a+": "+n+")",p.name="ChunkLoadError",p.type=a,p.request=n,r[1](p)}o[e]=void 0}};var f=setTimeout((function(){c({type:"timeout",target:l})}),12e4);l.onerror=l.onload=c,document.head.appendChild(l)}return Promise.all(t)},i.m=e,i.c=a,i.d=function(e,t,r){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},i.r=function(e){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"===typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)i.d(r,a,function(t){return e[t]}.bind(null,a));return r},i.n=function(e){var t=e&&e.__esModule?function(){return e["default"]}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="/",i.oe=function(e){throw console.error(e),e};var c=window["webpackJsonp"]=window["webpackJsonp"]||[],l=c.push.bind(c);c.push=t,c=c.slice();for(var p=0;p<c.length;p++)t(c[p]);var f=l;r()})([]);</script><script src="/static/js/chunk-libs.dc6146cd.js"></script><script src="/static/js/app.6d2c358d.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrdutq.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="考核方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构-线性表">
+<meta property="og:url" content="http://mrdutq.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8.html">
+<meta property="og:site_name" content="Jason&#39;s blog">
+<meta property="og:description" content="考核方式">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-17T10:56:41.812Z">
+<meta property="article:modified_time" content="2020-09-25T16:57:26.074Z">
+<meta property="article:author" content="Jason">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://mrdutq.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>数据结构-线性表 | Jason's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jason's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/home/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/mrdutq" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://mrdutq.github.io/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jason">
+      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据结构-线性表
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-26 00:57:26" itemprop="dateModified" datetime="2020-09-26T00:57:26+08:00">2020-09-26</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="考核方式"><a href="#考核方式" class="headerlink" title="考核方式"></a>考核方式</h1><span id="more"></span>
+<p>平时成绩：40%</p>
+<pre><code>作业、考勤：10%
+实验(源代码、实验报告)：15%
+过程性评价(3次，5分/次)：15%
+课堂纪律
+    无故迟到3次=1次旷课
+    无故旷课：-2分/次
+    上课玩手机、玩游戏：-2分/次
+</code></pre>
+<p>期末成绩：60%</p>
+<pre><code>闭卷、笔试
+</code></pre>
+<h1 id="抽象数据类型的表示"><a href="#抽象数据类型的表示" class="headerlink" title="抽象数据类型的表示"></a>抽象数据类型的表示</h1><p>ADT = (D,R,P)</p>
+<p>[D]：数据对象</p>
+<p>[R]：D上的关系集</p>
+<p>[P]：D上的操作集</p>
+<pre><code>ADT抽象数据类型名&#123;
+
+    数据对象:&lt;数据对象的定义&gt;
+
+    数据关系:&lt;数据关系的定义&gt;
+
+    基本操作:&lt;基本操作的定义&gt;
+&#125;ADT抽象数据类型名
+</code></pre>
+<h1 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h1><h2 id="推导秘籍"><a href="#推导秘籍" class="headerlink" title="推导秘籍"></a>推导秘籍</h2><p>1、寻找执行频率最高的那条语句<br>  (通常是循环最内层)</p>
+<p>2、估计出该语句的执行次数<br>(是问题规模n的函数)</p>
+<p>3、只保留最高次幂<br>(去掉最高次幂的系数和其余项)</p>
+<h2 id="推导的一般准则"><a href="#推导的一般准则" class="headerlink" title="推导的一般准则"></a>推导的一般准则</h2><p>准则1、对于一些简单的输入输出语句或赋值语句，近似认为需要O(1)时间。</p>
+<p>准则2、对于多个循环，假设循环体的时间复杂度为O(n),各个循环的循环次数分别是a,b,c…,则这个循环的时间复杂度为O(n<em>a</em>b<em>c</em>…)。</p>
+<p>准则3、如果算法中包含并列的循环，则：若并列循环设计问题规模相同，则取最大；若并列循环设计问题规模不同，则求和。</p>
+<p>准则4、对于条件判断语句，总的时间复杂度等于其中时间复杂度最大的路径的时间复杂度。</p>
+<h1 id="线性表的顺序表示和实现"><a href="#线性表的顺序表示和实现" class="headerlink" title="线性表的顺序表示和实现"></a>线性表的顺序表示和实现</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><pre><code>若结构是非空有限集，则有且仅有一个开始结点和一个终端结点，并且所有结点都最多只有一个直接前驱和一个直接后继。
+</code></pre>
+<h3 id="线性结构可表示为"><a href="#线性结构可表示为" class="headerlink" title="线性结构可表示为"></a>线性结构可表示为</h3><p>  (a<sub>1</sub>,a<sub>2</sub>,a<sub>3</sub>,a<sub>4</sub>,a<sub>5</sub>,a<sub>6</sub>…)</p>
+<h3 id="线性结构反应结点间的逻辑关系是1：1"><a href="#线性结构反应结点间的逻辑关系是1：1" class="headerlink" title="线性结构反应结点间的逻辑关系是1：1"></a>线性结构反应结点间的逻辑关系是1：1</h3><h3 id="线性结构包括："><a href="#线性结构包括：" class="headerlink" title="线性结构包括："></a>线性结构包括：</h3><pre><code>线性表、栈、队列、字符串和数组。
+</code></pre>
+<h3 id="线性结构的特点"><a href="#线性结构的特点" class="headerlink" title="线性结构的特点"></a>线性结构的特点</h3><pre><code>存在唯一的一个被称作“第一个”的数据元素；
+ 
+存在唯一的一个被称作“最后一个”的数据元素；
+
+除第一个外，集合中的每个数据元素均只有一个直接前驱；
+
+除最后一个之外，集合中每个数据元素均只有一个直接后继。
+</code></pre>
+<p>数据元素都是记录； 元素间关系是线性</p>
+<p><em><strong>同一线性表中的元素必定具有相同特性</strong></em></p>
+<h3 id="线性表的类型定义"><a href="#线性表的类型定义" class="headerlink" title="线性表的类型定义"></a>线性表的类型定义</h3><pre><code>  n个具有相同特性的数据元素的有限序列
+
+  ADT List&#123;
+  数据对象: D=&#123;ai|ai∈ElemSet,i=1,2,...,n,n≥0&#125; 
+  数据关系: R=&#123;&lt;ai-1,ai&gt;|ai-1,ai∈D,i=2,...,n&#125; 
+  基本操作：
+  
+  InitList(&amp;L)
+    操作结果：构造一个空的线性L。
+  
+  DestroyList(&amp;L)    
+    初始条件：线性表L已存在。
+    操作结果：销毁线性表L。
+  
+  ListEmpty(L)    
+    初始条件：线性表L已存在。
+    操作结果：若L为空表，则返回T,否则返回F。
+  
+  ListLength(L)
+    初始条件：线性表L已存在。
+    操作结果：返回L中数据元素个数。
+  
+  GetElem(L,i,&amp;e)
+    初始条件：线性表L已存在，     1≤i≤ListLength(L)。
+    操作结果：用e返回L中第i个数据元素的值。 
+  
+  LocateElem(L,e,compare())
+    初始条件：线性表L已存在，compare()是数据元素判定函数。
+    操作结果：返回L中第1个与e满足关系compare()的数据元素的位序。若这样的数据元素不存在，则返回值为0。
+  
+  PriorElem(L,cur_e,&amp;pre_e)
+    初始条件：线性表L已存在。
+    操作结果：若cur_e是L的数据元素，且不是第一个，则用pre_e返回它的前驱，否则操作失败，pre_e无定义。 
+  
+  NextElem(L,cur_e,&amp;next_e)
+    初始条件：线性表L已存在。
+    操作结果：若cur_e是L的数据元素，且不是最后一个，则用next_e返回它的后继，否则操作失败，next_e无定义。
+  
+  ListTraverse(L)
+    初始条件：线性表L已存在。
+    操作结果：对线性表L进行遍历，在遍历过程中依次对L的每个数据元素访问一次。
+  
+  ClearList(&amp;L)
+  初始条件：线性表L已存在。
+  操作结果：将L重置为空表。
+  
+  ListInsert(&amp;L,i,e)
+    初始条件：线性表L已存在，1≤i≤ListLength(L)+1。
+    操作结果：在L中第i个位置之前插入新的数据元素e，L的长度加1。
+  
+  ListDelete(&amp;L,i,&amp;e)
+    初始条件：线性表L已存在且非空，1≤i≤ListLength(L)。
+    操作结果：删除L的第i个数据元素，并用e返回其值，L的长度减1。
+  
+  PutElem(&amp;L, i, e )
+       初始条件：线性表 L 已存在且1≤i≤LengthList(L)。。
+       操作结果：L 中第i 个元素的值与e 相同。
+</code></pre>
+<h3 id="线性表的操作主要包括"><a href="#线性表的操作主要包括" class="headerlink" title="线性表的操作主要包括"></a>线性表的操作主要包括</h3><pre><code>  创建和删除结构
+  对结构有没有改变的操作
+  对结构有改变的操作
+</code></pre>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><h1 id="线性表的链式表示和实现"><a href="#线性表的链式表示和实现" class="headerlink" title="线性表的链式表示和实现"></a>线性表的链式表示和实现</h1><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><h3 id="线性表的顺序表示"><a href="#线性表的顺序表示" class="headerlink" title="线性表的顺序表示"></a>线性表的顺序表示</h3><pre><code>指的是用一组地址连续的存储单元依次存储线性表中的数据元素。
+
+特点：
+  逻辑上相邻的数据元素，物理上也相邻；
+  若已知表中首元素在存储器中的位置，则可求出线性表中其他元素的存放位置
+
+线性表的起始地址（线性表的基地址）
+</code></pre>
+<h2 id="顺序表的实现"><a href="#顺序表的实现" class="headerlink" title="顺序表的实现"></a>顺序表的实现</h2><h3 id="顺序表的基本操作"><a href="#顺序表的基本操作" class="headerlink" title="顺序表的基本操作"></a>顺序表的基本操作</h3><ol>
+<li>初始化顺序表L</li>
+<li> 销毁顺序表L</li>
+<li> 清空顺序表L</li>
+<li> 求顺序表L的长度</li>
+<li> 判断顺序表L是否为空 </li>
+<li> 获取顺序表L中的某个数据元素内容 </li>
+<li> 检索值为e的数据元素    </li>
+<li> 在顺序表L中插入一个数据元素  </li>
+<li> 删除顺序表L中第i个数据元素</li>
+</ol>
+<h3 id="线性表顺序表示的优缺点"><a href="#线性表顺序表示的优缺点" class="headerlink" title="线性表顺序表示的优缺点"></a>线性表顺序表示的优缺点</h3><pre><code>  优点：
+    可以随机存取表中任一元素;
+    无需为表示表中元素之间的逻辑关系而增加额外存储空间；
+  缺点：
+    在插入、删除某一元素时，需要移动大量元素；
+    表的容量难以确定,浪费存储空间
+</code></pre>
+<p>为了克服这一缺点–&gt;链表</p>
+<h2 id="线性表的链式存储的特点："><a href="#线性表的链式存储的特点：" class="headerlink" title="线性表的链式存储的特点："></a>线性表的链式存储的特点：</h2><pre><code>  用一组任意的存储单元存储线性表的数据元素
+    存储单元的地址可以连续或不连续
+    即：逻辑上相邻的数据元素在物理上不一定相邻
+  
+  对线性表中的每一个数据元素，都需要用两部分来存储：一部分用于存放数据元素本身的信息，称为数据域（Data Field）；另一部分用于存放直接前驱或直接后继的地址（指针），称为指针域（Link Field）
+</code></pre>
+<h2 id="与链式存储有关的术语"><a href="#与链式存储有关的术语" class="headerlink" title="与链式存储有关的术语"></a>与链式存储有关的术语</h2><p>  结点（Node）：</p>
+<pre><code>数据元素的存储映像  
+  由数据域和指针域两部分组成：数据域Data 指针域Link
+</code></pre>
+<p>  链表：n个结点通过指针域链结称一个链表</p>
+<h2 id="链表的种类"><a href="#链表的种类" class="headerlink" title="链表的种类"></a>链表的种类</h2><p>  单链表<br>      结点只有一个指针域的链表，也称线性链表</p>
+<p>  双链表<br>      有两个指针域的链表</p>
+<p>  循环链表<br>      首尾相接的链表</p>
+<h3 id="头指针、首元结点和头结点"><a href="#头指针、首元结点和头结点" class="headerlink" title="头指针、首元结点和头结点"></a>头指针、首元结点和头结点</h3><pre><code>头指针：指向链表中第一个结点（为头结点或首元结点）的指针
+首元结点：是指链表中存储第一个数据元素a1的结点
+头结点：实在链表的首元结点之前附设的一个结点；数据域内只放空表标志和表长等信息
+
+在链表中设置头结点的好处
+</code></pre>
+<h2 id="单链表的定义和实现"><a href="#单链表的定义和实现" class="headerlink" title="单链表的定义和实现"></a>单链表的定义和实现</h2><h2 id="单链表的存储结构定义"><a href="#单链表的存储结构定义" class="headerlink" title="单链表的存储结构定义"></a>单链表的存储结构定义</h2><pre><code>typedef struct LNode&#123;
+  ElemType data;//数据域
+  struct LNode *next;//指针域
+&#125;LNode,*LinkList;
+或者
+struct LNode&#123;
+  ElemType data;
+  struct LNode *next;
+&#125;;
+typedef LNode *LinkList;
+或者
+typedef struct LNode&#123;
+  ElemType data;
+  struct LNode *next;
+&#125;LNode;
+typedef LNode *LinkList;
+</code></pre>
+<p> 指针变量和结点变量<br>    LNode *p;<br>    LNode n; </p>
+<pre><code>p:指针变量，表示结点地址。
+p-&gt;data,p-&gt;next
+n:结点变量，表示一个结点
+n.data;n.next
+</code></pre>
+<p>如何获得后继元素<br>    若p-&gt;data代表ai</p>
+<h2 id="单链表基本操作的实现"><a href="#单链表基本操作的实现" class="headerlink" title="单链表基本操作的实现"></a>单链表基本操作的实现</h2><p>  初始化单链表L</p>
+<p>  销毁单链表L</p>
+<pre><code>Status DestroyList_L(LinkList&amp;L)&#123;
+    LinkList p;
+    while(L)&#123;
+      p=L;
+      L=L-&gt;next;
+      delete p;
+    &#125;
+  return OK;
+&#125;
+</code></pre>
+<p>  清空单链表L</p>
+<pre><code>Status ClearList(LinkList L)&#123;
+  //将L重置为空表
+  LinkList p,q;
+  p=L-&gt;next;//p指向第一个结点
+  while(p)&#123;//没到表尾
+    q=p-&gt;next;
+    delete p;
+    p=q;
+  &#125;
+  L-&gt;next=null;//头结点指针域为空
+  return OK;
+&#125;
+</code></pre>
+<p>  求单链表L的长度</p>
+<pre><code>int ListLength_L(LinkList L)&#123;
+  //返回L中数据元素个数
+  LinkList P；
+  p=L-&gt;next;
+  count = 0;
+  while(p)&#123;
+    ++count;
+    p=p-&gt;next;
+  return count;
+  &#125;
+&#125;
+</code></pre>
+<p>  判断单链表L是否为空</p>
+<pre><code>bool ListEmpty()&#123;
+
+&#125;
+</code></pre>
+<p>  获取单链表L中的某个数据元素内容</p>
+<pre><code>  Status GetElem_L(LinkList L,int i, ElemType &amp;e)&#123;
+    //当第i个元素存在时，其值赋给e并返回OK。否则返回ERROR
+    p=L-&gt;next;
+    j=1;
+
+    while(p&amp;&amp;j&lt;i)&#123;
+      //向后扫描，直到p指向第i个元素或p为空
+      p=p-&gt;next;
+      ++j;
+    &#125;
+    if(!p||j&gt;i)return ERROR;//不合法范围
+    e=p-&gt;data;
+    return OK;
+  &#125;
+</code></pre>
+<p>  检索值为e的数据元素</p>
+<pre><code>  LNode *LocateElem_L(LinkList L , Elemtype e)&#123;
+
+  &#125;
+</code></pre>
+<p>  在单链表L中插入一个数据元素</p>
+<pre><code>Status ListInsert_L(LinkList L,int i , ElemType e)&#123;
+  p=1;j=0;
+  while(p&amp;&amp;j&lt;i-1)&#123;//寻找第i-1个结点
+    p=p-&gt;next;
+    ++i;
+  &#125;
+  if(!p||i&gt;i-1)return ERROR;//i大于表长+1或者小于1
+  s=new LNode;//生成新节点*s
+  s-&gt;data=e;//将节点*s的数据域置为e
+  s-&gt;next=p-&gt;next;//将结点*s插入L中
+  p-&gt;next=s;
+  return OK;
+&#125;
+</code></pre>
+<p>单链表的建立(前插法)</p>
+<pre><code>从一个空表开始，重复读入数据
+    生成新结点
+    将读入数据存放到新节点的数据域中
+    将该新结点插入到...
+</code></pre>
+<p>后插法<br>  从一个空表L开始，将新节点逐个插入到链表的尾部，尾指针r…</p>
+<h2 id="链表的运算时间效率分析"><a href="#链表的运算时间效率分析" class="headerlink" title="链表的运算时间效率分析"></a>链表的运算时间效率分析</h2><h3 id="查找-1"><a href="#查找-1" class="headerlink" title="查找"></a>查找</h3><pre><code>因线性表职能顺序存取，即在查找时要从头指针找起，查找的时间复杂度为O(n)
+</code></pre>
+<h3 id="插入和删除"><a href="#插入和删除" class="headerlink" title="插入和删除"></a>插入和删除</h3><pre><code>因线性
+</code></pre>
+<h2 id="链表的优缺点"><a href="#链表的优缺点" class="headerlink" title="链表的优缺点"></a>链表的优缺点</h2><pre><code>优点
+数据元素的个数可以自由扩充
+插入、删除等操作不必移动数据，只需修改链接指针，修改效率较高
+  
+缺点
+存储密度笑
+存取效率不高，必须采用顺序存取
+</code></pre>
+<h2 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h2><pre><code>将单链表中最后一个结点的指针域指向头结点，整个链表形成一个环。
+(a)非空单循环链表
+  特点：从表中任一结点出发均可找到表中其他结点
+(b)空表
+
+与单链表的区别：查找结束条件
+单链表---p-&gt;next=null
+循环链表--p-&gt;next=head
+
+设立尾指针：可以使链表合并简化
+</code></pre>
+<h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><pre><code>既有前驱指针，也有后继指针
+</code></pre>
+<h2 id="顺序表和链表的比较"><a href="#顺序表和链表的比较" class="headerlink" title="顺序表和链表的比较"></a>顺序表和链表的比较</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6.html" rel="prev" title="操作系统-进程的描述与控制">
+      <i class="fa fa-chevron-left"></i> 操作系统-进程的描述与控制
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%AA%E8%AE%BA.html" rel="next" title="数据结构-绪论">
+      数据结构-绪论 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%80%83%E6%A0%B8%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">考核方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">2.</span> <span class="nav-text">抽象数据类型的表示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">3.</span> <span class="nav-text">时间复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E7%A7%98%E7%B1%8D"><span class="nav-number">3.1.</span> <span class="nav-text">推导秘籍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E5%AF%BC%E7%9A%84%E4%B8%80%E8%88%AC%E5%87%86%E5%88%99"><span class="nav-number">3.2.</span> <span class="nav-text">推导的一般准则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="nav-number">4.</span> <span class="nav-text">线性表的顺序表示和实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">4.1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E5%8F%AF%E8%A1%A8%E7%A4%BA%E4%B8%BA"><span class="nav-number">4.1.1.</span> <span class="nav-text">线性结构可表示为</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E5%8F%8D%E5%BA%94%E7%BB%93%E7%82%B9%E9%97%B4%E7%9A%84%E9%80%BB%E8%BE%91%E5%85%B3%E7%B3%BB%E6%98%AF1%EF%BC%9A1"><span class="nav-number">4.1.2.</span> <span class="nav-text">线性结构反应结点间的逻辑关系是1：1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E5%8C%85%E6%8B%AC%EF%BC%9A"><span class="nav-number">4.1.3.</span> <span class="nav-text">线性结构包括：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">4.1.4.</span> <span class="nav-text">线性结构的特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%AE%9A%E4%B9%89"><span class="nav-number">4.1.5.</span> <span class="nav-text">线性表的类型定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC"><span class="nav-number">4.1.6.</span> <span class="nav-text">线性表的操作主要包括</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE"><span class="nav-number">4.2.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5"><span class="nav-number">4.3.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">4.4.</span> <span class="nav-text">删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E8%A1%A8%E7%A4%BA%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.</span> <span class="nav-text">线性表的链式表示和实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">5.1.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%A4%BA"><span class="nav-number">5.1.1.</span> <span class="nav-text">线性表的顺序表示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.2.</span> <span class="nav-text">顺序表的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">5.2.1.</span> <span class="nav-text">顺序表的基本操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%A4%BA%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">5.2.2.</span> <span class="nav-text">线性表顺序表示的优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="nav-number">5.3.</span> <span class="nav-text">线性表的链式存储的特点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E6%9C%89%E5%85%B3%E7%9A%84%E6%9C%AF%E8%AF%AD"><span class="nav-number">5.4.</span> <span class="nav-text">与链式存储有关的术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="nav-number">5.5.</span> <span class="nav-text">链表的种类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%B4%E6%8C%87%E9%92%88%E3%80%81%E9%A6%96%E5%85%83%E7%BB%93%E7%82%B9%E5%92%8C%E5%A4%B4%E7%BB%93%E7%82%B9"><span class="nav-number">5.5.1.</span> <span class="nav-text">头指针、首元结点和头结点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.6.</span> <span class="nav-text">单链表的定义和实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89"><span class="nav-number">5.7.</span> <span class="nav-text">单链表的存储结构定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.8.</span> <span class="nav-text">单链表基本操作的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%9A%84%E8%BF%90%E7%AE%97%E6%97%B6%E9%97%B4%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90"><span class="nav-number">5.9.</span> <span class="nav-text">链表的运算时间效率分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE-1"><span class="nav-number">5.9.1.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%92%8C%E5%88%A0%E9%99%A4"><span class="nav-number">5.9.2.</span> <span class="nav-text">插入和删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">5.10.</span> <span class="nav-text">链表的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8"><span class="nav-number">5.11.</span> <span class="nav-text">循环链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8"><span class="nav-number">5.12.</span> <span class="nav-text">双向链表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">5.13.</span> <span class="nav-text">顺序表和链表的比较</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jason</p>
+  <div class="site-description" itemprop="description">为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mrdutq" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mrdutq" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dutianqi9911@163.com" title="E-Mail → mailto:dutianqi9911@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn" rel="noopener" target="_blank">Jason's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
