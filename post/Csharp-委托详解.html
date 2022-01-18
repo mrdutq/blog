@@ -18,25 +18,25 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mrdutq.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"equsky.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="C#委托详解 2020年10月29日，这部分学了挺长时间，感觉听懂了，还是要多练。 视频教程、笔记内容来源：刘铁猛_C#入门详解_委托详解  什么是委托 委托(delegate)是函数指针的“升级版”  事例：C&#x2F;C++中的函数指针   一切皆地址  变量(数据)是以某个地址为起点的一段内存中所存储的值 函数(算法)是以某个地址为起点的一段内存中所存储的一组机器语言指令   直接调用与间接调用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#-委托详解">
-<meta property="og:url" content="http://mrdutq.github.io/post/Csharp-%E5%A7%94%E6%89%98%E8%AF%A6%E8%A7%A3.html">
+<meta property="og:url" content="http://equsky.cn/post/Csharp-%E5%A7%94%E6%89%98%E8%AF%A6%E8%A7%A3.html">
 <meta property="og:site_name" content="Jason&#39;s blog">
 <meta property="og:description" content="C#委托详解 2020年10月29日，这部分学了挺长时间，感觉听懂了，还是要多练。 视频教程、笔记内容来源：刘铁猛_C#入门详解_委托详解  什么是委托 委托(delegate)是函数指针的“升级版”  事例：C&#x2F;C++中的函数指针   一切皆地址  变量(数据)是以某个地址为起点的一段内存中所存储的值 函数(算法)是以某个地址为起点的一段内存中所存储的一组机器语言指令   直接调用与间接调用">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/C#/%E5%A7%94%E6%89%98%E4%B8%8E%E6%89%80%E5%B0%81%E8%A3%85%E7%9A%84%E6%96%B9%E6%B3%95%E5%BF%85%E9%A1%BB%E2%80%9C%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E2%80%9D.jpg">
 <meta property="article:published_time" content="2022-01-17T10:56:41.732Z">
-<meta property="article:modified_time" content="2020-10-29T15:32:29.166Z">
+<meta property="article:modified_time" content="2022-01-18T12:47:35.067Z">
 <meta property="article:author" content="Jason">
-<meta property="article:tag" content="C#">
+<meta property="article:tag" content="CSharp">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/C#/%E5%A7%94%E6%89%98%E4%B8%8E%E6%89%80%E5%B0%81%E8%A3%85%E7%9A%84%E6%96%B9%E6%B3%95%E5%BF%85%E9%A1%BB%E2%80%9C%E7%B1%BB%E5%9E%8B%E5%85%BC%E5%AE%B9%E2%80%9D.jpg">
 
-<link rel="canonical" href="http://mrdutq.github.io/post/Csharp-%E5%A7%94%E6%89%98%E8%AF%A6%E8%A7%A3.html">
+<link rel="canonical" href="http://equsky.cn/post/Csharp-%E5%A7%94%E6%89%98%E8%AF%A6%E8%A7%A3.html">
 
 
 <script id="page-configurations">
@@ -136,6 +136,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -167,12 +172,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://mrdutq.github.io/post/Csharp-%E5%A7%94%E6%89%98%E8%AF%A6%E8%A7%A3.html">
+    <link itemprop="mainEntityOfPage" href="http://equsky.cn/post/Csharp-%E5%A7%94%E6%89%98%E8%AF%A6%E8%A7%A3.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Jason">
-      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！">
+      <meta itemprop="description" content="为天地立心  为生民立命  为往圣继绝学  为万世开太平  ">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -197,7 +202,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-10-29 23:32:29" itemprop="dateModified" datetime="2020-10-29T23:32:29+08:00">2020-10-29</time>
+                <time title="Modified: 2022-01-18 20:47:35" itemprop="dateModified" datetime="2022-01-18T20:47:35+08:00">2022-01-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -205,7 +210,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C#</span></a>
+                  <a href="/categories/CSharp/" itemprop="url" rel="index"><span itemprop="name">CSharp</span></a>
                 </span>
             </span>
 
@@ -680,7 +685,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/C/" rel="tag"># C#</a>
+              <a href="/tags/CSharp/" rel="tag"># CSharp</a>
           </div>
 
         
@@ -688,10 +693,7 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/post/hello-world.html" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
-    </a></div>
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
     <a href="/post/JavaWeb-HTML.html" rel="next" title="JavaWeb-HTML">
       JavaWeb-HTML <i class="fa fa-chevron-right"></i>
@@ -761,25 +763,27 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Jason</p>
-  <div class="site-description" itemprop="description">为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！</div>
+  <div class="site-description" itemprop="description">为天地立心  为生民立命  为往圣继绝学  为万世开太平  </div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">13</span>
-        <span class="site-state-item-name">categories</span>
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -800,7 +804,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn" rel="noopener" target="_blank">Jason's Blog</a>
+          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn">Jason's Blog</a>
         </li>
     </ul>
   </div>

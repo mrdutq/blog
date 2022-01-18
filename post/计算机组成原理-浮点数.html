@@ -18,23 +18,23 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mrdutq.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"equsky.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="浮点数：小数点位置可变，形如科学计数法中的数据表示浮点数格式定义N&#x3D;Re*MM:尾数，是一个纯小数，表示数据的全部有效数位，其位数决定着数值的精度R:基数，可以取2、8、10、16，表示当前的数制；        微机中，一般默认为2，隐含表示e:阶码，是一个整数，用于支出小数点在该数中的位置，其位数决定着数据的取值范围 机器数的一般表示形式 阶符--阶码--数符--尾数 四个元素的顺序可以变">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机组成原理-浮点数">
-<meta property="og:url" content="http://mrdutq.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0.html">
+<meta property="og:url" content="http://equsky.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0.html">
 <meta property="og:site_name" content="Jason&#39;s blog">
 <meta property="og:description" content="浮点数：小数点位置可变，形如科学计数法中的数据表示浮点数格式定义N&#x3D;Re*MM:尾数，是一个纯小数，表示数据的全部有效数位，其位数决定着数值的精度R:基数，可以取2、8、10、16，表示当前的数制；        微机中，一般默认为2，隐含表示e:阶码，是一个整数，用于支出小数点在该数中的位置，其位数决定着数据的取值范围 机器数的一般表示形式 阶符--阶码--数符--尾数 四个元素的顺序可以变">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-17T10:56:41.899Z">
-<meta property="article:modified_time" content="2020-09-25T16:56:10.975Z">
+<meta property="article:modified_time" content="2022-01-18T12:52:03.700Z">
 <meta property="article:author" content="Jason">
 <meta property="article:tag" content="计算机组成原理">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://mrdutq.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0.html">
+<link rel="canonical" href="http://equsky.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0.html">
 
 
 <script id="page-configurations">
@@ -134,6 +134,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -165,12 +170,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://mrdutq.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0.html">
+    <link itemprop="mainEntityOfPage" href="http://equsky.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Jason">
-      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！">
+      <meta itemprop="description" content="为天地立心  为生民立命  为往圣继绝学  为万世开太平  ">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -195,7 +200,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-26 00:56:10" itemprop="dateModified" datetime="2020-09-26T00:56:10+08:00">2020-09-26</time>
+                <time title="Modified: 2022-01-18 20:52:03" itemprop="dateModified" datetime="2022-01-18T20:52:03+08:00">2022-01-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,12 +263,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/post/%E8%93%9D%E6%A1%A5%E6%9D%AF-95-%E8%B4%B9%E8%A7%A3%E7%9A%84%E5%BC%80%E5%85%B3%E8%AF%A6%E8%A7%A3.html" rel="prev" title="蓝桥杯-95.费解的开关2021/03/10">
-      <i class="fa fa-chevron-left"></i> 蓝桥杯-95.费解的开关2021/03/10
+    <a href="/post/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92%E8%AF%A6%E8%A7%A3.html" rel="prev" title="算法-递归详解">
+      <i class="fa fa-chevron-left"></i> 算法-递归详解
     </a></div>
       <div class="post-nav-item">
-    <a href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E7%AC%AC%E4%B8%80%E8%AE%B2.html" rel="next" title="计算机组成原理-第一讲">
-      计算机组成原理-第一讲 <i class="fa fa-chevron-right"></i>
+    <a href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%A6%82%E8%AE%BA.html" rel="next" title="计算机组成原理-概论">
+      计算机组成原理-概论 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -329,25 +334,27 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Jason</p>
-  <div class="site-description" itemprop="description">为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！</div>
+  <div class="site-description" itemprop="description">为天地立心  为生民立命  为往圣继绝学  为万世开太平  </div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">13</span>
-        <span class="site-state-item-name">categories</span>
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -368,7 +375,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn" rel="noopener" target="_blank">Jason's Blog</a>
+          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn">Jason's Blog</a>
         </li>
     </ul>
   </div>

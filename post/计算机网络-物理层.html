@@ -18,13 +18,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mrdutq.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"equsky.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="第 2 章  物理层物理层的基本概念物理层的主要任务描述为确定与传输媒体的接口的一些特性 机械特性    指明接口所用接线器的形状和尺寸、引线数目和排列、固定和锁定装置等等。 电气特性    指明在接口电缆的各条线上出现的电压的范围。 功能特性    指明某条线上出现的某一电平的电压表示何种意义。 过程特性    指明对于不同功能的各种可能事件的出现顺序。  数据通信的基础知识数据通信系统的模型有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络-物理层">
-<meta property="og:url" content="http://mrdutq.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82.html">
+<meta property="og:url" content="http://equsky.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82.html">
 <meta property="og:site_name" content="Jason&#39;s blog">
 <meta property="og:description" content="第 2 章  物理层物理层的基本概念物理层的主要任务描述为确定与传输媒体的接口的一些特性 机械特性    指明接口所用接线器的形状和尺寸、引线数目和排列、固定和锁定装置等等。 电气特性    指明在接口电缆的各条线上出现的电压的范围。 功能特性    指明某条线上出现的某一电平的电压表示何种意义。 过程特性    指明对于不同功能的各种可能事件的出现顺序。  数据通信的基础知识数据通信系统的模型有">
 <meta property="og:locale" content="en_US">
@@ -36,7 +36,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/computer-network/ch2.png">
 
-<link rel="canonical" href="http://mrdutq.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82.html">
+<link rel="canonical" href="http://equsky.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82.html">
 
 
 <script id="page-configurations">
@@ -136,6 +136,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -167,12 +172,12 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://mrdutq.github.io/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82.html">
+    <link itemprop="mainEntityOfPage" href="http://equsky.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C-%E7%89%A9%E7%90%86%E5%B1%82.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Jason">
-      <meta itemprop="description" content="为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！">
+      <meta itemprop="description" content="为天地立心  为生民立命  为往圣继绝学  为万世开太平  ">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -453,25 +458,27 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Jason</p>
-  <div class="site-description" itemprop="description">为天地立心，为生民立命，为往圣继绝学，为万世开太平！！！</div>
+  <div class="site-description" itemprop="description">为天地立心  为生民立命  为往圣继绝学  为万世开太平  </div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">39</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">13</span>
-        <span class="site-state-item-name">categories</span>
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">18</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -492,7 +499,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn" rel="noopener" target="_blank">Jason's Blog</a>
+          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn">Jason's Blog</a>
         </li>
     </ul>
   </div>
