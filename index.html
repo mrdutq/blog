@@ -166,6 +166,173 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://equsky.cn/post/Python.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jason">
+      <meta itemprop="description" content="为天地立心  为生民立命  为往圣继绝学  为万世开太平  ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/Python.html" class="post-title-link" itemprop="url">Python Tutorial for Beginners</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-01-19 14:57:21 / Modified: 17:05:40" itemprop="dateCreated datePublished" datetime="2022-01-19T14:57:21+08:00">2022-01-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Decimal-conversion"><a href="#Decimal-conversion" class="headerlink" title="Decimal conversion"></a>Decimal conversion</h3><ul>
+<li>Binary: base 2(0-1)</li>
+<li>Octal: base 8(0-7)</li>
+<li>Decimal: base 10(0-9)</li>
+<li>HexaDecimal: base 16(0-9;a-f)</li>
+</ul>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># Decimal to Binary
+bin(25) &#x3D;&#x3D; &#39;0b11001&#39;
+#Binary to Decimal
+0b0101 &#x3D;&#x3D; 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">#Decimal to Octal 
+oct(25) &#x3D;&#x3D; &#39;0o31&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">#Decimal to HexaDecimal and HexaDecimal to Decimal
+hex(25) &#x3D;&#x3D; &#39;0x19&#39;
+hex(10) &#x3D;&#x3D; &#39;0xa&#39;
+0xf &#x3D;&#x3D; 15<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Swap-2-Variables-in-Python"><a href="#Swap-2-Variables-in-Python" class="headerlink" title="Swap 2 Variables in Python"></a>Swap 2 Variables in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">#swap the value of a and b
+#basic
+a &#x3D; 5
+b &#x3D; 6
+temp &#x3D; a
+a &#x3D; b
+b &#x3D; temp
+
+#python
+a,b &#x3D; b,a
+
+print(a)
+print(b)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Python-BitWise-Operators"><a href="#Python-BitWise-Operators" class="headerlink" title="Python BitWise Operators"></a>Python BitWise Operators</h3><ul>
+<li>Complement(~) [求补]<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># ~: tilde
+~12 &#x3D;&#x3D; -13
+# Why ~12 is minus 13
+# what is complement means?
+# if you say ~1 --&gt; 0
+# if you say ~0 --&gt; 1
+# binary 12 is 00001100
+# we need to find a complement for it.
+# what you will do is reverse the number
+# so 00001100 becomes **11110011**. this is complement of 12.
+# what is this number? and why we got minus 13?
+# we have a concept of 2&#39;s complement because what happens is in your system we can store positive numbers.
+# but how to store negative numbers?
+# when you want to store negative numbers like minuse 13, you need to convert this number into positive numbers first.
+# the way that you can do that is with the help of 2&#39;s complement.
+# how do you find 2&#39;s complement?
+# to find 2&#39;s complement, we need to find 1&#39;s complement plus 1.
+# how to find 1&#39;s complement?
+# it easy actually. First convert this number into one format.
+# 00001101, this is +13, we want to find minus(-)
+# I have to find 2&#39;s complement of this number now let&#39;s find the complement.
+# and how to find 1&#39;s complement? it&#39;s easy now. We know how to find complement, so we have to reverse this number.
+# 00001101 --&gt; 11110010, this is one&#39;s complement of 13 but we want to find two&#39;s complement. So what you will do?
+# you wiil say plus one. 11110010 + 1 --&gt; 11110011, this number is minus 13. so this is two&#39;s complement of 13 which mastered in.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>And(&amp;, ampersand, and)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bitwise and:  二进制按位与运算</span>
+<span class="token number">12</span> <span class="token operator">&amp;</span> <span class="token number">13</span> <span class="token operator">==</span> <span class="token number">12</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>Or(|, pipe, or)<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># bitwise or: 二进制按位或运算
+12 | 13 &#x3D;&#x3D; 13<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>XOR(^)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 0 0 --> 0</span>
+<span class="token comment"># 0 1 --> 1</span>
+<span class="token comment"># 1 0 --> 1</span>
+<span class="token comment"># 1 1 --> 0</span>
+<span class="token comment"># bitwise XOR: 二进制按位异或运算</span>
+<span class="token number">12</span> <span class="token operator">^</span> <span class="token number">13</span> <span class="token operator">==</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>Left Shift(&lt;&lt;)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bitwise left shift: 二进制左移，末尾补零。左移一位相当于乘2。</span>
+<span class="token number">10</span> <span class="token operator">&lt;&lt;</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">40</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>Right Shift(&gt;&gt;)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bitwise right shift: 二进制右移右移一位相当于除以2</span>
+<span class="token number">10</span> <span class="token operator">>></span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="Import-Math-Functions-in-Python"><a href="#Import-Math-Functions-in-Python" class="headerlink" title="Import Math Functions in Python"></a>Import Math Functions in Python</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># square root function: sqrt(),[开方，sqrt(25) == 5]</span>
+<span class="token keyword">import</span> math
+x <span class="token operator">=</span> math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>
+
+<span class="token comment"># x == 5.0</span>
+<span class="token comment"># floor function: floor(),[浮点数的小数丢弃]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>floor<span class="token punctuation">(</span><span class="token number">2.9</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 2</span>
+
+<span class="token comment"># ceil function: ceil(),[浮点数的小数取整]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>ceil<span class="token punctuation">(</span><span class="token number">2.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 3</span>
+
+<span class="token comment"># power function: pow(),[乘方运算] == **</span>
+<span class="token number">3</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token comment"># 9</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 9.0</span>
+
+<span class="token comment"># constant value like pi and epsilon(e).:数学中的固定数比如PI和e。</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>pi<span class="token punctuation">)</span> <span class="token comment"># 3.141592653589793</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>e<span class="token punctuation">)</span> <span class="token comment"># 2.718281828459045</span>
+
+<span class="token comment"># 给module取别名。</span>
+<span class="token keyword">import</span> math <span class="token keyword">as</span> m
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span>pi<span class="token punctuation">)</span>  <span class="token comment"># 3.141592653589793</span>
+
+<span class="token comment"># 引入的模块中有很多的功能都可以用，如果只需要用到其中的几个，可以只引用具体的功能，而不全部引用。</span>
+<span class="token keyword">from</span> math <span class="token keyword">import</span> sqrt<span class="token punctuation">,</span> <span class="token builtin">pow</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sqrt<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 5,0</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 1024.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://equsky.cn/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89%E5%92%8C%E5%8F%AF%E8%A1%8C%E6%80%A7%E7%A0%94%E7%A9%B6-%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2035,87 +2202,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://equsky.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%95%B0%E6%8D%AE%E5%88%86%E7%B1%BB.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Jason">
-      <meta itemprop="description" content="为天地立心  为生民立命  为往圣继绝学  为万世开太平  ">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jason's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%95%B0%E6%8D%AE%E5%88%86%E7%B1%BB.html" class="post-title-link" itemprop="url">计算机组成原理-数据分类</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-18 20:53:24" itemprop="dateModified" datetime="2022-01-18T20:53:24+08:00">2022-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="数据的类型"><a href="#数据的类型" class="headerlink" title="数据的类型"></a>数据的类型</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%95%B0%E6%8D%AE%E5%88%86%E7%B1%BB.html#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2185,20 +2271,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

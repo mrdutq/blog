@@ -21,21 +21,20 @@
     var CONFIG = {"hostname":"equsky.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="printf的格式控制的完整格式：">
+  <meta name="description" content="Decimal conversion Binary: base 2(0-1) Octal: base 8(0-7) Decimal: base 10(0-9) HexaDecimal: base 16(0-9;a-f)  # Decimal to Binary bin(25) &#x3D;&#x3D; &#39;0b11001&#39; #Binary to Decimal 0b0101 &amp;#x3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中printf的用法总结">
-<meta property="og:url" content="http://equsky.cn/post/Java%E4%B8%ADprintf%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93.html">
+<meta property="og:title" content="Python Tutorial for Beginners">
+<meta property="og:url" content="http://equsky.cn/post/Python.html">
 <meta property="og:site_name" content="Jason&#39;s blog">
-<meta property="og:description" content="printf的格式控制的完整格式：">
+<meta property="og:description" content="Decimal conversion Binary: base 2(0-1) Octal: base 8(0-7) Decimal: base 10(0-9) HexaDecimal: base 16(0-9;a-f)  # Decimal to Binary bin(25) &#x3D;&#x3D; &#39;0b11001&#39; #Binary to Decimal 0b0101 &amp;#x3">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-01-17T10:56:41.749Z">
-<meta property="article:modified_time" content="2022-01-18T12:48:39.281Z">
+<meta property="article:published_time" content="2022-01-19T06:57:21.808Z">
+<meta property="article:modified_time" content="2022-01-19T09:05:40.857Z">
 <meta property="article:author" content="Jason">
-<meta property="article:tag" content="Java">
-<meta property="article:tag" content="Print">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://equsky.cn/post/Java%E4%B8%ADprintf%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93.html">
+<link rel="canonical" href="http://equsky.cn/post/Python.html">
 
 
 <script id="page-configurations">
@@ -48,7 +47,7 @@
   };
 </script>
 
-  <title>Java中printf的用法总结 | Jason's blog</title>
+  <title>Python Tutorial for Beginners | Jason's blog</title>
   
 
 
@@ -171,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://equsky.cn/post/Java%E4%B8%ADprintf%E7%9A%84%E7%94%A8%E6%B3%95%E6%80%BB%E7%BB%93.html">
+    <link itemprop="mainEntityOfPage" href="http://equsky.cn/post/Python.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -184,7 +183,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Java中printf的用法总结
+          Python Tutorial for Beginners
         </h1>
 
         <div class="post-meta">
@@ -193,23 +192,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
+              <time title="Created: 2022-01-19 14:57:21 / Modified: 17:05:40" itemprop="dateCreated datePublished" datetime="2022-01-19T14:57:21+08:00">2022-01-19</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-18 20:48:39" itemprop="dateModified" datetime="2022-01-18T20:48:39+08:00">2022-01-18</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+                  <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
             </span>
 
@@ -224,41 +217,106 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="printf的格式控制的完整格式："><a href="#printf的格式控制的完整格式：" class="headerlink" title="printf的格式控制的完整格式："></a>printf的格式控制的完整格式：</h1><span id="more"></span>
-<pre><code>%  -  0  m.n  l或h  格式字符 
+        <h3 id="Decimal-conversion"><a href="#Decimal-conversion" class="headerlink" title="Decimal conversion"></a>Decimal conversion</h3><ul>
+<li>Binary: base 2(0-1)</li>
+<li>Octal: base 8(0-7)</li>
+<li>Decimal: base 10(0-9)</li>
+<li>HexaDecimal: base 16(0-9;a-f)</li>
+</ul>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># Decimal to Binary
+bin(25) &#x3D;&#x3D; &#39;0b11001&#39;
+#Binary to Decimal
+0b0101 &#x3D;&#x3D; 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">#Decimal to Octal 
+oct(25) &#x3D;&#x3D; &#39;0o31&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-下面对组成格式说明的各项加以说明： 
-①%：表示格式说明的起始符号，不可缺少。 
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">#Decimal to HexaDecimal and HexaDecimal to Decimal
+hex(25) &#x3D;&#x3D; &#39;0x19&#39;
+hex(10) &#x3D;&#x3D; &#39;0xa&#39;
+0xf &#x3D;&#x3D; 15<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Swap-2-Variables-in-Python"><a href="#Swap-2-Variables-in-Python" class="headerlink" title="Swap 2 Variables in Python"></a>Swap 2 Variables in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">#swap the value of a and b
+#basic
+a &#x3D; 5
+b &#x3D; 6
+temp &#x3D; a
+a &#x3D; b
+b &#x3D; temp
 
-②-：有-表示左对齐输出，如省略表示右对齐输出。
+#python
+a,b &#x3D; b,a
 
-③0：有0表示指定空位填0,如省略表示指定空位不填。
+print(a)
+print(b)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-④m.n：m指域宽，即对应的输出项在输出设备上所占的字符数。N指精度。用于说明输出的实型数的小数位数。为指定n时，隐含的精度为n=6位。 
+<h3 id="Python-BitWise-Operators"><a href="#Python-BitWise-Operators" class="headerlink" title="Python BitWise Operators"></a>Python BitWise Operators</h3><ul>
+<li>Complement(~) [求补]<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># ~: tilde
+~12 &#x3D;&#x3D; -13
+# Why ~12 is minus 13
+# what is complement means?
+# if you say ~1 --&gt; 0
+# if you say ~0 --&gt; 1
+# binary 12 is 00001100
+# we need to find a complement for it.
+# what you will do is reverse the number
+# so 00001100 becomes **11110011**. this is complement of 12.
+# what is this number? and why we got minus 13?
+# we have a concept of 2&#39;s complement because what happens is in your system we can store positive numbers.
+# but how to store negative numbers?
+# when you want to store negative numbers like minuse 13, you need to convert this number into positive numbers first.
+# the way that you can do that is with the help of 2&#39;s complement.
+# how do you find 2&#39;s complement?
+# to find 2&#39;s complement, we need to find 1&#39;s complement plus 1.
+# how to find 1&#39;s complement?
+# it easy actually. First convert this number into one format.
+# 00001101, this is +13, we want to find minus(-)
+# I have to find 2&#39;s complement of this number now let&#39;s find the complement.
+# and how to find 1&#39;s complement? it&#39;s easy now. We know how to find complement, so we have to reverse this number.
+# 00001101 --&gt; 11110010, this is one&#39;s complement of 13 but we want to find two&#39;s complement. So what you will do?
+# you wiil say plus one. 11110010 + 1 --&gt; 11110011, this number is minus 13. so this is two&#39;s complement of 13 which mastered in.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>And(&amp;, ampersand, and)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bitwise and:  二进制按位与运算</span>
+<span class="token number">12</span> <span class="token operator">&amp;</span> <span class="token number">13</span> <span class="token operator">==</span> <span class="token number">12</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>Or(|, pipe, or)<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># bitwise or: 二进制按位或运算
+12 | 13 &#x3D;&#x3D; 13<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>XOR(^)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 0 0 --> 0</span>
+<span class="token comment"># 0 1 --> 1</span>
+<span class="token comment"># 1 0 --> 1</span>
+<span class="token comment"># 1 1 --> 0</span>
+<span class="token comment"># bitwise XOR: 二进制按位异或运算</span>
+<span class="token number">12</span> <span class="token operator">^</span> <span class="token number">13</span> <span class="token operator">==</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>Left Shift(&lt;&lt;)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bitwise left shift: 二进制左移，末尾补零。左移一位相当于乘2。</span>
+<span class="token number">10</span> <span class="token operator">&lt;&lt;</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">40</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>Right Shift(&gt;&gt;)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bitwise right shift: 二进制右移右移一位相当于除以2</span>
+<span class="token number">10</span> <span class="token operator">>></span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="Import-Math-Functions-in-Python"><a href="#Import-Math-Functions-in-Python" class="headerlink" title="Import Math Functions in Python"></a>Import Math Functions in Python</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># square root function: sqrt(),[开方，sqrt(25) == 5]</span>
+<span class="token keyword">import</span> math
+x <span class="token operator">=</span> math<span class="token punctuation">.</span>sqrt<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span>
 
-⑤l或h:l对整型指long型，对实型指double型。h用于将整型的格式字符修正为short型。 
-</code></pre>
-<hr>
-<h1 id="格式字符"><a href="#格式字符" class="headerlink" title="格式字符"></a>格式字符</h1><p>格式字符用以指定输出项的<strong>数据类型</strong>和<strong>输出格式</strong>。 </p>
-<p>①d格式：用来输出十进制整数。有以下几种用法：<br>  %d：按整型数据的实际长度输出。<br>  %md：m为指定的输出字段的宽度。如果数据的位数小于m，则左端补以空格，若大于m，则按实际位数输出。<br>  %ld：输出长整型数据。 </p>
-<p>②o格式：以无符号八进制形式输出整数。对长整型可以用”%lo”格式输出。同样也可以指定字段宽度用“%mo”格式输出。 </p>
-<p>③x格式：以无符号十六进制形式输出整数。对长整型可以用”%lx”格式输出。同样也可以指定字段宽度用”%mx”格式输出。 </p>
-<p>④u格式：以无符号十进制形式输出整数。对长整型可以用”%lu”格式输出。同样也可以指定字段宽度用“%mu”格式输出。 //不可使用  //在实践中没有运行出来。</p>
-<p>⑤c格式：输出一个字符。 </p>
-<p>⑥s格式：用来输出一个串。有几中用法<br>  %s：例如:printf(“%s”, “CHINA”)输出”CHINA”字符串（不包括双引号）。<br>  %ms：输出的字符串占m列，如字符串本身长度大于m，则突破获m的限制,将字符串全部输出。若串长小于m，则左补空格。<br>  %-ms：如果串长小于m，则在m列范围内，字符串向左靠，右补空格。<br>  %m.ns：输出占m列，但只取字符串中左端n个字符。这n个字符输出在m列的右侧，左补空格。<br>  %-m.ns：其中m、n含义同上，n个字符输出在m列范围的左侧，右补空格。如果n&gt;m，则自动取n值，即保证n个字符正常输出。 </p>
-<p>⑦f格式：用来输出实数（包括单、双精度），以小数形式输出。有以下几种用法：<br>  %f：不指定宽度，整数部分全部输出并输出6位小数。<br>  %m.nf：输出共占m列，其中有n位小数，如数值宽度小于m左端补空格。<br>  %-m.nf：输出共占n列，其中有n位小数，如数值宽度小于m右端补空格。 </p>
-<p>⑧e格式：以指数形式输出实数。可用以下形式：//在实践中没有运行出来。<br>  %e：数字部分（又称尾数）输出6位小数，指数部分占5位或4位。<br>  %m.ne和%-m.ne：m、n和”-”字符含义与前相同。此处n指数据的数字部分的小数位数，m表示整个输出数据所占的宽度。 </p>
-<p>⑨g格式：自动选f格式或e格式中较短的一种输出，且不输出无意义的零。 //在实践中没有运行出来。 </p>
-<hr>
-<h1 id="关于printf函数的进一步说明："><a href="#关于printf函数的进一步说明：" class="headerlink" title="关于printf函数的进一步说明："></a>关于printf函数的进一步说明：</h1><p>如果想输出字符”%”,则应该在“格式控制”字符串中用连续两个%表示，如:<br>printf(“%f%%”, 1.0/3);<br>输出0.333333%。 </p>
-<hr>
-<p>对于单精度数，使用%f格式符输出时，仅前7位是有效数字，小数6位．<br>对于双精度数，使用%lf格式符输出时，前16位是有效数字，小数6位． </p>
-<hr>
-<p>对于m.n的格式还可以用如下方法表示（例） </p>
-<p>char ch[20];</p>
-<p>printf(“%*.*s\n”,m,n,ch); </p>
-<p>前边的*定义的是总的宽度，后边的定义的是输出的个数。分别对应外面的参数m和n 。我想这种方法的好处是可以在语句之外对参数m和n赋值，从而控制输出格式。 </p>
-<hr>
+<span class="token comment"># x == 5.0</span>
+<span class="token comment"># floor function: floor(),[浮点数的小数丢弃]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>floor<span class="token punctuation">(</span><span class="token number">2.9</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 2</span>
+
+<span class="token comment"># ceil function: ceil(),[浮点数的小数取整]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>ceil<span class="token punctuation">(</span><span class="token number">2.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 3</span>
+
+<span class="token comment"># power function: pow(),[乘方运算] == **</span>
+<span class="token number">3</span> <span class="token operator">**</span> <span class="token number">2</span> <span class="token comment"># 9</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 9.0</span>
+
+<span class="token comment"># constant value like pi and epsilon(e).:数学中的固定数比如PI和e。</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>pi<span class="token punctuation">)</span> <span class="token comment"># 3.141592653589793</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>math<span class="token punctuation">.</span>e<span class="token punctuation">)</span> <span class="token comment"># 2.718281828459045</span>
+
+<span class="token comment"># 给module取别名。</span>
+<span class="token keyword">import</span> math <span class="token keyword">as</span> m
+<span class="token keyword">print</span><span class="token punctuation">(</span>m<span class="token punctuation">.</span>pi<span class="token punctuation">)</span>  <span class="token comment"># 3.141592653589793</span>
+
+<span class="token comment"># 引入的模块中有很多的功能都可以用，如果只需要用到其中的几个，可以只引用具体的功能，而不全部引用。</span>
+<span class="token keyword">from</span> math <span class="token keyword">import</span> sqrt<span class="token punctuation">,</span> <span class="token builtin">pow</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sqrt<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 5,0</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 1024.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 
     </div>
 
@@ -268,8 +326,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Java/" rel="tag"># Java</a>
-              <a href="/tags/Print/" rel="tag"># Print</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
 
         
@@ -278,13 +335,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/post/JavaWeb-Tomcat.html" rel="prev" title="JavaWeb-Tomcat">
-      <i class="fa fa-chevron-left"></i> JavaWeb-Tomcat
+    <a href="/post/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89%E5%92%8C%E5%8F%AF%E8%A1%8C%E6%80%A7%E7%A0%94%E7%A9%B6-%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90.html" rel="prev" title="软件工程-问题定义和可行性研究+结构化分析">
+      <i class="fa fa-chevron-left"></i> 软件工程-问题定义和可行性研究+结构化分析
     </a></div>
-      <div class="post-nav-item">
-    <a href="/post/MySQL.html" rel="next" title="MySQL">
-      MySQL <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -343,7 +397,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#printf%E7%9A%84%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6%E7%9A%84%E5%AE%8C%E6%95%B4%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">printf的格式控制的完整格式：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%AD%97%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">格式字符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Eprintf%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">关于printf函数的进一步说明：</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-conversion"><span class="nav-number">1.</span> <span class="nav-text">Decimal conversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-2-Variables-in-Python"><span class="nav-number">2.</span> <span class="nav-text">Swap 2 Variables in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-BitWise-Operators"><span class="nav-number">3.</span> <span class="nav-text">Python BitWise Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-Math-Functions-in-Python"><span class="nav-number">4.</span> <span class="nav-text">Import Math Functions in Python</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
