@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"equsky.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="第2章 寄存器（CPU工作原理） CPU概述 一个典型的CPU由运算器、控制器、寄存器等器件组成，这些器件靠内部总线相连。 区别： 内部总线实现CPU内部各个器件之间的联系。 外部总线实现CPU和主板上其他器件的联系。     寄存器概述 8086CPU有14个寄存器 AX、BX、CX、DX、SI、DI、SP、BP、IP、CS、SS、DS、ES、PSW      2.1 通用寄存器 8086CPU">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编语言_寄存器（CPU工作原理）">
+<meta property="og:url" content="https://equsky.cn/2022/01/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%88CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%89/index.html">
+<meta property="og:site_name" content="Jason&#39;s blog">
+<meta property="og:description" content="第2章 寄存器（CPU工作原理） CPU概述 一个典型的CPU由运算器、控制器、寄存器等器件组成，这些器件靠内部总线相连。 区别： 内部总线实现CPU内部各个器件之间的联系。 外部总线实现CPU和主板上其他器件的联系。     寄存器概述 8086CPU有14个寄存器 AX、BX、CX、DX、SI、DI、SP、BP、IP、CS、SS、DS、ES、PSW      2.1 通用寄存器 8086CPU">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-17T10:56:41.865Z">
+<meta property="article:modified_time" content="2020-10-21T07:55:54.579Z">
+<meta property="article:author" content="Jason">
+<meta property="article:tag" content="汇编语言">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://equsky.cn/2022/01/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%88CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%89/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>汇编语言_寄存器（CPU工作原理） | Jason's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jason's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/home/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/mrdutq" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://equsky.cn/2022/01/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%88CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Jason">
+      <meta itemprop="description" content="为天地立心\n为生民立命\n为往圣继绝学\n为万世开太平  ">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          汇编语言_寄存器（CPU工作原理）
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-21 15:55:54" itemprop="dateModified" datetime="2020-10-21T15:55:54+08:00">2020-10-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">汇编语言</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="第2章-寄存器（CPU工作原理）"><a href="#第2章-寄存器（CPU工作原理）" class="headerlink" title="第2章 寄存器（CPU工作原理）"></a>第2章 寄存器（CPU工作原理）</h1><ul>
+<li>CPU概述<ul>
+<li>一个典型的CPU由运算器、控制器、寄存器等器件组成，这些器件靠内部总线相连。</li>
+<li>区别：<ul>
+<li>内部总线实现CPU内部各个器件之间的联系。</li>
+<li>外部总线实现CPU和主板上其他器件的联系。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>寄存器概述<ul>
+<li>8086CPU有14个寄存器<ul>
+<li>AX、BX、CX、DX、SI、DI、SP、BP、IP、CS、SS、DS、ES、PSW</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-1-通用寄存器"><a href="#2-1-通用寄存器" class="headerlink" title="2.1 通用寄存器"></a>2.1 通用寄存器</h2><ul>
+<li>8086CPU所有的寄存器都是16位的，可以存放两个字节。</li>
+<li>AX、BX、CX、DX通常用来存放一般性数据被称为通用寄存器。<ul>
+<li>一个16位寄存器可以存储一个16位的数据</li>
+<li>一个16位寄存器所能存储的数据的最大值为2^16-1.</li>
+</ul>
+</li>
+<li>8086上一代CPU中的寄存器都是8位的。</li>
+<li>为了保证兼容性，这四个寄存器都可以分为两个独立的8位寄存器使用。<ul>
+<li>AX可以分为AH和AL(AH高8位8<del>15位、AL低8位0</del>7位)</li>
+<li>BX可以分为BH和BL</li>
+<li>CX可以分为CH和CL</li>
+<li>DX可以分为DH和DL</li>
+</ul>
+</li>
+<li>一个8位寄存器所能存储的数据的最大值为2^8-1.</li>
+</ul>
+<h2 id="2-2-字在寄存器中的存储✳"><a href="#2-2-字在寄存器中的存储✳" class="headerlink" title="2.2 字在寄存器中的存储✳"></a>2.2 字在寄存器中的存储✳</h2><ul>
+<li>一个字（word）可以存在一个16位寄存器中，这个字的高位字节和低位字节自然就存在这个寄存器的高8位寄存器和低8位寄存器中。</li>
+</ul>
+<h2 id="2-3-几条汇编指令"><a href="#2-3-几条汇编指令" class="headerlink" title="2.3 几条汇编指令"></a>2.3 几条汇编指令</h2><ul>
+<li>汇编指令不区分大小写。<ul>
+<li>mov ax,18 将18送入AX</li>
+<li>mov ah,78 将78送入AH</li>
+<li>add ax,8 将寄存器AX中的数值加上8</li>
+<li>mov ax,bx 将寄存器BX中的数据送入寄存器AX</li>
+<li>add ax,bx 将AX,BX 中的内容相加，结果存在AX中</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-4-物理地址"><a href="#2-4-物理地址" class="headerlink" title="2.4 物理地址"></a>2.4 物理地址</h2><ul>
+<li>CPU访问内存单元时要给出内存单元的地址。所有的内存单元构成的存储空间是一个一维的线性空间。</li>
+<li>我们称这个唯一的地址成为物理地址。</li>
+</ul>
+<h2 id="2-5-16位结构的CPU"><a href="#2-5-16位结构的CPU" class="headerlink" title="2.5 16位结构的CPU"></a>2.5 16位结构的CPU</h2><ul>
+<li>16位结构描述了一个CPU具有以下几个方面的特征<ul>
+<li>1、运算器一次最多可以处理16位的数据。</li>
+<li>2、寄存器的最大宽度位16位。</li>
+<li>3、寄存器和运算器之间的通路是16位的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-6-8086CPU给出物理地址的方法"><a href="#2-6-8086CPU给出物理地址的方法" class="headerlink" title="2.6 8086CPU给出物理地址的方法"></a>2.6 8086CPU给出物理地址的方法</h2><ul>
+<li>8086有20位地址总线，可传送20位地址，寻址能力为1MB（2^20B）。</li>
+<li>8086内部为16为结构，它只能传送16位的地址，表现出的寻址能力却只有64kB(2^16B)</li>
+<li>8086CPU读写内存时，发生了这么些事：<ul>
+<li>1、CPU中相关部件提供两个16位的地址，一个称为段地址，另一个称为偏移地址；</li>
+<li>2、段地址和偏移地址通过内部总线进入一个称为地址加法器的部件；</li>
+<li>3、地址加法器将两个16位地址合并成一个20位的地址；</li>
+<li>4、……</li>
+</ul>
+</li>
+<li>地址加法器合成物理地址的方法：段地址×16+偏移地址=物理地址<ul>
+<li>“段地址×16”–&gt;数据左移一位（十六进制位）–&gt;数据左移4位（二进制位）<ul>
+<li>一个数据的二进制形式左移1位，相当于该数据乘以2；</li>
+<li>一个数据的二进制形式左移N位，相当于该数据乘以2的N次方；</li>
+<li>一个数据的十六进制形式左移1位，相当于该数据乘以16；</li>
+<li>一个数据的十进制形式左移1位，相当于该数据乘以10；</li>
+<li>一个数据的X进制形式左移1位，相当于该数据乘以X；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-7-“段地址×16-偏移地址-物理地址”的本质含义✳"><a href="#2-7-“段地址×16-偏移地址-物理地址”的本质含义✳" class="headerlink" title="2.7 “段地址×16+偏移地址=物理地址”的本质含义✳"></a>2.7 “段地址×16+偏移地址=物理地址”的本质含义✳</h2><h2 id="2-8-段的概念"><a href="#2-8-段的概念" class="headerlink" title="2.8 段的概念"></a>2.8 段的概念</h2><ul>
+<li>内存并没有分段，段的划分来自于CPU，由于8086CPU用“段地址×16+偏移地址=物理地址”的方式给出内存单元的物理地址，使得我们可以用分段的方式来管理内存。</li>
+<li>在编程时可以根据需要，将若干地址连续的内存单元看作一个段，用段地址×16定位段的起始地址（基础地址），用偏移地址定位段中的内存单元。</li>
+<li>偏移地址为16位，16位地址的寻址能力位64K，所以一个段的长度最大为64K。</li>
+</ul>
+<h2 id="内存单元地址小结"><a href="#内存单元地址小结" class="headerlink" title="内存单元地址小结"></a>内存单元地址小结</h2><ul>
+<li>CPU访问内存单元时，必须向内存单元提供内存单元的物理地址。</li>
+<li>8086CPU在内部用段地址和偏移地址移位相加的方法形成最终的物理地址。</li>
+<li>CPU可以用不同的段地址和偏移地址形成同一个物理地址。</li>
+<li>给定一个段地址，偏移地址16位，变化范围为0~FFFFH，仅用偏移地址来寻址最多可寻64K个内存单元。</li>
+<li>在8086PC机中，存储单元的地址用两个元素来描述。即段地址和偏移地址。</li>
+<li>“数据在21F60H内存单元中。”对于8086PC机有两种描述：<ul>
+<li>(a)数据存在内存2000:1F60单元中；</li>
+<li>(b)数据存在内存的2000段中的1F60H单元                                         中。</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-9-段寄存器"><a href="#2-9-段寄存器" class="headerlink" title="2.9 段寄存器"></a>2.9 段寄存器</h2><ul>
+<li>段寄存器就是提供段地址的。<ul>
+<li>8086CPU有4个段寄存器：CS、DS、SS、ES</li>
+</ul>
+</li>
+<li>当8086CPU要访问内存时，由这四个段寄存器提供内存单元的段地址。</li>
+</ul>
+<h2 id="2-10-CS和IP"><a href="#2-10-CS和IP" class="headerlink" title="2.10 CS和IP"></a>2.10 CS和IP</h2><ul>
+<li>CS和IP是8086CPU中最关键的寄存器，它们指示了CPU当前要读取指令的地址。<ul>
+<li>CS为代码段寄存器</li>
+<li>IP为指令指针寄存器</li>
+</ul>
+</li>
+<li>8086PC工作过程的简要概述<ul>
+<li>(1)从CS：IP指向内存单元读取指令，读取的指令进入指令缓冲器；</li>
+<li>(2)IP=IP+所读取指令的长度，从而指向下一条指令；</li>
+<li>(3 )执行指令。转到步骤(1)，重复这个过程。</li>
+<li>在8086CPU加电启动或复位后（即CPU刚开始工作时）CS和IP被设置为CS=FFFFH，IP=0000H<ul>
+<li>即在8086PC机刚启动时，CPU从内存FFFF0H单元中读取指令执行。</li>
+<li>FFFF0H单元中的指令时8086PC机开机后执行的第一条指令。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>在任何时候，CPU将CS、IP中的内容当作指令的段地址和偏移地址，用它们合成指令的物理地址，到内存中读取指令码，执行。</li>
+<li>如果说，内存中的一段信息曾被CPU执行过的话，那么，它所在的内存单元必然被CS:IP指向过。</li>
+</ul>
+<h2 id="2-11-修改CS、IP的指令"><a href="#2-11-修改CS、IP的指令" class="headerlink" title="2.11 修改CS、IP的指令"></a>2.11 修改CS、IP的指令</h2><ul>
+<li>在CPU中，程序员能够用指令读写的部件只有寄存器，程序员可以通过改变寄存器中的内容实现对CPU的控制。</li>
+<li>CPU从何处执行指令是由CS、IP中的内容决定的，程序员可以通过改变CS、IP中的内容来控制CPU执行目标指令。</li>
+<li>同时修改CS、IP的内容：<ul>
+<li>jmp 段地址:偏移地址<ul>
+<li>jmp 2AE3:3</li>
+<li>jmp 3:0B46</li>
+</ul>
+</li>
+<li>功能：用指令给出的段地址修改CS，偏移地址修改IP。</li>
+</ul>
+</li>
+<li>仅修改IP的内容:<ul>
+<li>jmp 某一合法寄存器<ul>
+<li>jmp ax</li>
+<li>jmp bx</li>
+<li>功能：用寄存器中的值修改IP。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-12-代码段"><a href="#2-12-代码段" class="headerlink" title="2.12 代码段"></a>2.12 代码段</h2><ul>
+<li>对于8086PC机，在编程时可以根据需要将一组内存单元定义为一个段。</li>
+<li>可以将长度为N（N&lt;=64KB）的一组代码，存在一组地址连续、起始地址为16的倍数的内存单元中，这段代码是用来存放代码的，就定义了一个代码段。</li>
+<li>CPU只认被CS:IP指向的内存单元中的内容为指令。</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li>1、段地址在8086CPU的寄存器中存放。当8086CPU要访问内存时，由段寄存器提供内存单元的段地址。8086CPU有四个段寄存器，其中CS用来存放指令的段地址。</li>
+<li>2、CS存放指令的段地址，IP存放指令的偏移地址。<ul>
+<li>8086机中，任意时刻，CPU将CS:IP指向的内容当作指令执行。</li>
+</ul>
+</li>
+<li>3、8086CPU的工作过程<ul>
+<li>(1)从CS:IP指向内存单元读取指令，读取的指令进入指令缓冲器。</li>
+<li>(2)IP指向下一条指令；</li>
+<li>(3)执行指令。（转到步骤(1)，重复这个过程）</li>
+</ul>
+</li>
+<li>4、8086CPU提供转移指令修改CS、IP的内容。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" rel="tag"># 汇编语言</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/01/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" rel="prev" title="汇编语言_基础知识">
+      <i class="fa fa-chevron-left"></i> 汇编语言_基础知识
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%88%E5%86%85%E5%AD%98%E8%AE%BF%E9%97%AE%EF%BC%89/" rel="next" title="汇编语言_寄存器（内存访问）">
+      汇编语言_寄存器（内存访问） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC2%E7%AB%A0-%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%88CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">第2章 寄存器（CPU工作原理）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">1.1.</span> <span class="nav-text">2.1 通用寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%AD%97%E5%9C%A8%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8%E2%9C%B3"><span class="nav-number">1.2.</span> <span class="nav-text">2.2 字在寄存器中的存储✳</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E5%87%A0%E6%9D%A1%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="nav-number">1.3.</span> <span class="nav-text">2.3 几条汇编指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80"><span class="nav-number">1.4.</span> <span class="nav-text">2.4 物理地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-16%E4%BD%8D%E7%BB%93%E6%9E%84%E7%9A%84CPU"><span class="nav-number">1.5.</span> <span class="nav-text">2.5 16位结构的CPU</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-8086CPU%E7%BB%99%E5%87%BA%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.</span> <span class="nav-text">2.6 8086CPU给出物理地址的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-%E2%80%9C%E6%AE%B5%E5%9C%B0%E5%9D%80%C3%9716-%E5%81%8F%E7%A7%BB%E5%9C%B0%E5%9D%80-%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80%E2%80%9D%E7%9A%84%E6%9C%AC%E8%B4%A8%E5%90%AB%E4%B9%89%E2%9C%B3"><span class="nav-number">1.7.</span> <span class="nav-text">2.7 “段地址×16+偏移地址&#x3D;物理地址”的本质含义✳</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-%E6%AE%B5%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.8.</span> <span class="nav-text">2.8 段的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%8D%95%E5%85%83%E5%9C%B0%E5%9D%80%E5%B0%8F%E7%BB%93"><span class="nav-number">1.9.</span> <span class="nav-text">内存单元地址小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-%E6%AE%B5%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">1.10.</span> <span class="nav-text">2.9 段寄存器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-10-CS%E5%92%8CIP"><span class="nav-number">1.11.</span> <span class="nav-text">2.10 CS和IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-11-%E4%BF%AE%E6%94%B9CS%E3%80%81IP%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="nav-number">1.12.</span> <span class="nav-text">2.11 修改CS、IP的指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-12-%E4%BB%A3%E7%A0%81%E6%AE%B5"><span class="nav-number">1.13.</span> <span class="nav-text">2.12 代码段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span class="nav-number">1.14.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jason</p>
+  <div class="site-description" itemprop="description">为天地立心\n为生民立命\n为往圣继绝学\n为万世开太平  </div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mrdutq" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mrdutq" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dutianqi9911@163.com" title="E-Mail → mailto:dutianqi9911@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn">Jason's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
