@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mrdutq.github.io","root":"/Blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"equsky.cn","root":"/Blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="第二章进程的描述与控制前驱图和程序执行前驱图 前趋图：有向无循环图（DAG ）。描述一个程序的各部分（程序段或语句）间的依赖关系，或者是一个大的计算的各个子任务间的因果（前后）关系。  前驱图的定义 前趋图中的每个结点可以表示一条语句、一个程序段或一个进程，结点间的有向边表示两个结点之间存在的偏序关系或前趋关系“→ ”。 → ＝ (Pi,Pj)| 在 Pj 开始前 Pi 必须完成 。如果 (Pi,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统-进程的描述与控制">
-<meta property="og:url" content="https://mrdutq.github.io/Blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6/index.html">
+<meta property="og:url" content="https://equsky.cn/Blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6/index.html">
 <meta property="og:site_name" content="Jason&#39;s blog">
 <meta property="og:description" content="第二章进程的描述与控制前驱图和程序执行前驱图 前趋图：有向无循环图（DAG ）。描述一个程序的各部分（程序段或语句）间的依赖关系，或者是一个大的计算的各个子任务间的因果（前后）关系。  前驱图的定义 前趋图中的每个结点可以表示一条语句、一个程序段或一个进程，结点间的有向边表示两个结点之间存在的偏序关系或前趋关系“→ ”。 → ＝ (Pi,Pj)| 在 Pj 开始前 Pi 必须完成 。如果 (Pi,">
 <meta property="og:locale" content="en_US">
@@ -39,7 +39,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/os/%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81%E7%9A%84%E8%BD%AC%E6%8D%A2.jpg">
 
-<link rel="canonical" href="https://mrdutq.github.io/Blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6/">
+<link rel="canonical" href="https://equsky.cn/Blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6/">
 
 
 <script id="page-configurations">
@@ -176,7 +176,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/Blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6/">
+    <link itemprop="mainEntityOfPage" href="https://equsky.cn/Blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%8F%8F%E8%BF%B0%E4%B8%8E%E6%8E%A7%E5%88%B6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/Blog/images/avatar.gif">
@@ -760,7 +760,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://equsky.cn/" title="https:&#x2F;&#x2F;equsky.cn" rel="noopener" target="_blank">Jason's Blog</a>
+          <a href="https://equsky.cn/" title="https:&#x2F;&#x2F;equsky.cn">Jason's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="https://51world.win/" title="https:&#x2F;&#x2F;51world.win" rel="noopener" target="_blank">时间的朋友</a>
