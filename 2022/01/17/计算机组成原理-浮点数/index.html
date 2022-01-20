@@ -5,25 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 6.0.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon.png">
-  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/Blog/css/main.css">
+<link rel="stylesheet" href="/blog/css/main.css">
 
 
-<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mrdutq.github.io","root":"/Blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"mrdutq.github.io","root":"/blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="浮点数：小数点位置可变，形如科学计数法中的数据表示浮点数格式定义N&#x3D;Re*MM:尾数，是一个纯小数，表示数据的全部有效数位，其位数决定着数值的精度R:基数，可以取2、8、10、16，表示当前的数制；        微机中，一般默认为2，隐含表示e:阶码，是一个整数，用于支出小数点在该数中的位置，其位数决定着数据的取值范围 机器数的一般表示形式 阶符--阶码--数符--尾数 四个元素的顺序可以变">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机组成原理-浮点数">
-<meta property="og:url" content="https://mrdutq.github.io/Blog/2022/01/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0/index.html">
+<meta property="og:url" content="https://mrdutq.github.io/blog/2022/01/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0/index.html">
 <meta property="og:site_name" content="Jason&#39;s blog">
 <meta property="og:description" content="浮点数：小数点位置可变，形如科学计数法中的数据表示浮点数格式定义N&#x3D;Re*MM:尾数，是一个纯小数，表示数据的全部有效数位，其位数决定着数值的精度R:基数，可以取2、8、10、16，表示当前的数制；        微机中，一般默认为2，隐含表示e:阶码，是一个整数，用于支出小数点在该数中的位置，其位数决定着数据的取值范围 机器数的一般表示形式 阶符--阶码--数符--尾数 四个元素的顺序可以变">
 <meta property="og:locale" content="zh_CN">
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="计算机组成原理">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://mrdutq.github.io/Blog/2022/01/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0/">
+<link rel="canonical" href="https://mrdutq.github.io/blog/2022/01/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0/">
 
 
 <script id="page-configurations">
@@ -95,7 +95,7 @@
 
   <div class="site-meta">
 
-    <a href="/Blog/" class="brand" rel="start">
+    <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Jason's blog</h1>
       <span class="logo-line-after"><i></i></span>
@@ -115,27 +115,27 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/Blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
   </ul>
@@ -170,10 +170,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/Blog/2022/01/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0/">
+    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%B5%AE%E7%82%B9%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/Blog/images/avatar.gif">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
       <meta itemprop="name" content="Jason">
       <meta itemprop="description" content="立心 立命 继绝学 开太平">
     </span>
@@ -208,7 +208,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/Blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
+                  <a href="/blog/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">计算机组成原理</span></a>
                 </span>
             </span>
 
@@ -254,7 +254,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/Blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"># 计算机组成原理</a>
+              <a href="/blog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"># 计算机组成原理</a>
           </div>
 
         
@@ -263,11 +263,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/Blog/2022/01/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%A6%82%E8%AE%BA/" rel="prev" title="计算机组成原理-概论">
+    <a href="/blog/2022/01/17/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86-%E6%A6%82%E8%AE%BA/" rel="prev" title="计算机组成原理-概论">
       <i class="fa fa-chevron-left"></i> 计算机组成原理-概论
     </a></div>
       <div class="post-nav-item">
-    <a href="/Blog/2022/01/17/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92%E8%AF%A6%E8%A7%A3/" rel="next" title="算法-递归详解">
+    <a href="/blog/2022/01/17/%E7%AE%97%E6%B3%95-%E9%80%92%E5%BD%92%E8%AF%A6%E8%A7%A3/" rel="next" title="算法-递归详解">
       算法-递归详解 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -339,20 +339,20 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/Blog/archives/">
+          <a href="/blog/archives/">
         
           <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/Blog/categories/">
+            <a href="/blog/categories/">
           
         <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/Blog/tags/">
+            <a href="/blog/tags/">
           
         <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">标签</span></a>
@@ -437,23 +437,23 @@
   </div>
 
   
-  <script src="/Blog/lib/anime.min.js"></script>
-  <script src="/Blog/lib/pjax/pjax.min.js"></script>
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/pjax/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.min.js"></script>
-  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/Blog/js/utils.js"></script>
+<script src="/blog/js/utils.js"></script>
 
-<script src="/Blog/js/motion.js"></script>
-
-
-<script src="/Blog/js/schemes/muse.js"></script>
+<script src="/blog/js/motion.js"></script>
 
 
-<script src="/Blog/js/next-boot.js"></script>
+<script src="/blog/js/schemes/muse.js"></script>
 
-<script src="/Blog/js/bookmark.js"></script>
+
+<script src="/blog/js/next-boot.js"></script>
+
+<script src="/blog/js/bookmark.js"></script>
 
   <script>
 var pjax = new Pjax({
