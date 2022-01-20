@@ -1315,7 +1315,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e92053;
+  background: #ffff1f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2323,7 +2323,7 @@ hr {
 }
 .pagination {
   margin: 120px 0 0;
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .pagination {
@@ -2337,7 +2337,7 @@ hr {
   padding: 10px 0;
 }
 .footer-inner {
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -2443,7 +2443,7 @@ hr {
 }
 .posts-expand.index .post-title,
 .posts-expand.index .post-meta {
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .posts-expand.index .post-title,
@@ -2465,7 +2465,7 @@ hr {
   text-align: center;
 }
 .posts-expand .post-body img {
-  margin-left: 0;
+  margin: 0 auto;
 }
 .posts-expand .post-tags {
   text-align: left;
@@ -2483,7 +2483,7 @@ hr {
 }
 .post-button {
   margin-top: 20px;
-  text-align: left;
+  text-align: center;
 }
 .post-button .btn {
   background: none;

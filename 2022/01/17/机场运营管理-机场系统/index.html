@@ -5,26 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 6.0.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/Blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/Blog/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/Blog/images/favicon.png">
+  <link rel="mask-icon" href="/Blog/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/Blog/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+<link rel="stylesheet" href="/Blog/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"equsky.cn","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"mrdutq.github.io","root":"/Blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="第2章 机场系统机场系统的构成 机场系统也可以分为空域和地域两部分。    跑道 机场的构型主要取决于跑道的数目、方位以及跑道与航站区的相对位置。跑道方位主要与当地风向有关。  跑道的长度 设计跑道的长度主要是依据预计使用该机场飞机的起降特性(特别是要求跑道最长的那种机型的构型和性能特点)。此外跑道长度还与下列因素有关：飞机起降质量与速度（飞机起飞或降落质量越大，离地速度或接地速度越大，滑跑距离就">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机场运营管理-机场系统">
-<meta property="og:url" content="https://equsky.cn/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:url" content="https://mrdutq.github.io/Blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="Jason&#39;s blog">
 <meta property="og:description" content="第2章 机场系统机场系统的构成 机场系统也可以分为空域和地域两部分。    跑道 机场的构型主要取决于跑道的数目、方位以及跑道与航站区的相对位置。跑道方位主要与当地风向有关。  跑道的长度 设计跑道的长度主要是依据预计使用该机场飞机的起降特性(特别是要求跑道最长的那种机型的构型和性能特点)。此外跑道长度还与下列因素有关：飞机起降质量与速度（飞机起飞或降落质量越大，离地速度或接地速度越大，滑跑距离就">
 <meta property="og:locale" content="en_US">
@@ -36,7 +35,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/airport-manage/%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%84%E6%88%90.jpg">
 
-<link rel="canonical" href="https://equsky.cn/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F/">
+<link rel="canonical" href="https://mrdutq.github.io/Blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F/">
 
 
 <script id="page-configurations">
@@ -98,7 +97,7 @@
 
   <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
+    <a href="/Blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Jason's blog</h1>
       <span class="logo-line-after"><i></i></span>
@@ -118,27 +117,27 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/home/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/Blog/home/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/Blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/Blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/Blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/Blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
   </ul>
@@ -173,10 +172,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://equsky.cn/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F/">
+    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/Blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/Blog/images/avatar.gif">
       <meta itemprop="name" content="Jason">
       <meta itemprop="description" content="立心 立命 继绝学 开太平">
     </span>
@@ -211,7 +210,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">机场运营管理</span></a>
+                  <a href="/Blog/categories/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">机场运营管理</span></a>
                 </span>
             </span>
 
@@ -257,7 +256,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86/" rel="tag"># 机场运营管理</a>
+              <a href="/Blog/tags/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86/" rel="tag"># 机场运营管理</a>
           </div>
 
         
@@ -266,11 +265,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E8%88%AA%E7%AB%99%E5%8C%BA%E7%9A%84%E8%BF%90%E8%90%A5-%E6%9C%BA%E5%9C%BA%E8%B4%A7%E8%BF%90%E7%BB%8F%E8%90%A5/" rel="prev" title="机场运营管理_机场航站区运营_机场货运经营">
+    <a href="/Blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E8%88%AA%E7%AB%99%E5%8C%BA%E7%9A%84%E8%BF%90%E8%90%A5-%E6%9C%BA%E5%9C%BA%E8%B4%A7%E8%BF%90%E7%BB%8F%E8%90%A5/" rel="prev" title="机场运营管理_机场航站区运营_机场货运经营">
       <i class="fa fa-chevron-left"></i> 机场运营管理_机场航站区运营_机场货运经营
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E5%AE%B9%E9%87%8F%E7%AE%A1%E7%90%86/" rel="next" title="机场运营管理_机场容量管理">
+    <a href="/Blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E5%AE%B9%E9%87%8F%E7%AE%A1%E7%90%86/" rel="next" title="机场运营管理_机场容量管理">
       机场运营管理_机场容量管理 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -343,20 +342,20 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+          <a href="/Blog/archives/">
         
           <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/categories/">
+            <a href="/Blog/categories/">
           
         <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/tags/">
+            <a href="/Blog/tags/">
           
         <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">tags</span></a>
@@ -379,19 +378,22 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://equsky.cn/" title="http:&#x2F;&#x2F;equsky.cn">Jason's Blog</a>
+          <a href="https://equsky.cn/" title="https:&#x2F;&#x2F;equsky.cn" rel="noopener" target="_blank">Jason's Blog</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="/51world.win" title="51world.win">时间的朋友</a>
+          <a href="https://51world.win/" title="https:&#x2F;&#x2F;51world.win" rel="noopener" target="_blank">时间的朋友</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="/baidu.com" title="baidu.com">baidu</a>
+          <a href="https://linwhitehat.github.io/Blog/about" title="https:&#x2F;&#x2F;linwhitehat.github.io&#x2F;Blog&#x2F;about" rel="noopener" target="_blank">林深时见璐</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="/www.google.com" title="www.google.com">google</a>
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">baidu</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="/www.youtube.com" title="www.youtube.com">youtube</a>
+          <a href="https://www.google.com/" title="https:&#x2F;&#x2F;www.google.com" rel="noopener" target="_blank">google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/" title="https:&#x2F;&#x2F;www.youtube.com" rel="noopener" target="_blank">youtube</a>
         </li>
     </ul>
   </div>
@@ -438,24 +440,23 @@
   </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/pjax/pjax.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/Blog/lib/anime.min.js"></script>
+  <script src="/Blog/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.min.js"></script>
+  <script src="/Blog/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/js/utils.js"></script>
+<script src="/Blog/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
+<script src="/Blog/js/motion.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="/Blog/js/schemes/muse.js"></script>
 
-<script src="/js/bookmark.js"></script>
+
+<script src="/Blog/js/next-boot.js"></script>
+
+<script src="/Blog/js/bookmark.js"></script>
 
   <script>
 var pjax = new Pjax({
