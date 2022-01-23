@@ -166,6 +166,171 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Jason">
+      <meta itemprop="description" content="立心 立命 继绝学 开太平">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/" class="post-title-link" itemprop="url">操作系统-虚拟存储器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-18 20:50:00" itemprop="dateModified" datetime="2022-01-18T20:50:00+08:00">2022-01-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示。文章开头添加 summary_img: 链接 即可 -->
+      
+<!-- 自定义结束 -->
+          <h1 id="第五章：虚拟存储器"><a href="#第五章：虚拟存储器" class="headerlink" title="第五章：虚拟存储器"></a>第五章：虚拟存储器</h1><h2 id="常规存储管理方式的特征"><a href="#常规存储管理方式的特征" class="headerlink" title="常规存储管理方式的特征"></a>常规存储管理方式的特征</h2><h3 id="一次性"><a href="#一次性" class="headerlink" title="一次性"></a>一次性</h3><h3 id="驻留性"><a href="#驻留性" class="headerlink" title="驻留性"></a>驻留性</h3><h2 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a>局部性原理</h2><h3 id="程序在执行时将呈现出局部性特征，即在一较短的时间内，程序的执行仅局限于某个部分，相应地，它所访问的存储空间也局限于某个区域"><a href="#程序在执行时将呈现出局部性特征，即在一较短的时间内，程序的执行仅局限于某个部分，相应地，它所访问的存储空间也局限于某个区域" class="headerlink" title="程序在执行时将呈现出局部性特征，即在一较短的时间内，程序的执行仅局限于某个部分，相应地，它所访问的存储空间也局限于某个区域"></a>程序在执行时将呈现出局部性特征，即在一较短的时间内，程序的执行仅局限于某个部分，相应地，它所访问的存储空间也局限于某个区域</h3><h3 id="时间局限性"><a href="#时间局限性" class="headerlink" title="时间局限性"></a>时间局限性</h3><ul>
+<li>如果程序中的某条指令一旦执行， 则不久以后该指令可能再次执行；如果某数据被访问过， 则不久以后该数据可能再次被访问。产生时间局限性的典型原因，是由于在程序中存在着大量的循环操作</li>
+</ul>
+<h3 id="空间局限性"><a href="#空间局限性" class="headerlink" title="空间局限性"></a>空间局限性</h3><ul>
+<li>一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也将被访问，即程序在一段时间内所访问的地址，可能集中在一定的范围之内，其典型情况便是程序的顺序执行。</li>
+</ul>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><h3 id="指具有请求调入功能和置换功能，能从逻辑上对内存容量加以扩充的一种存储器系统"><a href="#指具有请求调入功能和置换功能，能从逻辑上对内存容量加以扩充的一种存储器系统" class="headerlink" title="指具有请求调入功能和置换功能，能从逻辑上对内存容量加以扩充的一种存储器系统"></a>指具有请求调入功能和置换功能，能从逻辑上对内存容量加以扩充的一种存储器系统</h3><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><h3 id="大程序：可在较小的可用内存中执行较大的用户程序；"><a href="#大程序：可在较小的可用内存中执行较大的用户程序；" class="headerlink" title="大程序：可在较小的可用内存中执行较大的用户程序；"></a>大程序：可在较小的可用内存中执行较大的用户程序；</h3><h3 id="大的用户空间：提供给用户可用的虚拟内存空间通常大于物理内存-real-memory"><a href="#大的用户空间：提供给用户可用的虚拟内存空间通常大于物理内存-real-memory" class="headerlink" title="大的用户空间：提供给用户可用的虚拟内存空间通常大于物理内存(real memory)"></a>大的用户空间：提供给用户可用的虚拟内存空间通常大于物理内存(real memory)</h3><h3 id="并发：可在内存中容纳更多程序并发执行；"><a href="#并发：可在内存中容纳更多程序并发执行；" class="headerlink" title="并发：可在内存中容纳更多程序并发执行；"></a>并发：可在内存中容纳更多程序并发执行；</h3><h3 id="易于开发：不必影响编程时的程序结构"><a href="#易于开发：不必影响编程时的程序结构" class="headerlink" title="易于开发：不必影响编程时的程序结构"></a>易于开发：不必影响编程时的程序结构</h3><h3 id="以CPU时间和外存空间换取昂贵内存空间，这是操作系统中的资源转换技术"><a href="#以CPU时间和外存空间换取昂贵内存空间，这是操作系统中的资源转换技术" class="headerlink" title="以CPU时间和外存空间换取昂贵内存空间，这是操作系统中的资源转换技术"></a>以CPU时间和外存空间换取昂贵内存空间，这是操作系统中的资源转换技术</h3><h2 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h2><h3 id="离散性"><a href="#离散性" class="headerlink" title="离散性"></a>离散性</h3><ul>
+<li>指在内存分配时采用离散的分配方式，它是虚拟存储器的实现的基础</li>
+</ul>
+<h3 id="多次性"><a href="#多次性" class="headerlink" title="多次性"></a>多次性</h3><ul>
+<li>指一个作业被分成多次调入内存运行，即在作业运行时没有必要将其全部装入，只须将当前要运行的那部分程序和数据装入内存即可。多次性是虚拟存储器最重要的特征</li>
+</ul>
+<h3 id="对换性"><a href="#对换性" class="headerlink" title="对换性"></a>对换性</h3><ul>
+<li>指允许在作业的运行过程中在内存和外存的对换区之间换进、换出。</li>
+</ul>
+<h3 id="虚拟性"><a href="#虚拟性" class="headerlink" title="虚拟性"></a>虚拟性</h3><ul>
+<li>指能够从逻辑上扩充内存容量，使用户所看到的内存容量远大于实际内存容量。</li>
+</ul>
+<h2 id="虚拟存储器的实现方式"><a href="#虚拟存储器的实现方式" class="headerlink" title="虚拟存储器的实现方式"></a>虚拟存储器的实现方式</h2><h3 id="请求分页存储管理方式"><a href="#请求分页存储管理方式" class="headerlink" title="请求分页存储管理方式"></a>请求分页存储管理方式</h3><ul>
+<li>硬件<ul>
+<li>请求页表机制<ul>
+<li>格式：页号+物理块号+状态位P+访问字段A+修改位M+外存地址</li>
+</ul>
+</li>
+<li>缺页中断机构</li>
+<li>地址变换机构（过程图很关键）</li>
+</ul>
+</li>
+<li>请求分页中的内存分配<ul>
+<li>最小物理块数<ul>
+<li>即能保证进程正常运行所需的最小物理块数</li>
+</ul>
+</li>
+<li>内存分配策略<ul>
+<li>固定分配局部置换（国王的大儿子）</li>
+<li>可变分配全局置换（国王的二儿子）</li>
+<li>可变分配局部置换（国王的小儿子）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>物理块分配算法<ul>
+<li>平均分配算法</li>
+<li>按比例分配算法</li>
+<li>考虑优先权的分配算法</li>
+</ul>
+</li>
+<li>页面调入策略<ul>
+<li>系统应在何时调入所需页面<ul>
+<li>预调页策略（不能实现）</li>
+<li>请求调页策略（需要才给）</li>
+</ul>
+</li>
+<li>系统应该从何处调入这些页面<ul>
+<li>对换区</li>
+<li>文件区</li>
+</ul>
+</li>
+<li>页面调入过程</li>
+<li>缺页率（出计算题）</li>
+</ul>
+</li>
+</ul>
+<h3 id="请求分段系统"><a href="#请求分段系统" class="headerlink" title="请求分段系统"></a>请求分段系统</h3><ul>
+<li>硬件<ul>
+<li>请求分段的段表机构</li>
+<li>缺段中断机构</li>
+<li>地址变换机构</li>
+</ul>
+</li>
+</ul>
+<h2 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h2><h3 id="抖动的概念"><a href="#抖动的概念" class="headerlink" title="抖动的概念"></a>抖动的概念</h3><ul>
+<li>即刚被换出的页很快又要被访问，需要将它重新调入，此时又需要再选一页调出</li>
+</ul>
+<h3 id="最佳置换算法-需要预知后面进程，所以不能实现"><a href="#最佳置换算法-需要预知后面进程，所以不能实现" class="headerlink" title="最佳置换算法(需要预知后面进程，所以不能实现)"></a>最佳置换算法(需要预知后面进程，所以不能实现)</h3><h3 id="先进先出页面置换算法（FIFO）"><a href="#先进先出页面置换算法（FIFO）" class="headerlink" title="先进先出页面置换算法（FIFO）"></a>先进先出页面置换算法（FIFO）</h3><ul>
+<li>选择在内存中驻留时间最久的页面予以淘汰</li>
+</ul>
+<h3 id="最近最久未使用置换算法（LRU）Recently"><a href="#最近最久未使用置换算法（LRU）Recently" class="headerlink" title="最近最久未使用置换算法（LRU）Recently"></a>最近最久未使用置换算法（LRU）Recently</h3><ul>
+<li>寄存器支持</li>
+<li>特殊的栈结构</li>
+</ul>
+<h3 id="最少使用置换算法（LFU）Frequently"><a href="#最少使用置换算法（LFU）Frequently" class="headerlink" title="最少使用置换算法（LFU）Frequently"></a>最少使用置换算法（LFU）Frequently</h3><h3 id="clock置换算法（对访问位A的判断）"><a href="#clock置换算法（对访问位A的判断）" class="headerlink" title="clock置换算法（对访问位A的判断）"></a>clock置换算法（对访问位A的判断）</h3><ul>
+<li>改进型——增加对修改位M思维判断</li>
+</ul>
+<h3 id="页面缓冲算法（PBA-page-buffering-algorithm）"><a href="#页面缓冲算法（PBA-page-buffering-algorithm）" class="headerlink" title="页面缓冲算法（PBA,page buffering algorithm）"></a>页面缓冲算法（PBA,page buffering algorithm）</h3><ul>
+<li>空闲页面链表</li>
+<li>修改页面链表</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/os/ch5.png" alt="OS—CH5"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1278,134 +1443,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jason">
-      <meta itemprop="description" content="立心 立命 继绝学 开太平">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jason's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2022/01/17/%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/" class="post-title-link" itemprop="url">学习网站推荐</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-27 11:46:07" itemprop="dateModified" datetime="2020-09-27T11:46:07+08:00">2020-09-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E5%88%86%E4%BA%AB/" itemprop="url" rel="index"><span itemprop="name">分享</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-<!-- 自定义，用于添加摘要图片，文章中不显示。文章开头添加 summary_img: 链接 即可 -->
-      
-<!-- 自定义结束 -->
-          <p>今天在B站翻到了UP主“三太子敖丙”在六月发布的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1zT4y1E7ev">大学四年自学走来，这些私藏的实用工具/学习网站我贡献出来了</a>，感觉分享的网站对在大学期间自学挺有用的，所以写下来，记录一下。</p>
-<ol>
-<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/">B站</a></p>
-<ul>
-<li>众所周知，B站是个学习网站</li>
-</ul>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.icourse163.org/">中国大学MOOC</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.imooc.com/">IMOOC</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://time.geekbang.org/">极客时间</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.jikexueyuan.com/">极客学院</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://study.163.com/">网易云课堂</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.baidu.com/">百度</a>  </p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/">知乎</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/">GitHub</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.51zxw.net/">我要自学网</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.w3school.com.cn/">w3school</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.runoob.com/">菜鸟教程</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.douban.com/">豆瓣</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://weread.qq.com/">微信读书</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.csdn.net/">CSDN</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/">stackoverflow</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.oschina.net/">开源中国</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.v2ex.com/">V2ex</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.infoq.cn/">infoQ</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.youdao.com/">有道词典</a></p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.yinxiang.com/">印象笔记</a></p>
-</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/blog/page/8/">8</a><a class="extend next" rel="next" href="/blog/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/blog/page/8/">8</a><a class="page-number" href="/blog/page/9/">9</a><a class="extend next" rel="next" href="/blog/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1471,20 +1512,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/blog/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
