@@ -166,6 +166,199 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/JavaWeb-HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Jason">
+      <meta itemprop="description" content="立心 立命 继绝学 开太平">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2022/01/17/JavaWeb-HTML/" class="post-title-link" itemprop="url">JavaWeb-HTML</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-30 00:29:28" itemprop="dateModified" datetime="2020-09-30T00:29:28+08:00">2020-09-30</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/JavaWeb/" itemprop="url" rel="index"><span itemprop="name">JavaWeb</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示。文章开头添加 summary_img: 链接 即可 -->
+      
+<!-- 自定义结束 -->
+          <h1 id="JavaWeb-HTML"><a href="#JavaWeb-HTML" class="headerlink" title="JavaWeb-HTML"></a>JavaWeb-HTML</h1><p>这篇文章主要对HTML标签进行介绍和归纳。</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
+<li>HTML 是网页内容的载体。内容就是网页制作者放在页面上想要让用户浏览的信息，可以包含文字、图片、视频等。</li>
+<li>CSS 样式是表现。比如，标题字体、颜色变化，或为标题加入背景图片、边框等，所有这些用来改变内容外观的东西称之为表现。</li>
+<li>JavaScript 是用来实现网页上的特效效果。如：鼠标滑过弹出下拉菜单，或鼠标滑过表格的背景颜色改变，还有焦点新闻（新闻图片）的轮换。有动画的，有交互的一般都是用JavaScript来实现的。</li>
+</ol>
+<h2 id="常用标签"><a href="#常用标签" class="headerlink" title="常用标签"></a>常用标签</h2><p><em>标签的用处以及标签在浏览器中的默认样式</em></p>
+<ul>
+<li><p>强调语气：&#60;em&#62;是斜体，&#60;strong&#62;是加粗。</p>
+</li>
+<li><p>引用：&#60;q&#62;短文本引用，&#60;blockquote&#62;长文本引用。</p>
+</li>
+<li><p>换行&#60;br /&#62;</p>
+</li>
+<li><p>水平横线&#60;hr /&#62;</p>
+</li>
+<li><p>空格 &amp;nbsp；</p>
+</li>
+<li><p>表格&#60;table&#62;</p>
+<ul>
+<li>&#60;tbody&#62;加上后表格内容全部下载完才会显示</li>
+<li>行&#60;tr&#62;</li>
+<li>列&#60;td&#62;</li>
+<li>表格表头&#60;th&#62;</li>
+<li>标题&#60;caption&#62;</li>
+</ul>
+</li>
+<li><p>超链&#60;a&#62;</p>
+<ul>
+<li>例如：&#60;a href=”目标网址” title=”鼠标滑过显示的文本”&#62;链接显示的文本&#60;/a&#62;</li>
+<li>新标签打开：target=”_blank”</li>
+</ul>
+</li>
+<li><p>图片&#60;img&#62;，图像可以是GIF、PNG、JPEG格式的图像文件</p>
+<ul>
+<li>例如：&#60;img src=”图片地址” alt=”下载失败时的替换文本” title = “提示文本”&#62;</li>
+</ul>
+</li>
+<li><p>表单&#60;form&#62;</p>
+<blockquote>
+<p>input type=text–是文本输入框 value设置默认显示内容</p>
+</blockquote>
+<blockquote>
+<p>input type=password–是密码输入框 value设置默认显示内容</p>
+</blockquote>
+<blockquote>
+<p>input type=radio–是单选框 name属性可以对其进行分组 checked=”checked”表示默认选中</p>
+</blockquote>
+<blockquote>
+<p>input type=checkbox–是复选框 checked=”checked”表示默认选中</p>
+</blockquote>
+<blockquote>
+<p>input type=reset–是重置按钮 value属性修改按钮上的文本</p>
+</blockquote>
+<blockquote>
+<p>input type=submit–是提交按钮 value属性修改按钮上的文本</p>
+</blockquote>
+<blockquote>
+<p>input type=button–是按钮 value属性修改按钮上的文本</p>
+</blockquote>
+<blockquote>
+<p>input type=file–是文件上传域</p>
+</blockquote>
+<blockquote>
+<p>input type=hidden–是隐藏域 当我们要发送某些信息，而这些信息，不需要用户参与，就可以使用隐藏域（提交的时候同时发送给服务器）。</p>
+</blockquote>
+<blockquote>
+<p>select标签</p>
+</blockquote>
+<blockquote>
+<p>option标签</p>
+</blockquote>
+<blockquote>
+<p>textarea表示多行文本输入框（起始标签和结束标签中的内容是默认设置）</p>
+</blockquote>
+<blockquote>
+<p>rows 属性设置可以显示几行的高度</p>
+</blockquote>
+<blockquote>
+<p>cols 属性设置每行可以显示几个字符宽度</p>
+</blockquote>
+</li>
+<li><p>文本域&#60;textarea&#62;</p>
+<ul>
+<li>例如：&#60;textarea rows=”行数” cols=”列数”&#62;文本&#60;/textarea&#62;</li>
+<li>cols 多行输入域的列数；rows 多行输入域的行数。这两个属性可用 CSS 样式的 width 和 height 来代替：col 用 width、row 用 height 来代替</li>
+</ul>
+</li>
+<li><p>输入框&#60;input type=”text/password” name=”名称” value=”文本” /&#62;</p>
+<ul>
+<li>当type=”text”时，输入框为文本输入框</li>
+<li>当type=”password”时，输入框为密码输入框</li>
+</ul>
+</li>
+<li><p>单/复选框&#60;input type=”radio/checkbox” value=”值” name=”名称” checked=”checked”/&#62;</p>
+<ul>
+<li>当type=”radio”时，控件为单选框，同一组单选框的name命名要一致</li>
+<li>当type=”checkbox”时，控件为复选框</li>
+</ul>
+</li>
+<li><p>提交按钮&#60;input type=”submit” value=”提交”&#62;</p>
+</li>
+<li><p>重置按钮&#60;input type=”reset” value=”重置”&#62;</p>
+</li>
+<li><p>下拉列表框&#60;select&#62;&#60;option value=”看书”&#62;看书&#60;/option&#62;&#60;/select&#62;</p>
+<ul>
+<li><p>value&#60;option value=”提交值”&#62;选项&#60;/option&#62;</p>
+</li>
+<li><p>选中selected=”selected”</p>
+</li>
+<li><p>多选multiple=”multiple”</p>
+</li>
+</ul>
+</li>
+<li><p>标签&#60;label for=”控件id名称”&#62;，标签的for属性中的值应当与控件的id属性值一定要相同。</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/Csharp-%E5%A7%94%E6%89%98%E8%AF%A6%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -758,7 +951,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -771,7 +964,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -166,6 +166,469 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Jason">
+      <meta itemprop="description" content="立心 立命 继绝学 开太平">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">操作系统-输入输出系统</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-18 20:50:04" itemprop="dateModified" datetime="2022-01-18T20:50:04+08:00">2022-01-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示。文章开头添加 summary_img: 链接 即可 -->
+      
+<!-- 自定义结束 -->
+          <h1 id="第六章：输入输出系统"><a href="#第六章：输入输出系统" class="headerlink" title="第六章：输入输出系统"></a>第六章：输入输出系统</h1><h2 id="I-O系统的功能，模型和接口"><a href="#I-O系统的功能，模型和接口" class="headerlink" title="I/O系统的功能，模型和接口"></a>I/O系统的功能，模型和接口</h2><h3 id="I-O系统管理的对象是I-O设备和相应的设备控制器。"><a href="#I-O系统管理的对象是I-O设备和相应的设备控制器。" class="headerlink" title="I/O系统管理的对象是I/O设备和相应的设备控制器。"></a>I/O系统管理的对象是I/O设备和相应的设备控制器。</h3><h3 id="I-O系统的基本功能"><a href="#I-O系统的基本功能" class="headerlink" title="I/O系统的基本功能"></a>I/O系统的基本功能</h3><ul>
+<li>隐藏物理设备的细节</li>
+<li>与设备的无关性</li>
+<li>提高处理机和I/O设备的利用率</li>
+<li>对I/O设备进行控制</li>
+<li>确保对设备的正确共享</li>
+<li>错误处理</li>
+</ul>
+<h3 id="I-O软件的层次结构"><a href="#I-O软件的层次结构" class="headerlink" title="I/O软件的层次结构"></a>I/O软件的层次结构</h3><ul>
+<li>用户层I/O软件</li>
+<li>设备独立性软件</li>
+<li>设备驱动程序（厂家开发）</li>
+<li>中断处理程序</li>
+<li>硬件</li>
+</ul>
+<h3 id="I-O系统的分层"><a href="#I-O系统的分层" class="headerlink" title="I/O系统的分层"></a>I/O系统的分层</h3><ul>
+<li>中断处理程序</li>
+<li>设备驱动程序</li>
+<li>设备独立性软件</li>
+</ul>
+<h3 id="I-O系统接口"><a href="#I-O系统接口" class="headerlink" title="I/O系统接口"></a>I/O系统接口</h3><ul>
+<li>块设备接口<ul>
+<li>指以数据块为单位来组织和传送数据信息的设备</li>
+<li>典型的块设备是磁盘、光盘</li>
+<li>块设备的基本特征<ul>
+<li>①传输速率较高，通常每秒钟为几兆位；</li>
+<li>②它是可寻址的，即可随机地读/写任意一块；</li>
+<li>③磁盘设备的I/O采用DMA方式。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>流设备接口<ul>
+<li>又称字符设备指以单个字符为单位来传送数据信息的设备</li>
+<li>这类设备一般用于数据的输入和输出，有交互式终端、打印机</li>
+<li>字符设备的基本特征<ul>
+<li>①传输速率较低；</li>
+<li>②不可寻址，即不能指定输入时的源地址或输出时的目标地址；</li>
+<li>③字符设备的I/O常采用中断驱动方式。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>网络通信接口<ul>
+<li>提供网络接入功能，使计算机能通过网络与其他计算机进行通信或上网浏览。</li>
+</ul>
+</li>
+</ul>
+<h2 id="I-O设备和设备控制器"><a href="#I-O设备和设备控制器" class="headerlink" title="I/O设备和设备控制器"></a>I/O设备和设备控制器</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>使用特性分<ul>
+<li>存储设备</li>
+<li>I/O设备</li>
+</ul>
+</li>
+<li>传输速率分<ul>
+<li>低速设备（几字节——几百字节）<ul>
+<li>典型的设备有键盘、鼠标、语音的输入</li>
+</ul>
+</li>
+<li>中速设备（数千——数万字节）<ul>
+<li>典型的设备有行式打印机、激光打印机</li>
+</ul>
+</li>
+<li>高速设备（数十万——千兆字节）<ul>
+<li>典型的设备有磁带机、磁盘机、光盘机</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="设备并不是直接与CPU进行通信，而是与设备控制器通信。在设备与设备控制器之间应该有一个接口。"><a href="#设备并不是直接与CPU进行通信，而是与设备控制器通信。在设备与设备控制器之间应该有一个接口。" class="headerlink" title="设备并不是直接与CPU进行通信，而是与设备控制器通信。在设备与设备控制器之间应该有一个接口。"></a>设备并不是直接与CPU进行通信，而是与设备控制器通信。在设备与设备控制器之间应该有一个接口。</h3><ul>
+<li>数据信号：控制器 ←  设备 ←  控制器<ul>
+<li>传送数据信号，输入、输出bit</li>
+</ul>
+</li>
+<li>控制信号: 控制器  →  设备<ul>
+<li>执行读、写操作的信号</li>
+</ul>
+</li>
+<li>状态信号：设备当前使用状态</li>
+</ul>
+<h3 id="设备控制器"><a href="#设备控制器" class="headerlink" title="设备控制器"></a>设备控制器</h3><ul>
+<li>主要功能：控制一个或多个I/O设备，以实现I/O设备和计算机之间的数据交换</li>
+<li>基本功能<ul>
+<li>接收和识别命令<ul>
+<li>控制寄存器、命令译码器</li>
+</ul>
+</li>
+<li>数据交换<ul>
+<li>实现CPU与控制器，控制器与设备间的数据交换</li>
+</ul>
+</li>
+<li>标识和报告设备的状态</li>
+<li>地址识别<ul>
+<li>配置地址译码器，识别不同的设备</li>
+</ul>
+</li>
+<li>数据缓冲区</li>
+<li>差错控制</li>
+</ul>
+</li>
+<li>设备控制器的组成<ul>
+<li>设备控制器与处理机（CPU）的接口<ul>
+<li>实现CPU与设备控制器之间的通信</li>
+</ul>
+</li>
+<li>设备控制器与设备的接口<ul>
+<li>控制器可连接多个设备</li>
+</ul>
+</li>
+<li>I/O逻辑<ul>
+<li>实现对设备的控制</li>
+<li>CPU利用该逻辑向控制器发送I/O命令</li>
+<li>命令、地址译码</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="内存映像I-O"><a href="#内存映像I-O" class="headerlink" title="内存映像I/O"></a>内存映像I/O</h3><ul>
+<li>驱动程序将抽象I/O命令转换出的一系列具体的命令，参数等数据装入设备控制器的相应寄存器，由控制器来执行这些命令，具体实施对I/O设备的操作</li>
+</ul>
+<h3 id="I-O通道"><a href="#I-O通道" class="headerlink" title="I/O通道"></a>I/O通道</h3><ul>
+<li>目的：建立独立的I/O操作(组织, 管理和结束)，使由CPU处理的I/O工作转由通道完成（解放CPU，实现并行）</li>
+<li>什么是I/O通道？<ul>
+<li> 是一种特殊的处理机，具有通过执行通道程序完成I/O操作的指令</li>
+<li> 特点：指令单一(局限于与I/O操作相关的指令)，与CPU共享内存</li>
+</ul>
+</li>
+<li>基本过程：<ul>
+<li>CPU向通道发出I/O指令-&gt;通道接收指令-&gt;从内存取出通道程序处理I/O-&gt;向CPU发出中断</li>
+</ul>
+</li>
+<li>通道类型<ul>
+<li>字节多路通道<ul>
+<li>低中速连接子通道时间片轮转方式共享主通道</li>
+<li>字节多路通道不适于连接高速设备，这推动了按数组方式进行数据传送的数组选择通道的形成。</li>
+</ul>
+</li>
+<li>数组选择通道<ul>
+<li>这种通道可以连接多台高速设备，但只含有一个分配型子通道，在一段时间内只能执行一道通道程序， 控制一台设备进行数据传送， 直至该设备传送完毕释放该通道。这种通道的利用率很低。</li>
+</ul>
+</li>
+<li>数组多路通道<ul>
+<li>含有多个非分配型子通道，前两种通道的组合，通道利用率较好</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>瓶颈问题<ul>
+<li>原因;通道不足</li>
+<li>解决办法：增加设备到主机间的通路，而不增加通道（结果类似RS触发器）</li>
+</ul>
+</li>
+</ul>
+<h2 id="中断机构和中断处理程序"><a href="#中断机构和中断处理程序" class="headerlink" title="中断机构和中断处理程序"></a>中断机构和中断处理程序</h2><h3 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h3><ul>
+<li>分类<ul>
+<li>中断（外部触发）<ul>
+<li>对外部I/O设备发出的中断信号的响应</li>
+</ul>
+</li>
+<li>陷入（内部原因：除0）<ul>
+<li>由CPU内部事件引起的中断</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>中断向量表（类比51单片机）<ul>
+<li>中断程序的入口地址表</li>
+</ul>
+</li>
+<li>中断优先级<ul>
+<li>对紧急程度不同的中断处理方式</li>
+</ul>
+</li>
+<li>对多中断源的处理方式<ul>
+<li>屏蔽中断</li>
+<li>嵌套中断</li>
+</ul>
+</li>
+</ul>
+<h3 id="中断处理程序"><a href="#中断处理程序" class="headerlink" title="中断处理程序"></a>中断处理程序</h3><ul>
+<li>测定是否有未响应的中断信号</li>
+<li>保护被中断进程的CPU环境</li>
+<li>转入相应的设备处理程序</li>
+<li>中断处理</li>
+<li>恢复CPU 的现场并退出中断</li>
+</ul>
+<h2 id="设备驱动程序"><a href="#设备驱动程序" class="headerlink" title="设备驱动程序"></a>设备驱动程序</h2><h3 id="是I-O进程与设备控制器之间的通信程序，又由于它常以进程的形式存在，故以后就简称为设备驱动进程"><a href="#是I-O进程与设备控制器之间的通信程序，又由于它常以进程的形式存在，故以后就简称为设备驱动进程" class="headerlink" title="是I/O进程与设备控制器之间的通信程序，又由于它常以进程的形式存在，故以后就简称为设备驱动进程"></a>是I/O进程与设备控制器之间的通信程序，又由于它常以进程的形式存在，故以后就简称为设备驱动进程</h3><h3 id="主要任务是接受来自它上一层的与设备无关软件的抽象请求，并执行这个请求。"><a href="#主要任务是接受来自它上一层的与设备无关软件的抽象请求，并执行这个请求。" class="headerlink" title="主要任务是接受来自它上一层的与设备无关软件的抽象请求，并执行这个请求。"></a>主要任务是接受来自它上一层的与设备无关软件的抽象请求，并执行这个请求。</h3><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ul>
+<li><ol>
+<li>接收由I/O进程发来的命令和参数， 并将命令中的抽象要求转换为具体要求。例如，将磁盘块号转换为磁盘的盘面、 磁道号及扇区号。</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>检查用户I/O请求的合法性，了解I/O设备的状态，传递有关参数，设置设备的工作方式。 </li>
+</ol>
+</li>
+<li><ol start="3">
+<li>发出I/O命令，如果设备空闲，便立即启动I/O设备去完成指定的I/O操作；如果设备处于忙碌状态，则将请求者的请求块挂在设备队列上等待。</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>及时响应由控制器或通道发来的中断请求，并根据其中断类型调用相应的中断处理程序进行处理。</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>对于设置有通道的计算机系统，驱动程序还应能够根据用户的I/O请求，自动地构成通道程序。 </li>
+</ol>
+</li>
+</ul>
+<h3 id="设备驱动程序的处理过程"><a href="#设备驱动程序的处理过程" class="headerlink" title="设备驱动程序的处理过程"></a>设备驱动程序的处理过程</h3><ul>
+<li>将用户和上层软件对设备控制的抽象要求转换成对设备的具体要求，如对抽象要求的盘块号转换为磁盘的盘面、磁道及扇区。</li>
+<li>检查I/O请求的合理性。</li>
+<li>读出和检查设备的状态，确保设备处于就绪态。</li>
+<li>传送必要的参数，如传送的字节数，数据在主存的首址等。</li>
+<li>工作方式的设置。</li>
+<li>启动I/O设备，并检查启动是否成功，如成功则将控制返回给I/O控制系统，在I/O设备忙于传送数据时，该用户进程把自己阻塞，直至中断到来才将它唤醒，而CPU可干别的事。</li>
+</ul>
+<h3 id="对I-O设备的控制方式"><a href="#对I-O设备的控制方式" class="headerlink" title="对I/O设备的控制方式"></a>对I/O设备的控制方式</h3><ul>
+<li>I/O控制的宗旨<ul>
+<li>减少CPU对I/O控制的干预</li>
+<li>充分利用CPU完成数据处理工作</li>
+</ul>
+</li>
+<li>I/O 控制方式<ul>
+<li>轮询的可编程I/O方式</li>
+<li>中断驱动I/O方式</li>
+<li>DMA控制方式</li>
+<li>I/O通道控制方式</li>
+</ul>
+</li>
+</ul>
+<h3 id="DMA控制器组成"><a href="#DMA控制器组成" class="headerlink" title="DMA控制器组成"></a>DMA控制器组成</h3><ul>
+<li>主机与DMA控制器的接口</li>
+<li>DMA控制器与块设备的接口</li>
+<li>I/O控制逻辑</li>
+</ul>
+<h2 id="与设备无关的I-O软件"><a href="#与设备无关的I-O软件" class="headerlink" title="与设备无关的I/O软件"></a>与设备无关的I/O软件</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>含义： 应用程序独立于具体使用的物理设备。</li>
+<li>驱动程序是一个与硬件(或设备)紧密相关的软件。为实现设备独立性，须在驱动程序上设置一层软件，称为设备独立性软件。</li>
+<li>设备独立性(Device Independence)的优点<ul>
+<li>以物理设备名使用设备</li>
+<li>引入了逻辑设备名</li>
+<li>逻辑设备名称到物理设备名称的转换（易于实现I/O重定向）</li>
+</ul>
+</li>
+</ul>
+<h3 id="与设备无关的软件"><a href="#与设备无关的软件" class="headerlink" title="与设备无关的软件"></a>与设备无关的软件</h3><ul>
+<li>设备驱动程序的统一接口</li>
+<li>缓存管理</li>
+<li>差错控制</li>
+<li>对独立设备的分配与回收</li>
+<li>独立于设备的逻辑数据块</li>
+</ul>
+<h3 id="设备分配中的数据结构"><a href="#设备分配中的数据结构" class="headerlink" title="设备分配中的数据结构"></a>设备分配中的数据结构</h3><ul>
+<li>设备控制表DCT</li>
+<li>控制器控制表COCT</li>
+<li>通道控制表CHCT</li>
+<li>显然，在有通道的系统中，一个进程只有获得了通道，控制器和所需设备三者之后，才具备了进行I/O操作的物理条件</li>
+<li>系统设备表SDT</li>
+<li>逻辑设备表LUT</li>
+<li>分配的流程，从资源多的到资源紧张的:LUT-&gt;SDT-&gt;DCT-&gt;COCT-&gt;CHCT</li>
+<li>在申请设备的过程中，根据用户请求的I/O设备的逻辑名，查找逻辑设备和物理设备的映射表；以物理设备为索引，查找SDT，找到该设备所连接的DCT；继续查找与该设备连接的COCT和CHCT，就找到了一条通路。</li>
+</ul>
+<h2 id="用户层的I-O软件"><a href="#用户层的I-O软件" class="headerlink" title="用户层的I/O软件"></a>用户层的I/O软件</h2><h3 id="系统调用与库函数"><a href="#系统调用与库函数" class="headerlink" title="系统调用与库函数"></a>系统调用与库函数</h3><ul>
+<li>OS向用户提供的所有功能，用户进程都必须通过系统调用来获取</li>
+<li>在C语言以及UNIX系统中，系统调用（如read）与各系统调用所使用的库函数（如read）之间几乎是一一对应的。而微软的叫Win32API</li>
+</ul>
+<h3 id="假脱机系统（spooling）"><a href="#假脱机系统（spooling）" class="headerlink" title="假脱机系统（spooling）"></a>假脱机系统（spooling）</h3><ul>
+<li>spooling技术是对脱机输入/输出系统的模拟</li>
+<li>主要组成<ul>
+<li>输入/输出井</li>
+<li>输入/输出缓冲区</li>
+<li>输入/输出进程</li>
+<li>井管理程序</li>
+</ul>
+</li>
+<li>特点（体现操作系统的虚拟性）<ul>
+<li>提高了I/O的速度<ul>
+<li>对数据所进行的I/O操作，已从对低速设备演变为对输入井或输出井中的数据存取。</li>
+</ul>
+</li>
+<li>将独占设备改造为共享设备<ul>
+<li>实际分给用户进程的不是打印设备，而是共享输出井中的存储区域 </li>
+</ul>
+</li>
+<li>实现了虚拟设备功能<ul>
+<li>将独占设备变成多台独占的虚拟设备。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="缓冲区管理"><a href="#缓冲区管理" class="headerlink" title="缓冲区管理"></a>缓冲区管理</h2><h3 id="缓冲的引入（原因）"><a href="#缓冲的引入（原因）" class="headerlink" title="缓冲的引入（原因）"></a>缓冲的引入（原因）</h3><ul>
+<li>缓和CPU与I/O设备间速度不匹配的矛盾</li>
+<li>减少对CPU的中断频率，放宽对CPU中断响应时间的限制</li>
+<li>提高CPU和I/O设备之间的并行性</li>
+<li>解决数据粒度不匹配的问题</li>
+</ul>
+<h3 id="单缓冲区"><a href="#单缓冲区" class="headerlink" title="单缓冲区"></a>单缓冲区</h3><ul>
+<li>即在CPU计算的时候，将数据数据输入到缓冲区(大小取决与T和C的大小)</li>
+</ul>
+<h3 id="双缓冲区"><a href="#双缓冲区" class="headerlink" title="双缓冲区"></a>双缓冲区</h3><ul>
+<li>即允许CPU连续工作（T不断）</li>
+</ul>
+<h3 id="环形缓冲区（专为生产者和消费者打造）"><a href="#环形缓冲区（专为生产者和消费者打造）" class="headerlink" title="环形缓冲区（专为生产者和消费者打造）"></a>环形缓冲区（专为生产者和消费者打造）</h3><ul>
+<li>组成<ul>
+<li>多个缓冲区</li>
+<li>多个指针</li>
+</ul>
+</li>
+<li>使用<ul>
+<li>Getbuf过程</li>
+<li>Releasebuf过程</li>
+</ul>
+</li>
+<li>同步问题</li>
+</ul>
+<h3 id="缓冲池-理解为更大的缓冲区"><a href="#缓冲池-理解为更大的缓冲区" class="headerlink" title="缓冲池(理解为更大的缓冲区)"></a>缓冲池(理解为更大的缓冲区)</h3><ul>
+<li>组成<ul>
+<li>空白缓冲队列（emq）<ul>
+<li>由空缓冲区链接而成F(emq)，L(emq)分别指向该队列首尾缓冲区</li>
+</ul>
+</li>
+<li>输入队列（inq）<ul>
+<li>由装满输入数据的缓冲区链接而成F(inq)，L(inq)分别指向该队列首尾缓冲区</li>
+</ul>
+</li>
+<li>输出队列（outq）<ul>
+<li>由装满输出数据的缓冲区链接而成F(outq)， L(outq)分别指向该队列首尾缓冲</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Getbuf和Putbuf过程<ul>
+<li>收容：缓冲池接收外界数据</li>
+<li>提取：外界从缓冲池获得数据</li>
+</ul>
+</li>
+<li>缓冲区工作方式（从缓冲区的角度来看）<ul>
+<li>收容输入</li>
+<li>提取输入</li>
+<li>收容输出</li>
+<li>提取输出</li>
+</ul>
+</li>
+</ul>
+<h2 id="磁盘存储器的性能和调度"><a href="#磁盘存储器的性能和调度" class="headerlink" title="磁盘存储器的性能和调度"></a>磁盘存储器的性能和调度</h2><h3 id="数据的组织和格式"><a href="#数据的组织和格式" class="headerlink" title="数据的组织和格式"></a>数据的组织和格式</h3><h3 id="磁盘的类型"><a href="#磁盘的类型" class="headerlink" title="磁盘的类型"></a>磁盘的类型</h3><ul>
+<li>固定头磁盘（贵）</li>
+<li>移动头磁盘</li>
+</ul>
+<h3 id="磁盘访问的时间（关键）"><a href="#磁盘访问的时间（关键）" class="headerlink" title="磁盘访问的时间（关键）"></a>磁盘访问的时间（关键）</h3><ul>
+<li>寻道时间Ts=m*n+s</li>
+<li>旋转延迟时间Tr</li>
+<li>传输时间Tt=b/rN</li>
+<li>总时间Ta=Ts+1/2r+b/rN</li>
+</ul>
+<h3 id="磁盘的调度算法（掌握图表）"><a href="#磁盘的调度算法（掌握图表）" class="headerlink" title="磁盘的调度算法（掌握图表）"></a>磁盘的调度算法（掌握图表）</h3><ul>
+<li>先来先服务（FCFS）<ul>
+<li>优点：公平，简单</li>
+<li>缺点：可能导致某些进程的请求长期得不到满足</li>
+</ul>
+</li>
+<li>最短寻道时间优先（SSTF）<ul>
+<li>说明：要求访问的磁道和当前磁头所在的磁道距离最近，以使每次的寻道时间最短</li>
+</ul>
+</li>
+<li>扫描算法（SCAN）<ul>
+<li>扫描算法不仅考虑到欲访问的磁道与当前磁道间的距离，更优先考虑的是磁道当前的移动方向</li>
+<li>联想电梯的运行</li>
+<li>可防止低优先级进程出现“饥饿”的现象</li>
+</ul>
+</li>
+<li>循环扫描算法（CSCAN）<ul>
+<li>算法规定磁头单向移动，例如，只是自里向外移动，当磁头移到最外的磁道并访问后，磁头立即返回到最里的欲访问磁道，亦即将最小磁道号紧接着最大磁道号构成循环，进行循环扫描</li>
+</ul>
+</li>
+<li>NStepScan算法<ul>
+<li>N步SCAN算法是将磁盘请求队列分成若干个长度为N的子队列，磁盘调度将按FCFS算法依次这些子队列。</li>
+</ul>
+</li>
+<li>FSCAN算法<ul>
+<li>是Nstepscan算法的简化，将磁盘请求队列分成两个子队列</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/os/ch6.png" alt="OS—CH6"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E8%99%9A%E6%8B%9F%E5%AD%98%E5%82%A8%E5%99%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -970,479 +1433,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E4%B8%8E%E6%AD%BB%E9%94%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jason">
-      <meta itemprop="description" content="立心 立命 继绝学 开太平">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jason's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2022/01/17/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F-%E5%A4%84%E7%90%86%E6%9C%BA%E8%B0%83%E5%BA%A6%E4%B8%8E%E6%AD%BB%E9%94%81/" class="post-title-link" itemprop="url">操作系统-处理机调度与死锁</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-18 20:49:33" itemprop="dateModified" datetime="2022-01-18T20:49:33+08:00">2022-01-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="index"><span itemprop="name">操作系统</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-<!-- 自定义，用于添加摘要图片，文章中不显示。文章开头添加 summary_img: 链接 即可 -->
-      
-<!-- 自定义结束 -->
-          <h1 id="第三章-处理机调度与死锁"><a href="#第三章-处理机调度与死锁" class="headerlink" title="第三章:处理机调度与死锁"></a>第三章:处理机调度与死锁</h1><h2 id="处理机调度算法的目标"><a href="#处理机调度算法的目标" class="headerlink" title="处理机调度算法的目标"></a>处理机调度算法的目标</h2><h3 id="处理机调度算法的共同目标"><a href="#处理机调度算法的共同目标" class="headerlink" title="处理机调度算法的共同目标"></a>处理机调度算法的共同目标</h3><ul>
-<li>资源利用率:CPU的利用率=CPU有效工作时间/(CPU有效工作时间+CPU空闲等待时间)</li>
-<li>公平性</li>
-<li>平衡性</li>
-<li>策略强制执行</li>
-</ul>
-<h3 id="批处理系统的目标"><a href="#批处理系统的目标" class="headerlink" title="批处理系统的目标"></a>批处理系统的目标</h3><ul>
-<li>平均周转时间短</li>
-<li>系统吞吐量高</li>
-<li>处理机利用率高</li>
-</ul>
-<h3 id="分时系统的目标"><a href="#分时系统的目标" class="headerlink" title="分时系统的目标"></a>分时系统的目标</h3><ul>
-<li>响应时间快</li>
-<li>均衡性</li>
-</ul>
-<h3 id="实时系统目标"><a href="#实时系统目标" class="headerlink" title="实时系统目标"></a>实时系统目标</h3><ul>
-<li>截止时间的保证</li>
-<li>可预测性</li>
-</ul>
-<h3 id="处理机调度的层次"><a href="#处理机调度的层次" class="headerlink" title="处理机调度的层次"></a>处理机调度的层次</h3><ul>
-<li>高级调度（作业调度）<ul>
-<li>分时系统无需作业调度，因为需要交互</li>
-<li>批处理系统需要作业调度</li>
-</ul>
-</li>
-<li>中级调度（和挂起有关）</li>
-<li>低级调度（进程调度）<ul>
-<li>进程调度是最基本的调度，任何操作系统都有进程调度。</li>
-<li>低级调度的三个基本机制<ul>
-<li>排队器</li>
-<li>分派器</li>
-<li>上下文切换</li>
-</ul>
-</li>
-<li>进程调度方式<ul>
-<li>非抢占方式</li>
-<li>抢占方式<ul>
-<li>优先权原则</li>
-<li>短进程优先原则</li>
-<li>时间片原则</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>进程调度的任务<ul>
-<li>保存处理机的现场信息</li>
-<li>按某种算法选取进程</li>
-<li>把处理器分配给进程</li>
-</ul>
-</li>
-<li>进程调度的算法<ul>
-<li>优先级调度算法<ul>
-<li>优先级调度算法的类型<ul>
-<li>非抢占式优先级调度算法<ul>
-<li>等当前进程执行完以后，再执行另一个优先权最高的进程</li>
-<li>这种调度算法主要用于批处理系统中；也可用于某些对实时性要求不严的实时系统中。 </li>
-</ul>
-</li>
-<li>抢占式优先级调度算法<ul>
-<li>不等当前进程结束，直接抢处理机</li>
-<li>常用于要求比较严格的实时系统中， 以及对性能要求较高的批处理和分时系统中。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>优先级的类型<ul>
-<li>静态优先级<ul>
-<li>优先权是在创建进程时确定的，且在进程的整个运行期间保持不变。一般地，优先权是利用某一范围内的一个整数来表示的，例如，0<del>7或0</del>255中的某一整数， 又把该整数称为优先数。</li>
-<li>可以参考BIOS系统中设置boot的优先级</li>
-</ul>
-</li>
-<li>动态优先级<ul>
-<li>在创建进程时所赋予的优先权，是可以随进程的推进或随其等待时间的增加而改变的，以便获得更好的调度性能。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>轮转调度算法<ul>
-<li>基本原理:在轮转(RR)法中，系统根据FCFS策略，将所有的就绪进程排成一个就绪队列，并可设置每隔一定时间间隔(如30ms)即产生一次中断，激活系统中的进程调度程序，完成一次调度，将CPU分配给队首进程，令其执行</li>
-<li>进程切换时机<ul>
-<li>时间片未用完，进程完成</li>
-<li>时间片到，进程未完成</li>
-</ul>
-</li>
-<li>时间片大小的确定<ul>
-<li>太小利于短作业，增加系统切换开销</li>
-<li>太长就退化为FCFS算法</li>
-<li>一般选择: q略大于一次交互所需要的时间，使大多数进程在一个时间片内完成</li>
-</ul>
-</li>
-<li>一般来说，平均周转时间将比SJF长，但是有较好的响应时间</li>
-</ul>
-</li>
-<li>多队列调度算法</li>
-<li>多级反馈队列调度算法<ul>
-<li>调度机制<ul>
-<li>设置多个就绪队列</li>
-<li>每个队列都采用FCFS算法</li>
-<li>按照队列优先级调度，在第n队列中采取按时间片轮转的方式运行</li>
-</ul>
-</li>
-<li>调度算法的性能<ul>
-<li>对于终端型用户，由于作业小，感觉满意</li>
-<li>对于短批处理作业用户，周转时间也较小</li>
-<li>长批处理作业用户，也能够得到执行</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>基于公平原则的调度算法<ul>
-<li>保证调度算法</li>
-<li>公平分享调度算法</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="作业与作业调度"><a href="#作业与作业调度" class="headerlink" title="作业与作业调度"></a>作业与作业调度</h2><h3 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h3><ul>
-<li>作业不仅包含程序和数据，还配有一份作业说明书，系统根据说明书对程序的运行进行控制。批处理系统是以作业为单位从外存掉入内存的。</li>
-</ul>
-<h3 id="作业控制块JCB"><a href="#作业控制块JCB" class="headerlink" title="作业控制块JCB"></a>作业控制块JCB</h3><ul>
-<li>为每个作业设置一个JCB，保存了对作业管理调度的全部信息。是作业存在的标志。</li>
-</ul>
-<h3 id="作业步"><a href="#作业步" class="headerlink" title="作业步"></a>作业步</h3><ul>
-<li>作业步，每个作业都必须经过若干相对独立，有相互关联的顺序步骤才能得到结果。每一个步骤就是一个作业步。</li>
-</ul>
-<h3 id="作业运行的三个阶段"><a href="#作业运行的三个阶段" class="headerlink" title="作业运行的三个阶段"></a>作业运行的三个阶段</h3><ul>
-<li>收容阶段</li>
-<li>运行阶段</li>
-<li>完成阶段</li>
-</ul>
-<h3 id="作业运行的三个状态"><a href="#作业运行的三个状态" class="headerlink" title="作业运行的三个状态"></a>作业运行的三个状态</h3><ul>
-<li>后备状态</li>
-<li>运行状态</li>
-<li>完成状态</li>
-</ul>
-<h3 id="作业调度的主要任务"><a href="#作业调度的主要任务" class="headerlink" title="作业调度的主要任务"></a>作业调度的主要任务</h3><ul>
-<li>接纳多少个作业</li>
-<li>接纳哪些作业</li>
-</ul>
-<h3 id="先来先服务-first–come-first–served，FCFS-调度算法"><a href="#先来先服务-first–come-first–served，FCFS-调度算法" class="headerlink" title="先来先服务(first–come first–served，FCFS)调度算法"></a>先来先服务(first–come first–served，FCFS)调度算法</h3><ul>
-<li>比较有利于长作业，而不利于短作业。</li>
-<li>有利于CPU繁忙的作业，而不利于I/O繁忙的作业。</li>
-</ul>
-<h3 id="短作业优先-short-job-first，SJF-的调度算法"><a href="#短作业优先-short-job-first，SJF-的调度算法" class="headerlink" title="短作业优先(short job first，SJF)的调度算法"></a>短作业优先(short job first，SJF)的调度算法</h3><ul>
-<li>优点<ul>
-<li>比FCFS改善平均周转时间和平均带权周转时间，缩短作业的等待时间；</li>
-<li>提高系统的吞吐量；</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>必须预知作业的运行时间</li>
-<li>对长作业非常不利，长作业的周转时间会明显地增长</li>
-<li>在采用SJF算法时，人–机无法实现交互</li>
-<li>该调度算法完全未考虑作业的紧迫程度，故不能保证紧迫性作业能得到及时处理</li>
-</ul>
-</li>
-</ul>
-<h3 id="优先级调度算法-priority–scheduling-algorithm，PSA"><a href="#优先级调度算法-priority–scheduling-algorithm，PSA" class="headerlink" title="优先级调度算法(priority–scheduling algorithm，PSA)"></a>优先级调度算法(priority–scheduling algorithm，PSA)</h3><h3 id="高响应比优先调度算法-Highest-Response-Ratio-Next-HRRN"><a href="#高响应比优先调度算法-Highest-Response-Ratio-Next-HRRN" class="headerlink" title="高响应比优先调度算法(Highest Response Ratio Next,HRRN)"></a>高响应比优先调度算法(Highest Response Ratio Next,HRRN)</h3><ul>
-<li>原理<ul>
-<li>在每次选择作业投入运行时，先计算此时后备作业队列中每个作业的响应比RP然后选择其值最大的作业投入运行</li>
-<li>优先权=(等待时间+要求服务时间)/要求服务时间=响应时间/要求服务时间=1+等待时间/要求服务时间</li>
-</ul>
-</li>
-<li>特点<ul>
-<li>如果作业的等待时间相同，则要求服务的时间愈短，其优先权愈高，因而类似于SJF算法，有利于短作业</li>
-<li>当要求服务的时间相同时，作业的优先权又决定于其等待时间，因而该算法又类似于FCFS算法</li>
-<li>对于长时间的优先级，可以为随等待时间的增加而提高，当等待时间足够长时，也可获得处理机</li>
-</ul>
-</li>
-</ul>
-<h2 id="实时调度-HRT和SRT任务"><a href="#实时调度-HRT和SRT任务" class="headerlink" title="实时调度(HRT和SRT任务)"></a>实时调度(HRT和SRT任务)</h2><h3 id="实现实时调度的基本条件"><a href="#实现实时调度的基本条件" class="headerlink" title="实现实时调度的基本条件"></a>实现实时调度的基本条件</h3><ul>
-<li>提供必要信息<ul>
-<li>就绪时间</li>
-<li>开始截止时间和完成截止时间</li>
-<li>处理时间</li>
-<li>资源要求</li>
-<li>优先级</li>
-</ul>
-</li>
-<li>系统处理能力强<ul>
-<li>∑(Ci/Pi)≤1</li>
-<li>N个处理机:∑(Ci/Pi)≤N</li>
-</ul>
-</li>
-<li>采用抢占式调度机制</li>
-<li>具有快速切换机制<ul>
-<li>对中断的快速响应能力</li>
-<li>快速的任务分派能力</li>
-</ul>
-</li>
-</ul>
-<h3 id="实时调度算法的分类"><a href="#实时调度算法的分类" class="headerlink" title="实时调度算法的分类"></a>实时调度算法的分类</h3><ul>
-<li>非抢占式调度算法<ul>
-<li>非抢占式轮转调度算法</li>
-<li>非抢占式优先调度算法</li>
-</ul>
-</li>
-<li>抢占式调度算法<ul>
-<li>基于时钟中断的抢占式优先级调度算法</li>
-<li>立即抢占的优先级调度算法</li>
-</ul>
-</li>
-</ul>
-<h3 id="最早截止时间优先EDF-Earliest-Deadline-First-算法"><a href="#最早截止时间优先EDF-Earliest-Deadline-First-算法" class="headerlink" title="最早截止时间优先EDF(Earliest Deadline First)算法"></a>最早截止时间优先EDF(Earliest Deadline First)算法</h3><ul>
-<li>根据任务的开始截至时间来确定任务的优先级<ul>
-<li>截至时间越早，优先级越高</li>
-</ul>
-</li>
-<li>非抢占式调度方式用于非周期实时任务</li>
-<li>抢占式调度方式用于周期实时任务</li>
-</ul>
-<h3 id="最低松弛度优先LLF-Least-Laxity-First-算法"><a href="#最低松弛度优先LLF-Least-Laxity-First-算法" class="headerlink" title="最低松弛度优先LLF(Least Laxity First)算法"></a>最低松弛度优先LLF(Least Laxity First)算法</h3><ul>
-<li>类似EDF</li>
-<li>算法根据任务紧急(或松弛)的程度，来确定任务的优先级。任务的紧急程度愈高，为该任务所赋予的优先级就愈高， 以使之优先执行。</li>
-<li>松弛度例子<ul>
-<li>例如，一个任务在200ms时必须完成，而它本身所需的运行时间就有100ms，因此，调度程序必须在100 ms之前调度执行，该任务的紧急程度(松弛程度)为100 ms</li>
-</ul>
-</li>
-</ul>
-<h3 id="优先级倒置-Priority-inversion-problem"><a href="#优先级倒置-Priority-inversion-problem" class="headerlink" title="优先级倒置(Priority inversion problem)"></a>优先级倒置(Priority inversion problem)</h3><ul>
-<li>优先级倒置的形成<ul>
-<li>高优先级进程被低优先级进程延迟或阻塞。</li>
-</ul>
-</li>
-<li>优先级倒置的解决方法<ul>
-<li>简单的:假如进程P3在进入临界区后P3所占用的处理机就不允许被抢占</li>
-<li>实用的:建立在动态优先级继承基础上的</li>
-</ul>
-</li>
-</ul>
-<h2 id="死锁概述"><a href="#死锁概述" class="headerlink" title="死锁概述"></a>死锁概述</h2><h3 id="资源问题"><a href="#资源问题" class="headerlink" title="资源问题"></a>资源问题</h3><ul>
-<li>可重用性资源<ul>
-<li>计算机外设</li>
-</ul>
-</li>
-<li>消耗性资源<ul>
-<li>数据，消息</li>
-</ul>
-</li>
-<li>可抢占性资源<ul>
-<li> 不引起死锁</li>
-<li>CPU，内存 </li>
-</ul>
-</li>
-<li>不可抢占性资源<ul>
-<li>光驱，打印机</li>
-</ul>
-</li>
-</ul>
-<h3 id="计算机系统中的死锁"><a href="#计算机系统中的死锁" class="headerlink" title="计算机系统中的死锁"></a>计算机系统中的死锁</h3><ul>
-<li>竞争不可抢占性资源引起死锁</li>
-<li>竞争可消耗资源引起死锁</li>
-<li>进程推进顺序不当引起死锁</li>
-</ul>
-<h3 id="死锁的定义，必要条件和处理方法"><a href="#死锁的定义，必要条件和处理方法" class="headerlink" title="死锁的定义，必要条件和处理方法"></a>死锁的定义，必要条件和处理方法</h3><ul>
-<li>定义:如果一组进程中的每一个进程都在等待仅由该进程中的其他进程才能引发的事件，那么该组进程是死锁的</li>
-<li>产生死锁的必要条件<ul>
-<li>互斥条件</li>
-<li>请求和保存条件</li>
-<li>不可抢占条件</li>
-<li>循环等待条件<ul>
-<li>如果每个资源只有一个实例，则环路等待条件是死锁存在的充分必要条件</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>处理死锁的方法<ul>
-<li>预防死锁<ul>
-<li>静态方法，在进程执行前采取的措施，通过设置某些限制条件，去破坏产生死锁的四个条件之一，防止发生死锁。</li>
-<li>预防死锁的策略<ul>
-<li>破坏”请求和保存”条件<ul>
-<li>第一种协议<ul>
-<li>所有进程在开始运行之前，必须一次性地申请其在整个运行过程中所需的全部资源</li>
-<li>优点:简单，易行，安全</li>
-<li>缺点<ul>
-<li>资源被严重浪费，严重地恶化了资源的利用率</li>
-<li>使进程经常会发生饥饿现象</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>第二种协议<ul>
-<li>它允许一个进程只获得运行初期所需的资源后，便开始运行。进程运行过程中再逐步释放已分配给自己的，且已用毕的全部资源，然后再请求新的所需资源</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>破坏”不可抢占”条件<ul>
-<li>当一个已经保存了某些不可被抢占资源的进程，提出新的资源请求而不能得到满足时，它必须释放已经保持的所有资源，待以后需要时再重新申请</li>
-</ul>
-</li>
-<li>破坏”循环等待”条件<ul>
-<li>对系统所以资源类型进行线性排序，并赋予不同的序号</li>
-<li>例如令输入机的序号为1，打印机序号为2，磁盘机序号为3等。所有进程对资源的请求必须严格按资源序号递增的次序提出。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>避免死锁<ul>
-<li>动态的方法，在进程执行过程中采取的措施，不需事先采取限制措施破坏产生死锁的必要条件，而是在进程申请资源时用某种方法去防止系统进入不安全状态，从而避免发生死锁。如银行家算法</li>
-<li>避免死锁的策略<ul>
-<li>系统安全状态<ul>
-<li>安全状态<ul>
-<li>某时刻，对于并发执行的n个进程，若系统能够按照某种顺序如&lt;p1,p2…pn&gt;来为每个进程分配所需资源，直至最大需求，从而使每个进程都可顺利完成，则认为该时刻系统处于安全状态，这样的序列为安全序列</li>
-</ul>
-</li>
-<li>安全状态之例</li>
-<li>由安全状态向不安全状态的转换</li>
-</ul>
-</li>
-<li>利用银行家算法避免死锁<ul>
-<li>含义:每一个新进程在进入系统时，它必须申明在运行过程中，可能需要每种资源类型的最大单元数目，其数目不应超过系统所拥有的资源总量。当进程请求一组资源时，系统必须首先确定是否有足够的资源分配给该进程。若有，再进一步计算在将这些资源分配给进程后，是否会使系统处于不安全状态。如果不会，才将资源分配给它，否则让进程等待</li>
-<li>银行家算法中的数据结构<ul>
-<li>可用资源向量 Available[m]：m为系统中资源种类数，Available[j]=k表示系统中第j类资源数为k个。</li>
-<li>最大需求矩阵 Max[n,m]：n为系统中进程数，Max[i,j]=k表示进程i对j类资源的最大需求数为中k。</li>
-<li>分配矩阵 Allocation[n，m]:它定义了系统中每一类资源当前已分配给每一进程资源数，   Allocation[i,j] = k表示进程i已分得j类资源的数目为k个。</li>
-<li>需求矩阵 Need[n,m]：它表示每个进程尚需的各类资源数，Need[i,j]=k 表示进程i   还需要j类资源k个。Need[i,j]=Max[i,j] - Allocation[i,j]</li>
-</ul>
-</li>
-<li>银行家算法</li>
-<li>安全性算法</li>
-<li>银行家算法之例</li>
-<li>解题<ul>
-<li>矩阵</li>
-<li>列表</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>检测死锁<ul>
-<li>死锁的检测与解除<ul>
-<li>死锁的检测<ul>
-<li>资源分配图<ul>
-<li>简化步骤<ul>
-<li>选择一个没有阻塞的进程p</li>
-<li>将p移走，包括它的所有请求边和分配边</li>
-<li>重复步骤1，2，直至不能继续下去</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>死锁定理<ul>
-<li>若一系列简化以后不能使所有的进程节点都成为孤立节点</li>
-</ul>
-</li>
-<li>检测时机<ul>
-<li> 当进程等待时检测死锁 （其缺点是系统的开销大）</li>
-<li> 定时检测</li>
-<li> 系统资源利用率下降时检测死锁</li>
-</ul>
-</li>
-<li>死锁检测中的数据结构</li>
-</ul>
-</li>
-<li>死锁的解除<ul>
-<li>抢占资源</li>
-<li>终止(或撤销)进程</li>
-<li>终止进程的方法<ul>
-<li>终止所有死锁进程</li>
-<li>逐个终止进程<ul>
-<li>代价最小<ul>
-<li>进程的优先级的大小</li>
-<li>进程已执行了多少时间，还需时间</li>
-<li>进程在运行中已经使用资源的多少，还需多少资源</li>
-<li>进程的性质是交互式还是批处理的</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>付出代价最小的死锁解除算法<ul>
-<li>是使用一个有效的挂起和解除机构来挂起一些死锁的进程</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>解除死锁</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/os/ch3.png" alt="OS—CH3"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1512,7 +1502,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1525,7 +1515,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
