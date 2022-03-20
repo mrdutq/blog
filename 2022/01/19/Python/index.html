@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/blogs/PythonFullCourse.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/blogs/PythonArray.png">
 <meta property="article:published_time" content="2022-01-19T06:57:21.808Z">
-<meta property="article:modified_time" content="2022-01-24T09:23:58.749Z">
+<meta property="article:modified_time" content="2022-02-11T07:48:32.342Z">
 <meta property="article:author" content="Jason">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-24 17:23:58" itemprop="dateModified" datetime="2022-01-24T17:23:58+08:00">2022-01-24</time>
+                <time title="修改时间：2022-02-11 15:48:32" itemprop="dateModified" datetime="2022-02-11T15:48:32+08:00">2022-02-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -627,7 +627,184 @@ vals <span class="token operator">=</span> array<span class="token punctuation">
 # vals &#x3D; array(&#39;u&#39;, [&#39;a&#39;,&#39;e&#39;,&#39;i&#39;])
 vals &#x3D; ayyay(&#39;i&#39;,[5,9,-8,4,2])
 # new array 
-newarr &#x3D; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+newarr &#x3D; array(vals.typecode,(a for a in vals))
+# newarr: typecode &#x3D; &#39;i&#39;, values: [5,9,-8,4,2]
+newarr1 &#x3D; array(vals.typecode,(a*a for a in vals))
+# newarr1: typecode &#x3D; &#39;i&#39;, values: [25,81,64,16,4]
+for e in newarr:
+    print(e)
+
+i &#x3D; 0
+while i &lt;len(newarr):
+    print(newarr[i])
+    i +&#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Array-Values-from-Users-in-Python"><a href="#Array-Values-from-Users-in-Python" class="headerlink" title="Array Values from Users in Python"></a>Array Values from Users in Python</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># we want to get an array, and we want to take the values from the user.</span>
+<span class="token comment"># 1st, we need to get an array</span>
+<span class="token keyword">from</span> array <span class="token keyword">import</span> <span class="token operator">*</span>
+arr <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token string">'i'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># 2nd, we want to add the values. we need to know the length of the array</span>
+n <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter the length of the array: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    x <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter the value: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    arr<span class="token punctuation">.</span>append<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+
+val <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter the value for search: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+k <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> e <span class="token keyword">in</span> arr<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> e <span class="token operator">==</span> val<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+    k <span class="token operator">+=</span> <span class="token number">1</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>index<span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># dimensional 一维的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Why-Numpy-Installing-Numpy-in-Pycharm"><a href="#Why-Numpy-Installing-Numpy-in-Pycharm" class="headerlink" title="Why Numpy? Installing Numpy in Pycharm"></a>Why Numpy? Installing Numpy in Pycharm</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># dimensional 一维的   </span>
+<span class="token comment"># multi-dimensional 多维的</span>
+
+<span class="token comment"># one dimensional array : 2 5 6 8 4</span>
+<span class="token comment"># two dimensional array(matrix): 2 5 6 8 4</span>
+<span class="token comment">#                                6 8 9 8 7 </span>
+<span class="token comment">#                                5 9 4 5 7</span>
+<span class="token comment">#                                3 2 5 7 4</span>
+<span class="token comment"># 安装numpy</span>
+<span class="token comment"># pip install numpy</span>
+<span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
+
+arr <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># print: [1,2,3,2,5,4]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<p>2月11号</p>
+<h3 id="Ways-of-Creating-Arrays-in-Numpy"><a href="#Ways-of-Creating-Arrays-in-Numpy" class="headerlink" title="Ways of Creating Arrays in Numpy"></a>Ways of Creating Arrays in Numpy</h3><ul>
+<li>六种创建数组的方法：<ul>
+<li>array()</li>
+<li>linspace()</li>
+<li>logspace()</li>
+<li>arange()</li>
+<li>zeros()</li>
+<li>ones()<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
+<span class="token comment"># array()</span>
+arr <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># 默认情况下不需要指定数据类型，函数会根据数据进行猜测数据类型。</span>
+<span class="token comment"># print: [1 2 3 4 5]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token builtin">type</span><span class="token punctuation">)</span>
+<span class="token comment"># print: int32</span>
+arr <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5.0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># print: [1. 2. 3. 4. 5.]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token builtin">type</span><span class="token punctuation">)</span>
+<span class="token comment"># print: float64</span>
+
+arr <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token builtin">float</span><span class="token punctuation">)</span>
+<span class="token comment"># print: [1. 2. 3. 4. 5.]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token builtin">type</span><span class="token punctuation">)</span>
+<span class="token comment"># print: float64</span>
+
+<span class="token comment"># linspace(start, stop, step),includ the stop element</span>
+<span class="token comment"># 在指定的间隔内返回均匀间隔的数字。 即创建等差数列</span>
+arr <span class="token operator">=</span> linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span>
+<span class="token comment"># 返回9个数字 位于[0,16]且等间距 </span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># print: [ 0.  2.  4.  6.  8. 10. 12. 14. 16.]</span>
+arr <span class="token operator">=</span> linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">)</span>
+<span class="token comment"># 返回16个数字 位于[0,15]且等间距</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># [ 0.  1.  2.  3.  4.  5.  6.  7.  8.  9. 10. 11. 12. 13. 14. 15.]</span>
+arr <span class="token operator">=</span> linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">)</span> <span class="token comment"># 不指定step 默认是50</span>
+<span class="token comment"># logspace() 创建等比数列</span>
+arr <span class="token operator">=</span> logspace<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># print: [1.00000000e+01 5.62341325e+10 3.16227766e+20 1.77827941e+30 1.00000000e+40]</span>
+
+<span class="token comment"># arange() 生成一个等差数组</span>
+<span class="token comment"># 1.只有一个参数的时候，默认从0开始到输入的参数，产生序列，步进为默认的1</span>
+<span class="token comment"># 2.有两个参数的时候，序列中的元素从第一个参数到第二个参数的区间产生，步进为默认的1</span>
+<span class="token comment"># 3.有三个参数的时候，序列中的元素从第一个参数到第二个参数的区间产生，步进为第三个参数，这里第三个参数可以是小数</span>
+arr <span class="token operator">=</span> arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">15</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment"># 从[1,15)生成一个等差数组，差距为2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># print: [1,3,5,7,9,11,13]</span>
+<span class="token comment"># zeros() 创建全零数组</span>
+arr <span class="token operator">=</span> zeros<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># print:[0. 0. 0. 0. 0.]</span>
+<span class="token comment"># ones() 创建全1数组</span>
+arr <span class="token operator">=</span> ones<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># print: [1. 1. 1. 1. 1.]</span>
+
+arr <span class="token operator">=</span> ones<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token comment"># print: [1 1 1 1 1]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Copying-an-Array-in-Python"><a href="#Copying-an-Array-in-Python" class="headerlink" title="Copying an Array in Python"></a>Copying an Array in Python</h3></li>
+</ul>
+</li>
+<li>how to create another array from the existing array*<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
+arr1 <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+arr2 <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+arr3 <span class="token operator">=</span> arr1 <span class="token operator">+</span> arr2 <span class="token comment"># add two arrays, this is also called as Vectorized Operation</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr3<span class="token punctuation">)</span>
+<span class="token comment"># print: [7,3,12,7,7]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sin<span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># sin() cos() log() sqrt() ...</span>
+<span class="token comment"># print: [ 0.84147098  0.90929743  0.14112001 -0.7568025  -0.95892427]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">sum</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># min() max() sort()</span>
+<span class="token comment"># print: 15</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">[</span>arr1<span class="token punctuation">,</span>arr2<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># print: [1,2,3,4,5,6,1,9,3,2]</span>
+
+<span class="token comment"># copy an array</span>
+<span class="token comment"># 1. you can use loop to copy the array</span>
+<span class="token comment"># 2. arr2 = arr1, 实际上是一个数组，两个名字</span>
+<span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
+arr1 <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+arr2 <span class="token operator">=</span> arr1
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span>
+<span class="token comment"># print: [2 6 8 1 3]</span>
+<span class="token comment">#        [2 6 8 1 3]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 2269899350640</span>
+<span class="token comment"># 2269899350640</span>
+<span class="token comment"># 说明arr1和arr2是同一个数组，只是不同的变量名</span>
+
+<span class="token comment"># 3. arr2 = arr1.view()，shallow copy </span>
+<span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
+arr1 <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+arr2 <span class="token operator">=</span> arr1<span class="token punctuation">.</span>view<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span>
+<span class="token comment"># print: [2 6 8 1 3]</span>
+<span class="token comment">#        [2 6 8 1 3]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>arr2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 1710914495088</span>
+<span class="token comment"># 1710914575216</span>
+
+<span class="token comment"># 4. arr2 = arr1.copy(), deep copy</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="Working-with-Matrix-in-Python"><a href="#Working-with-Matrix-in-Python" class="headerlink" title="Working with Matrix in Python"></a>Working with Matrix in Python</h3><p><em>多维数组</em></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
+
+arr1 <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span> 
+    <span class="token comment"># arr1.dtype: type of data; int32</span>
+    <span class="token comment"># arr1.ndim :维度 dimension; 2</span>
+    <span class="token comment"># arr1.shape: rows and columns; (2,3)</span>
+    <span class="token comment"># arr1.size: size of entire block; 6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
 
     </div>
@@ -712,7 +889,7 @@ newarr &#x3D; <span aria-hidden="true" class="line-numbers-rows"><span></span><s
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-conversion"><span class="nav-number">1.</span> <span class="nav-text">Decimal conversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-2-Variables-in-Python"><span class="nav-number">2.</span> <span class="nav-text">Swap 2 Variables in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-BitWise-Operators"><span class="nav-number">3.</span> <span class="nav-text">Python BitWise Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-Math-Functions-in-Python"><span class="nav-number">4.</span> <span class="nav-text">Import Math Functions in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-PyCharm"><span class="nav-number">5.</span> <span class="nav-text">Working with PyCharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-input-in-Python"><span class="nav-number">6.</span> <span class="nav-text">User input in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#If-Elif-Else-Statement-in-Python"><span class="nav-number">7.</span> <span class="nav-text">If Elif Else Statement in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#While-Loop-in-Python"><span class="nav-number">8.</span> <span class="nav-text">While Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Loop-in-Python"><span class="nav-number">9.</span> <span class="nav-text">For Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Break-Continue-Pass-in-Python"><span class="nav-number">10.</span> <span class="nav-text">Break Continue Pass in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Printing-Patterns-in-Python"><span class="nav-number">11.</span> <span class="nav-text">Printing Patterns in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Else-in-Python"><span class="nav-number">12.</span> <span class="nav-text">For Else in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prime-Number-in-Python"><span class="nav-number">13.</span> <span class="nav-text">Prime Number in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-in-Python"><span class="nav-number">14.</span> <span class="nav-text">Array in Python</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-conversion"><span class="nav-number">1.</span> <span class="nav-text">Decimal conversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-2-Variables-in-Python"><span class="nav-number">2.</span> <span class="nav-text">Swap 2 Variables in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-BitWise-Operators"><span class="nav-number">3.</span> <span class="nav-text">Python BitWise Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-Math-Functions-in-Python"><span class="nav-number">4.</span> <span class="nav-text">Import Math Functions in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-PyCharm"><span class="nav-number">5.</span> <span class="nav-text">Working with PyCharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-input-in-Python"><span class="nav-number">6.</span> <span class="nav-text">User input in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#If-Elif-Else-Statement-in-Python"><span class="nav-number">7.</span> <span class="nav-text">If Elif Else Statement in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#While-Loop-in-Python"><span class="nav-number">8.</span> <span class="nav-text">While Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Loop-in-Python"><span class="nav-number">9.</span> <span class="nav-text">For Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Break-Continue-Pass-in-Python"><span class="nav-number">10.</span> <span class="nav-text">Break Continue Pass in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Printing-Patterns-in-Python"><span class="nav-number">11.</span> <span class="nav-text">Printing Patterns in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Else-in-Python"><span class="nav-number">12.</span> <span class="nav-text">For Else in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prime-Number-in-Python"><span class="nav-number">13.</span> <span class="nav-text">Prime Number in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-in-Python"><span class="nav-number">14.</span> <span class="nav-text">Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-Values-from-Users-in-Python"><span class="nav-number">15.</span> <span class="nav-text">Array Values from Users in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Numpy-Installing-Numpy-in-Pycharm"><span class="nav-number">16.</span> <span class="nav-text">Why Numpy? Installing Numpy in Pycharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ways-of-Creating-Arrays-in-Numpy"><span class="nav-number">17.</span> <span class="nav-text">Ways of Creating Arrays in Numpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copying-an-Array-in-Python"><span class="nav-number">18.</span> <span class="nav-text">Copying an Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-Matrix-in-Python"><span class="nav-number">19.</span> <span class="nav-text">Working with Matrix in Python</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -726,7 +903,7 @@ newarr &#x3D; <span aria-hidden="true" class="line-numbers-rows"><span></span><s
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">42</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
