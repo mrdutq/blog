@@ -27,8 +27,8 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/blogs/PythonFullCourse.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/blogs/PythonArray.png">
-<meta property="article:published_time" content="2022-01-19T06:57:21.808Z">
-<meta property="article:modified_time" content="2022-02-11T07:48:32.342Z">
+<meta property="article:published_time" content="2022-01-19T06:57:21.800Z">
+<meta property="article:modified_time" content="2022-03-23T10:27:32.000Z">
 <meta property="article:author" content="Jason">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-02-11 15:48:32" itemprop="dateModified" datetime="2022-02-11T15:48:32+08:00">2022-02-11</time>
+                <time title="修改时间：2022-03-23 18:27:32" itemprop="dateModified" datetime="2022-03-23T18:27:32+08:00">2022-03-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -805,6 +805,302 @@ arr1 <span class="token operator">=</span> array<span class="token punctuation">
     <span class="token comment"># arr1.shape: rows and columns; (2,3)</span>
     <span class="token comment"># arr1.size: size of entire block; 6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="Function-in-Python"><a href="#Function-in-Python" class="headerlink" title="Function in Python"></a>Function in Python</h3><p>In this video we’ll talk about functions</p>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># First you need to define a function
+# Second you will be calling the function
+def greet():
+    print(&quot;Hello&quot;)
+    print(&quot;Good Morning&quot;)
+
+greet()
+# Hello
+# Good Morning
+
+def add(x,y)
+    c &#x3D; x+y
+    return c
+
+result &#x3D; add(5,4)
+print(result)
+# 9
+
+def add_sub(x,y):
+    c &#x3D; x+y
+    d &#x3D; x-y
+    return c,d
+result1,result2 &#x3D; add_sub(5,4)
+print(result1,result2)
+# 9 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Function-Arguments-in-Python"><a href="#Function-Arguments-in-Python" class="headerlink" title="Function Arguments in Python"></a>Function Arguments in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def update(x)
+    x &#x3D; 8
+    print(x)
+
+update(10)
+# 8
+
+def update(x)
+    x &#x3D; 8
+    print(&quot;x &quot;,x)
+
+a &#x3D; 10
+update(a)
+print(&quot;a &quot;,a)
+# x 8
+# a 10
+
+# everything in python is object.
+# Pass by value:
+#(creation of another container with the same value ---&gt; now we have 2 containers with the same value ----&gt; they are independent of each other, changing the value inside one container does not change the value inside the other container)
+# Value is passed, resulting in 2 separate locations in the memory storing the same value. Therefore, a change in the &#39;copied&#39; value will not affect the original value because they are inhabiting separate memory locations.
+
+# Pass by reference:
+# (there is no creation of a new container, this is just aliasing)
+# Pointing the function to the memory location of the data&#x2F;value you are passing. In other words, no copying of values are actually taking place. So there really is only one memory location storing one value. This is basically aliasing. So a change in one of the aliases will obviously affect the value of the other aliases because they are the same thing.
+
+# In Python:
+# When you pass a variable with its value into a function, if its value is not changed by the function, reference (physical location &#x2F; address on memory) is not changed. So at this point, there is no creation of a new memory (container). But as soon as the function changes the value of the argument, a new memory is created, so now you have 2 containers holding different values. But this is only for immutable (cannot be mutated&#x2F;modified&#x2F;changed) datatypes like integers and strings. But if you pass in a mutable datatype like a list into the function and change its value, since it is mutable, the data can be updated&#x2F;changed in-situ (without the creation of a new memory). This results in still just one memory location, but with an updated value stored in it.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Types-of-Arguments-in-Python"><a href="#Types-of-Arguments-in-Python" class="headerlink" title="Types of Arguments in Python"></a>Types of Arguments in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def person(name, age):
+    print(name)
+    print(age)
+
+person(&#39;navin&#39;,28)
+
+# navin
+# 28
+
+person(age&#x3D;28,name&#x3D;&#39;navin&#39;)
+# navin
+# 28
+
+def sum(a, *b):
+# *b means it can have multiple values
+    print(a)
+    print(b)
+sum(5,6,34,78)   
+# *b is a tuple
+# 5
+# (6,34,78)
+
+def sum(a, *b):
+    c &#x3D; a
+    
+    for i in b:
+        c &#x3D; c + i
+    print(c)
+
+sum(5,6,34,78)   
+# 123
+
+def sum(*b):
+    c &#x3D; 0
+    
+    for i in b:
+        c &#x3D; c + i
+    print(c)
+
+sum(5,6,34,78)  
+# 123 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Keyworded-Variable-Length-Arguments-in-Python"><a href="#Keyworded-Variable-Length-Arguments-in-Python" class="headerlink" title="Keyworded Variable Length Arguments in Python"></a>Keyworded Variable Length Arguments in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def person(name,**data):
+    # **data have double stars means your values have keywords
+    print(name)
+    print(data)
+
+person(&#39;navin&#39;,age&#x3D;28,city&#x3D;&#39;Mumbai&#39;,mob&#x3D;9865432)
+# navin
+# (&#39;age&#39;: 28, &#39;city&#39;:&#39;Mumbai&#39;,&#39;mob&#39;: 9865432)
+
+def person(name,**data):
+    print(name)
+    
+    for i,j in data.items():
+        print(i,j)
+
+person(&#39;navin&#39;,age&#x3D;28,city&#x3D;&#39;Mumbai&#39;,mob&#x3D;9865432)
+
+# navin
+# age 28
+# city Mumbai
+# mob 9865432<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Global-Keyword-in-Python-Global-vs-Local-variable"><a href="#Global-Keyword-in-Python-Global-vs-Local-variable" class="headerlink" title="Global Keyword in Python | Global vs Local variable"></a>Global Keyword in Python | Global vs Local variable</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">a &#x3D; 10
+def something():
+    a &#x3D; 15
+    print(&quot;in function&quot;,a)
+    # Local variable
+    # Local to the function
+    b &#x3D; 8
+    # this means you cannot use b out of the function
+
+something()
+print(&quot;outside&quot;,a)
+# Global variable
+
+# in function 15
+# outside 10
+
+# if there is not a in the function something(), in function a is 10
+
+# if i want to make the in function &#39;a&#39; to be global variable, i need to use keyword &#39;global&#39;
+a &#x3D; 10
+def something():
+    global a
+    a &#x3D; 15
+    print(&quot;in fun&quot;, a)
+something()
+print(&quot;outside&quot;, a)
+# in fun 15
+# outside 15
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Pass-List-to-a-Function-in-Python"><a href="#Pass-List-to-a-Function-in-Python" class="headerlink" title="Pass List to a Function in Python"></a>Pass List to a Function in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def count(lst):
+    even &#x3D; 0
+    odd &#x3D; 0
+
+    for i in lst:
+        if i%2 &#x3D;&#x3D; 0
+            even +&#x3D; 1
+        else:
+            odd +&#x3D; 1
+    return even,odd
+lst &#x3D; [20,25,14,19,16,24,28,47,26]
+# imagine this values are coming from user
+
+even, odd &#x3D; count(lst),
+# 偶数、奇数
+print(&quot;Even : &#123;&#125; and Odd: &#123;&#125;&quot;.format(even,odd))
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Object-Oriented-Programming-Introduction"><a href="#Object-Oriented-Programming-Introduction" class="headerlink" title="Object Oriented Programming | Introduction"></a>Object Oriented Programming | Introduction</h3><p><em>Python supports all different programming paradigm(模式、范例)</em><br>it supports functional programming<br>it supports object oriented programming<br>it also works with procedure oriented programming</p>
+<h4 id="procedure-oriented-programming"><a href="#procedure-oriented-programming" class="headerlink" title="procedure oriented programming"></a>procedure oriented programming</h4><p>whenever you work with Python we define functions.<br>we’ve qualification functino from a function. so if you<br>want to create a software you will break down your project into small small part and those modules small modules will be functions.</p>
+<h4 id="functional-programming"><a href="#functional-programming" class="headerlink" title="functional programming"></a>functional programming</h4><p>functional programming means if you can achieve a certain task implementing functions as ourmathematical functions where you will not manipulate a data which is instead of changing data you will accomplish a task. one of the way is you can pass a function to a function.</p>
+<h4 id="OOPs-Object-priented-programming"><a href="#OOPs-Object-priented-programming" class="headerlink" title="OOPs: Object priented programming"></a>OOPs: Object priented programming</h4><p>what is object and why it’s important.</p>
+<p>in real world, everything is object. every object will have certain attributes(属性) and object will have certain behavior(行为、动作).<br>object will have something that you can store(存储) data and object will have some behavior.<br>if you want to store something object we need to define variables. if you want to define the behavior we need to use methods.<br>what is method?<br>we have done it functions so functions in object-oriented programming they are called as methods.</p>
+<p>Class(类)\Object(对象)\Encapsulation(封装)\Abstraction(抽象)\Polymorphism(多态性)\manufactured(虚构的、被制造的)<br>object has been designed once and then they have manufactured multiple times and that design in programming or in OOPs we say Class. So in that Class you will write a design of the object.<br>So you have to provide a design so that you will get the object so that means Class is a design and objects there are real stuff. entities(实体)\instance(实例)<br><em>Object is an instance of a Class.</em><br>Class-Design<br>Object-Instance</p>
+<h3 id="Class-and-Object"><a href="#Class-and-Object" class="headerlink" title="Class and Object"></a>Class and Object</h3><p>before creating an object you need to create a class. because class is a design for the object and if you don’t have a design how can you build something.<br>in fact even before building a tower you need to create a blueprint of it. that’s the same case here so if you want an object you need to create a class.</p>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">class Computer:
+    # Attributes--&gt; Variables
+    # Behavior--&gt;Methods(Functions)
+    def config(self):
+        print(&quot;i5,16GB,1TB&quot;)
+
+com1 &#x3D; Computer()
+print(type(com1))
+# &lt;class &#39;__main__.Computer&#39;&gt;
+com2 &#x3D; Computer()
+Computer.config(com1)
+# i5,16GB,1TB
+Computer.config(com2)
+# i5,16GB,1TB
+com1.config()
+# i5,16GB,1TB
+com2.config()
+# i5,16GB,1TB
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="init-method"><a href="#init-method" class="headerlink" title="init method"></a><strong>init</strong> method</h3><p>variable(变量)</p>
+<p>Special variables:<strong>name</strong><br>Special method: <strong>init</strong></p>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">class Computer:
+    def __init__(self):
+        print(&quot;in init&quot;)
+    def config(self):
+        print(&quot;i5,16GB,1TB&quot;)
+
+com1 &#x3D; Computer()
+# in init
+com2 &#x3D; Computer()
+# in init
+com1.config()
+# i5,16GB,1TB
+com2.config()
+# i5,16GB,1TB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">class Computer:
+    def __init__(self,CPU,RAM):
+        self.CPU &#x3D; CPU
+        self.RAM &#x3D; RAM
+    def config(self):
+        print(&quot;Config is &quot;,self.CPU, self.RAM)
+
+com1 &#x3D; Computer(&#39;i5&#39;,16)
+
+com2 &#x3D; Computer(&#39;AMD&#39;,8)
+
+com1.config()
+# Config is  i5 16
+com2.config()
+# Config is  AMD 8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Types-of-Variables"><a href="#Types-of-Variables" class="headerlink" title="Types of Variables"></a>Types of Variables</h3><ul>
+<li>Class variables</li>
+<li>Instance Variables</li>
+</ul>
+<p>if you want to have a variable which will affect all other objects. Example the number of wheels in a car is 4, by default is 4. But what if future you got a new concept and they’re saying now this time we’ll have six tires or six wheels. In this case, what you will do is you will define a variable outside in it. Because if you create all if we define the cariable inside in it, it becomes an instance variable, if we define a variable outside in it and inside a class of course it becomes a class variable.</p>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"> class Car:
+    wheels &#x3D; 4
+    def __init__(self):
+        self.mil &#x3D; 10
+        self.com &#x3D; &quot;BMW&quot;
+
+c1 &#x3D; Car()
+c2 &#x3D; Car()
+
+print(c1.com,c1.mil,c1.wheels)
+print(c2.com,c2.mil,c2.wheels)
+
+# Class variables : wheels &#x3D; 4
+# Instance variables: __init__ 
+#                   : mil &#x3D; 10
+#                   : com &#x3D; BMW
+
+# namespace is an area where you create and store object&#x2F;variable
+# -Class namespace
+# -Object&#x2F;Instance namespace<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Types-of-Methods"><a href="#Types-of-Methods" class="headerlink" title="Types of Methods"></a>Types of Methods</h3><ul>
+<li>Instance Methods</li>
+<li>Class Methods</li>
+<li>Static Methods</li>
+</ul>
+<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">class Student:
+
+    school &#x3D; &#39;Telusko&#39;
+
+    def __init__(self,m1,m2,m3):
+        self.m1 &#x3D; m1
+        self.m2 &#x3D; m2
+        self.m3 &#x3D; m3
+
+    def avg(self):
+        return(self.m1 + self.m2 + self.m3)&#x2F;3
+
+    def get_m1(self):
+        return self.m1
+
+    def set_m1(self,value):
+        self.m1 &#x3D; value
+    @classmethod
+    def getSchool(cls):
+        return cls.school
+    @staticmethod
+    def info():
+        print(&quot;This is Student class.. in abc molude&quot;)
+
+s1 &#x3D; Student(34,47,32)
+s2 &#x3D; Student(89,32,12)
+
+print(s1.avg())
+print(Student.getSchool())
+
+Student.info()
+
+# 37.666666666666664
+# Telusko
+# This is Student class.. in abc molude
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
 
     </div>
@@ -828,8 +1124,8 @@ arr1 <span class="token operator">=</span> array<span class="token punctuation">
       <i class="fa fa-chevron-left"></i> 多难兴邦
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2022/01/17/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89%E5%92%8C%E5%8F%AF%E8%A1%8C%E6%80%A7%E7%A0%94%E7%A9%B6-%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90/" rel="next" title="软件工程-问题定义和可行性研究+结构化分析">
-      软件工程-问题定义和可行性研究+结构化分析 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2022/01/17/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82/" rel="next" title="软件工程-软件需求">
+      软件工程-软件需求 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -889,7 +1185,7 @@ arr1 <span class="token operator">=</span> array<span class="token punctuation">
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-conversion"><span class="nav-number">1.</span> <span class="nav-text">Decimal conversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-2-Variables-in-Python"><span class="nav-number">2.</span> <span class="nav-text">Swap 2 Variables in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-BitWise-Operators"><span class="nav-number">3.</span> <span class="nav-text">Python BitWise Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-Math-Functions-in-Python"><span class="nav-number">4.</span> <span class="nav-text">Import Math Functions in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-PyCharm"><span class="nav-number">5.</span> <span class="nav-text">Working with PyCharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-input-in-Python"><span class="nav-number">6.</span> <span class="nav-text">User input in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#If-Elif-Else-Statement-in-Python"><span class="nav-number">7.</span> <span class="nav-text">If Elif Else Statement in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#While-Loop-in-Python"><span class="nav-number">8.</span> <span class="nav-text">While Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Loop-in-Python"><span class="nav-number">9.</span> <span class="nav-text">For Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Break-Continue-Pass-in-Python"><span class="nav-number">10.</span> <span class="nav-text">Break Continue Pass in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Printing-Patterns-in-Python"><span class="nav-number">11.</span> <span class="nav-text">Printing Patterns in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Else-in-Python"><span class="nav-number">12.</span> <span class="nav-text">For Else in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prime-Number-in-Python"><span class="nav-number">13.</span> <span class="nav-text">Prime Number in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-in-Python"><span class="nav-number">14.</span> <span class="nav-text">Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-Values-from-Users-in-Python"><span class="nav-number">15.</span> <span class="nav-text">Array Values from Users in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Numpy-Installing-Numpy-in-Pycharm"><span class="nav-number">16.</span> <span class="nav-text">Why Numpy? Installing Numpy in Pycharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ways-of-Creating-Arrays-in-Numpy"><span class="nav-number">17.</span> <span class="nav-text">Ways of Creating Arrays in Numpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copying-an-Array-in-Python"><span class="nav-number">18.</span> <span class="nav-text">Copying an Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-Matrix-in-Python"><span class="nav-number">19.</span> <span class="nav-text">Working with Matrix in Python</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-conversion"><span class="nav-number">1.</span> <span class="nav-text">Decimal conversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-2-Variables-in-Python"><span class="nav-number">2.</span> <span class="nav-text">Swap 2 Variables in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-BitWise-Operators"><span class="nav-number">3.</span> <span class="nav-text">Python BitWise Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-Math-Functions-in-Python"><span class="nav-number">4.</span> <span class="nav-text">Import Math Functions in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-PyCharm"><span class="nav-number">5.</span> <span class="nav-text">Working with PyCharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-input-in-Python"><span class="nav-number">6.</span> <span class="nav-text">User input in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#If-Elif-Else-Statement-in-Python"><span class="nav-number">7.</span> <span class="nav-text">If Elif Else Statement in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#While-Loop-in-Python"><span class="nav-number">8.</span> <span class="nav-text">While Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Loop-in-Python"><span class="nav-number">9.</span> <span class="nav-text">For Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Break-Continue-Pass-in-Python"><span class="nav-number">10.</span> <span class="nav-text">Break Continue Pass in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Printing-Patterns-in-Python"><span class="nav-number">11.</span> <span class="nav-text">Printing Patterns in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Else-in-Python"><span class="nav-number">12.</span> <span class="nav-text">For Else in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prime-Number-in-Python"><span class="nav-number">13.</span> <span class="nav-text">Prime Number in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-in-Python"><span class="nav-number">14.</span> <span class="nav-text">Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-Values-from-Users-in-Python"><span class="nav-number">15.</span> <span class="nav-text">Array Values from Users in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Numpy-Installing-Numpy-in-Pycharm"><span class="nav-number">16.</span> <span class="nav-text">Why Numpy? Installing Numpy in Pycharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ways-of-Creating-Arrays-in-Numpy"><span class="nav-number">17.</span> <span class="nav-text">Ways of Creating Arrays in Numpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copying-an-Array-in-Python"><span class="nav-number">18.</span> <span class="nav-text">Copying an Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-Matrix-in-Python"><span class="nav-number">19.</span> <span class="nav-text">Working with Matrix in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-in-Python"><span class="nav-number">20.</span> <span class="nav-text">Function in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-Arguments-in-Python"><span class="nav-number">21.</span> <span class="nav-text">Function Arguments in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Arguments-in-Python"><span class="nav-number">22.</span> <span class="nav-text">Types of Arguments in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keyworded-Variable-Length-Arguments-in-Python"><span class="nav-number">23.</span> <span class="nav-text">Keyworded Variable Length Arguments in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Global-Keyword-in-Python-Global-vs-Local-variable"><span class="nav-number">24.</span> <span class="nav-text">Global Keyword in Python | Global vs Local variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-List-to-a-Function-in-Python"><span class="nav-number">25.</span> <span class="nav-text">Pass List to a Function in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Oriented-Programming-Introduction"><span class="nav-number">26.</span> <span class="nav-text">Object Oriented Programming | Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#procedure-oriented-programming"><span class="nav-number">26.1.</span> <span class="nav-text">procedure oriented programming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#functional-programming"><span class="nav-number">26.2.</span> <span class="nav-text">functional programming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OOPs-Object-priented-programming"><span class="nav-number">26.3.</span> <span class="nav-text">OOPs: Object priented programming</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-and-Object"><span class="nav-number">27.</span> <span class="nav-text">Class and Object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init-method"><span class="nav-number">28.</span> <span class="nav-text">init method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Variables"><span class="nav-number">29.</span> <span class="nav-text">Types of Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Methods"><span class="nav-number">30.</span> <span class="nav-text">Types of Methods</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -903,7 +1199,7 @@ arr1 <span class="token operator">=</span> array<span class="token punctuation">
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

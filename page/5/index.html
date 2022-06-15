@@ -166,6 +166,185 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%A8%8B%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Jason">
+      <meta itemprop="description" content="立心 立命 继绝学 开太平">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/blog/2022/01/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E7%A8%8B%E5%BA%8F/" class="post-title-link" itemprop="url">汇编语言_程序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-25 23:07:52" itemprop="dateModified" datetime="2020-10-25T23:07:52+08:00">2020-10-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">汇编语言</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+<!-- 自定义，用于添加摘要图片，文章中不显示。文章开头添加 summary_img: 链接 即可 -->
+      
+<!-- 自定义结束 -->
+          <h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><h2 id="一个源程序从写出到执行的过程"><a href="#一个源程序从写出到执行的过程" class="headerlink" title="一个源程序从写出到执行的过程"></a>一个源程序从写出到执行的过程</h2><ul>
+<li>编写</li>
+<li>编译连接<ul>
+<li>使用汇编语言编译程序（MASM.EXE）对源程序文件中的源程序进行编译，产生目标文件(.obj)</li>
+<li>再用连接程序（LINK.EXE）对目标文件进行连接，生成可在操作系统中直接运行的可执行文件(.exe)。</li>
+</ul>
+</li>
+<li>执行（可执行文件）<ul>
+<li>程序（从原程序中的汇编指令翻译过来的机器码）和数据（源程序中定义的数据）。</li>
+<li>相关的描述信息（如：程序有多大、要占多少内存空间等）</li>
+</ul>
+</li>
+</ul>
+<h2 id="源程序"><a href="#源程序" class="headerlink" title="源程序"></a>源程序</h2><ul>
+<li>汇编指令</li>
+<li>伪指令<ul>
+<li>没有对应的机器码的指令，最终不被CPU所执行</li>
+<li>伪指令由编译器来执行的指令，编译器根据伪指令来进行相关的编译工作。</li>
+<li>segment和ends是一对成对使用的伪指令，这是在写可被编译器编译的汇编程序时，必须要用到的一对伪指令。</li>
+<li>segment和ends的功能是定义一个段，segment说明一个段的开始，ends说明一个段的结束。</li>
+<li>一个段必须有一个名称来标识，使用格式为：<ul>
+<li>段名 segment</li>
+<li>段名 ends</li>
+</ul>
+</li>
+<li>一个汇编程序由多个段组成，这些段被用来存放代码、数据或当作栈空间来使用。</li>
+<li>一个有意义的汇编程序中至少要有一个段，这个段用来存放代码。</li>
+</ul>
+</li>
+<li>end是一个汇编程序的结束标记，编译器在编译汇编程序的过程中，如果碰倒了伪指令end，就结束对源程序的编译。<ul>
+<li>程序写完必须要写end</li>
+</ul>
+</li>
+<li>end是结束，ends是段的结束（end_segment）</li>
+<li>assume：含义为“假设”<ul>
+<li>假设某一段寄存器和程序中的某一个用segment…ends定义的段相关联。</li>
+<li>通过assume说明这种关联，在需要的情况下，编译程序可以将段寄存器和某一个具体的段相联系。</li>
+<li>语句：assume CS:codesg –&gt; 假设CS（代码段）名称为codesg（code_segment）</li>
+</ul>
+</li>
+<li>源程序中的程序<ul>
+<li>汇编源程序：<ul>
+<li>伪指令（编译器处理）</li>
+<li>汇编指令（编译为机器码）</li>
+</ul>
+</li>
+<li>注意：<ul>
+<li>我们可以将源程序文件中的所有内容称为源程序，将源程序中最终由计算机执行处理的指令或数据，称为程序。</li>
+<li>程序最先以汇编指令的形式存在源程序中，经编译、连接后转变为机器码。存储在可执行文件中。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>标号<ul>
+<li>一个标号只带了一个地址。</li>
+<li>codesg：放在segment的前面，作为一个段的名称，这个段的名称最终将被编译、连接程序处理为一个段的段地址。</li>
+</ul>
+</li>
+</ul>
+<h2 id="编译和连接"><a href="#编译和连接" class="headerlink" title="编译和连接"></a>编译和连接</h2><ul>
+<li>连接的作用：<ul>
+<li>当源程序很大时，可以将它分为多个源程序文件来编译，每个源程序编译成为目标文件后，再用连接程序将它们连接到一起，生成一个可执行文件。</li>
+<li>程序中调用了某个库文件中的子程序，需要将这个库文件和该程序生成的目标文件连接到一起，生成一个可执行文件；</li>
+<li>一个源程序编译后，得到了存有机器码的目标文件，目标文件中的有些内容还不能直接用来生成可执行文件，连接程序将这些内容处理为最终的可执行信息。所以，在只有一个源程序文件，而又不需要调用某个库中的子程序的情况下，也必须用连接程序对目标文件进行处理，生成可执行文件。</li>
+<li>对于连接的过程，可执行文件是我们要得到的最终结果。</li>
+</ul>
+</li>
+<li>学习汇编的目的是通过汇编语言进行编程而深入地理解计算机底层的基本工作机理，达到可以随心所欲地控制计算机的目的。</li>
+<li>编辑器（edit）、编译器（masm）、连接器（link）、调试工具（debug）等所有工具，而这些工具都是在操作系统之上运行的程序，所以我们的学习过程必须建立在操作系统的环境中进行。</li>
+</ul>
+<h2 id="可执行文件中的程序装入内存并运行的原理"><a href="#可执行文件中的程序装入内存并运行的原理" class="headerlink" title="可执行文件中的程序装入内存并运行的原理"></a>可执行文件中的程序装入内存并运行的原理</h2><ul>
+<li>汇编程序从写出到执行的过程：<ul>
+<li>编程(edit)–&gt;1.asm–&gt;编译(masm)–&gt;1.obj–&gt;连接(link)–&gt;1.exe–&gt;加载(command)–&gt;内存中的程序–&gt;运行(CPU)</li>
+</ul>
+</li>
+</ul>
+<h2 id="程序执行过程的跟踪"><a href="#程序执行过程的跟踪" class="headerlink" title="程序执行过程的跟踪"></a>程序执行过程的跟踪</h2><ul>
+<li>Debug</li>
+<li>Debug可以将程序加载入内存，设置CS:IP指向程序的入口，但Debug并不放弃对CPU的控制，这样，我们就可以使用Debug的相关命令来单步执行程序，查看每条指令的执行结果。</li>
+<li>-r 可以查看各个寄存器的设置情况.</li>
+<li>-u 可以查看其他指令。</li>
+<li>-t 单步执行程序中的每一条指令，并观察每条指令的执行结果。</li>
+<li>到了int 21，我们要用-p命令执行：<ul>
+<li>int 21执行后，显示“Program terminated normally”，返回到debug中。表示程序正常结束。</li>
+</ul>
+</li>
+<li>Debug将程序从可执行文件加载入内存后，CX中存放的是和程序的长度。</li>
+<li>EXE文件中的程序的加载过程<ul>
+<li>总结<ul>
+<li>程序加载后，DS中存放着程序所在内存区的段地址，这个内存区的偏移地址为0，则程序所在的内存区的地址为：DS:0;</li>
+<li>这个内存区的前256个字节中存放的是PSP，DOS用来和程序进行通信。</li>
+<li>从256个字节处向后的空间存放的是程序。</li>
+<li>所以，我们从DS中可以得到PSP的段地址SA，PSP的偏移地址为0，则物理地址为SA×16+0</li>
+<li>因为PSP占256（100H）个字节，所以程序的物理地址是：<ul>
+<li>SA×16+0+256=SA×16+16×16=（SA+16）×16+0</li>
+<li>可用段地址和偏移地址表示为:SA+10:0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%88CPU%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -197,7 +376,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-21 15:55:54" itemprop="dateModified" datetime="2020-10-21T15:55:54+08:00">2020-10-21</time>
+                <time title="修改时间：2020-10-21 15:55:56" itemprop="dateModified" datetime="2020-10-21T15:55:56+08:00">2020-10-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -440,7 +619,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-20 21:36:19" itemprop="dateModified" datetime="2020-10-20T21:36:19+08:00">2020-10-20</time>
+                <time title="修改时间：2020-10-20 21:36:20" itemprop="dateModified" datetime="2020-10-20T21:36:20+08:00">2020-10-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -600,91 +779,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%B3%BB%E7%BB%9F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-      <meta itemprop="name" content="Jason">
-      <meta itemprop="description" content="立心 立命 继绝学 开太平">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Jason's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">机场运营管理_民用航空系统</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-17 18:56:41" itemprop="dateCreated datePublished" datetime="2022-01-17T18:56:41+08:00">2022-01-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-20 21:35:08" itemprop="dateModified" datetime="2020-10-20T21:35:08+08:00">2020-10-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">机场运营管理</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-<!-- 自定义，用于添加摘要图片，文章中不显示。文章开头添加 summary_img: 链接 即可 -->
-      
-<!-- 自定义结束 -->
-          <h1 id="第1章-民用航空系统"><a href="#第1章-民用航空系统" class="headerlink" title="第1章 民用航空系统"></a>第1章 民用航空系统</h1><p>==1944年 《芝加哥公约》==<br>==1947年 成立国际民航组织(ICAO)==</p>
-<h2 id="民用航空的概念"><a href="#民用航空的概念" class="headerlink" title="民用航空的概念"></a>民用航空的概念</h2><p>==民用航空==是指使用各类航空器从事除了军事性质（包括国防警察和海关）以外的所有的航空活动。<br>1919年==《巴黎公约》==是世界上第一部国家间的航空法。</p>
-<h2 id="商业航空"><a href="#商业航空" class="headerlink" title="商业航空"></a>商业航空</h2><p>==商业航空==也称为航空运输，是指以航空器进行经营性的客货运输的航空活动。它的经营性表明这是一种商业活动，以营利为目的。它又是运­输活动，这种航空活动是交通运输的一个组成部分，与铁路、公路、水路和管道运输共同组成了国家的交通运输系统。</p>
-<h2 id="民用航空系统的构成"><a href="#民用航空系统的构成" class="headerlink" title="民用航空系统的构成"></a>民用航空系统的构成</h2><p>政府部门、民航企业、民航机场.</p>
-<h2 id="机场的主要功能"><a href="#机场的主要功能" class="headerlink" title="机场的主要功能"></a>机场的主要功能</h2><p>1.保证飞机安全及时起飞和降落。<br>2.安排旅客和货物准时、舒适地上下飞机.<br>3.提供方便快捷的地面交通连接市区。</p>
-<h2 id="机场的分类"><a href="#机场的分类" class="headerlink" title="机场的分类"></a>机场的分类</h2><p>① 按服务对象划分：军用机场、民用机场、军民合用机场</p>
-<p>② 按航线性质划分：国际航线机场（国际机场）、国内航线机场</p>
-<p>③ 按机场在民航运输网络系统中所起作用划分：枢纽机场、干线机场、支线机场</p>
-<p>④ 我国机场的分类：大型枢纽机场、中型枢纽机场、一航干线机场、支线机场</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E8%88%AA%E7%AB%99%E5%8C%BA%E7%9A%84%E8%BF%90%E8%90%A5-%E6%9C%BA%E5%9C%BA%E8%B4%A7%E8%BF%90%E7%BB%8F%E8%90%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -716,7 +810,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-10-21 22:08:33" itemprop="dateModified" datetime="2020-10-21T22:08:33+08:00">2020-10-21</time>
+                <time title="修改时间：2020-10-21 22:08:34" itemprop="dateModified" datetime="2020-10-21T22:08:34+08:00">2020-10-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -837,7 +931,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F/">
+    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%B3%BB%E7%BB%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/avatar.gif">
@@ -851,7 +945,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">机场运营管理-机场系统</a>
+            <a href="/blog/2022/01/17/%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86-%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">机场运营管理_民用航空系统</a>
         </h2>
 
         <div class="post-meta">
@@ -868,7 +962,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-18 20:51:10" itemprop="dateModified" datetime="2022-01-18T20:51:10+08:00">2022-01-18</time>
+                <time title="修改时间：2020-10-20 21:35:10" itemprop="dateModified" datetime="2020-10-20T21:35:10+08:00">2020-10-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -894,28 +988,15 @@
 <!-- 自定义，用于添加摘要图片，文章中不显示。文章开头添加 summary_img: 链接 即可 -->
       
 <!-- 自定义结束 -->
-          <h1 id="第2章-机场系统"><a href="#第2章-机场系统" class="headerlink" title="第2章 机场系统"></a>第2章 机场系统</h1><h2 id="机场系统的构成"><a href="#机场系统的构成" class="headerlink" title="机场系统的构成"></a>机场系统的构成</h2><blockquote>
-<p>机场系统也可以分为空域和地域两部分。</p>
-</blockquote>
-<p> <img src="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/airport-manage/%E6%9C%BA%E5%9C%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%84%E6%88%90.jpg" alt="机场系统构成"></p>
-<h2 id="跑道"><a href="#跑道" class="headerlink" title="跑道"></a>跑道</h2><blockquote>
-<p>机场的构型主要取决于跑道的数目、方位以及跑道与航站区的相对位置。<br>跑道方位主要与当地风向有关。</p>
-</blockquote>
-<h3 id="跑道的长度"><a href="#跑道的长度" class="headerlink" title="跑道的长度"></a>跑道的长度</h3><blockquote>
-<p>设计跑道的长度主要是依据预计使用该机场飞机的起降特性(特别是要求跑道最长的那种机型的构型和性能特点)。<br>此外跑道长度还与下列因素有关：飞机起降质量与速度（飞机起飞或降落质量越大，离地速度或接地速度越大，滑跑距离就越长），跑道条件（如表面状况，湿度和纵向坡度等），机场所在环境（如机场的标高和地形），气象条件（特别是地面风力、风向和气温等），当海拔高度高，空气稀薄，地面温度高时，发动机的功率就会下降，因而都需要加长跑道。</p>
-</blockquote>
-<h2 id="停机坪"><a href="#停机坪" class="headerlink" title="停机坪"></a>停机坪</h2><blockquote>
-<p>停机坪也叫机坪，是飞机停放和旅客登机的地方。<br>机坪分为停放机坪和登机机坪。</p>
-</blockquote>
-<h2 id="飞行区的设施"><a href="#飞行区的设施" class="headerlink" title="飞行区的设施"></a>飞行区的设施</h2><h3 id="航站导航设施"><a href="#航站导航设施" class="headerlink" title="航站导航设施"></a>航站导航设施</h3><h4 id="仪表着陆系统（ILS）"><a href="#仪表着陆系统（ILS）" class="headerlink" title="仪表着陆系统（ILS）"></a>仪表着陆系统（ILS）</h4><blockquote>
-<p>仪表着陆系统按着陆的最小能见度分为3类。现在使用的标准仪表着陆系统为Ⅰ类。<br>Ⅰ类可以在跑道目视视程550米或能见度800米以上、决断高度60米以上时使用。<br>Ⅱ类仪表着陆系统可在跑道视程为350米、决断高度为30米以上的情况使用。<br>Ⅲ类仪表着陆系统没有决断高度限制，但是根据跑道目视视程不同又分为三个类别：<br>Ⅲa类对应视程为200米，Ⅲb类为50米，Ⅲc类则可在视程为0的情况下使用。</p>
-</blockquote>
-<h3 id="机场地面灯光系统"><a href="#机场地面灯光系统" class="headerlink" title="机场地面灯光系统"></a>机场地面灯光系统</h3><h4 id="跑道灯光"><a href="#跑道灯光" class="headerlink" title="跑道灯光"></a>跑道灯光</h4><blockquote>
-<p>驾驶员着陆时看到近处的跑道端是绿色灯光，远处的跑道端是红色灯光。</p>
-</blockquote>
-<h2 id="出入机场地面交通系统"><a href="#出入机场地面交通系统" class="headerlink" title="出入机场地面交通系统"></a>出入机场地面交通系统</h2><blockquote>
-<p>中大型运输机的巡航速度一般都在900KM/H左右，因而，国内航线的乘机时间都在1~3H之内。</p>
-</blockquote>
+          <h1 id="第1章-民用航空系统"><a href="#第1章-民用航空系统" class="headerlink" title="第1章 民用航空系统"></a>第1章 民用航空系统</h1><p>==1944年 《芝加哥公约》==<br>==1947年 成立国际民航组织(ICAO)==</p>
+<h2 id="民用航空的概念"><a href="#民用航空的概念" class="headerlink" title="民用航空的概念"></a>民用航空的概念</h2><p>==民用航空==是指使用各类航空器从事除了军事性质（包括国防警察和海关）以外的所有的航空活动。<br>1919年==《巴黎公约》==是世界上第一部国家间的航空法。</p>
+<h2 id="商业航空"><a href="#商业航空" class="headerlink" title="商业航空"></a>商业航空</h2><p>==商业航空==也称为航空运输，是指以航空器进行经营性的客货运输的航空活动。它的经营性表明这是一种商业活动，以营利为目的。它又是运­输活动，这种航空活动是交通运输的一个组成部分，与铁路、公路、水路和管道运输共同组成了国家的交通运输系统。</p>
+<h2 id="民用航空系统的构成"><a href="#民用航空系统的构成" class="headerlink" title="民用航空系统的构成"></a>民用航空系统的构成</h2><p>政府部门、民航企业、民航机场.</p>
+<h2 id="机场的主要功能"><a href="#机场的主要功能" class="headerlink" title="机场的主要功能"></a>机场的主要功能</h2><p>1.保证飞机安全及时起飞和降落。<br>2.安排旅客和货物准时、舒适地上下飞机.<br>3.提供方便快捷的地面交通连接市区。</p>
+<h2 id="机场的分类"><a href="#机场的分类" class="headerlink" title="机场的分类"></a>机场的分类</h2><p>① 按服务对象划分：军用机场、民用机场、军民合用机场</p>
+<p>② 按航线性质划分：国际航线机场（国际机场）、国内航线机场</p>
+<p>③ 按机场在民航运输网络系统中所起作用划分：枢纽机场、干线机场、支线机场</p>
+<p>④ 我国机场的分类：大型枢纽机场、中型枢纽机场、一航干线机场、支线机场</p>
 
       
     </div>
@@ -1000,7 +1081,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">44</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
