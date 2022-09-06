@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mrdutq.github.io","root":"/blog/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="概率论学习——第一章">
+<meta property="og:url" content="https://mrdutq.github.io/blog/2022/09/02/%E6%A6%82%E7%8E%87%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Jason&#39;s blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://i1.hdslb.com/bfs/archive/0ccbc2307d31f9fe6d0877ac025a729333823ed8.jpg@640w_400h_1c.webp">
+<meta property="article:published_time" content="2022-09-02T06:09:27.578Z">
+<meta property="article:modified_time" content="2022-09-06T08:53:01.952Z">
+<meta property="article:author" content="Jason">
+<meta property="article:tag" content="概率论">
+<meta property="article:tag" content="数理统计">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://i1.hdslb.com/bfs/archive/0ccbc2307d31f9fe6d0877ac025a729333823ed8.jpg@640w_400h_1c.webp">
+
+<link rel="canonical" href="https://mrdutq.github.io/blog/2022/09/02/%E6%A6%82%E7%8E%87%E8%AE%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>概率论学习——第一章 | Jason's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Jason's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/mrdutq" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://mrdutq.github.io/blog/2022/09/02/%E6%A6%82%E7%8E%87%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="name" content="Jason">
+      <meta itemprop="description" content="立心 立命 继绝学 开太平">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jason's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          概率论学习——第一章
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-09-02 14:09:27" itemprop="dateCreated datePublished" datetime="2022-09-02T14:09:27+08:00">2022-09-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-06 16:53:01" itemprop="dateModified" datetime="2022-09-06T16:53:01+08:00">2022-09-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%A6%82%E7%8E%87%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">概率论</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="http://i1.hdslb.com/bfs/archive/0ccbc2307d31f9fe6d0877ac025a729333823ed8.jpg@640w_400h_1c.webp" alt="封面"></p>
+<span id="more"></span>
+
+<h1 id="1-1-引言"><a href="#1-1-引言" class="headerlink" title="1.1 引言"></a>1.1 引言</h1><ul>
+<li>确定性（必然）：一定发生（一定不发生）</li>
+<li>随机性（偶然）：可能发生（可能不发生）</li>
+</ul>
+<h2 id="1-1-1-随机试验与随机事件"><a href="#1-1-1-随机试验与随机事件" class="headerlink" title="1.1.1 随机试验与随机事件"></a>1.1.1 随机试验与随机事件</h2><ul>
+<li><strong>试验</strong>：观察、测量实验</li>
+<li><strong>随机试验</strong>：①在相同条件下可以重复（可重复性）。②结果不止一个。③试验结果无法预测。</li>
+</ul>
+<p>随机试验用<strong>E</strong>表示</p>
+<p>事件：试验的每种结果。</p>
+<p>随机事件：试验可能发生的结果。</p>
+<p>基本事件：相对于实验目的来说事件不能（不必）再分。</p>
+<p>复合事件：由基本事件复合而成。</p>
+<p>Ⅰ、必然事件：一定发生的事件。<strong>Ω</strong>（全集）</p>
+<p>Ⅱ、不可能事件：一定不发生的事件。<strong>Φ</strong>（空集）</p>
+<p>Ⅰ、Ⅱ是两个极端，不是随机的。</p>
+<h2 id="1-1-2-样本空间与事件的集合表示"><a href="#1-1-2-样本空间与事件的集合表示" class="headerlink" title="1.1.2 样本空间与事件的集合表示"></a>1.1.2 样本空间与事件的集合表示</h2><p><strong>样本空间</strong>：所有基本事件的集合。<strong>Ω</strong></p>
+<p><strong>样本点</strong>：样本空间中的元素（基本事件）。<strong>ω</strong></p>
+<p>事件的集合表示：把事件用集合描述。</p>
+<p>“Ω–必然事件–样本空间”</p>
+<p>“Φ–不可能事件–空集合”</p>
+<h2 id="1-1-3-事件间的关系"><a href="#1-1-3-事件间的关系" class="headerlink" title="1.1.3 事件间的关系"></a>1.1.3 事件间的关系</h2><p>（1）包含 </p>
+<pre><code>A包含于B：A发生B必定发生
+相等--A包含于B，同时B包含于A
+</code></pre>
+<p>（2）并（和）</p>
+<pre><code>A、B中至少有一个发生
+</code></pre>
+<p>（3）交（积）</p>
+<pre><code>A、B同时发生
+</code></pre>
+<p><strong>无限可列个</strong>：按某种规律排成一个序列。①自然数 0、1、2、3… ② 整数：0，-1，1，-2，2… ③ 有理数 p/q,能用两个整数表示成分数的数。</p>
+<p>（4）差 A-B：A发生而B不发生，属于A而不属于B</p>
+<p>（5）互不相容事件，AB=Φ，A、B不同时发生。</p>
+<p>（6）对立事件：A、B互不相容（AB=Φ），A∪B=Ω<br>    记作： $A=\overline{B}$或者$B=\overline{A}$</p>
+<p>（6.1） $\overline{A}$的逆是A，即$\overline{\overline{A}}=A$</p>
+<p>（6.2）$A-B=A-AB=A\overline{B}$</p>
+<p><strong>互不相容与对立的联系与区别</strong>：1、两事件对立，则一定是互不相容的。2、互不相容适用于多个事件，对立适用于两个事件。3、互不相容不能同时发生，也可以都不发生。对立事件有且只有一个事件发生。</p>
+<p>（7）完备事件组：$A_1,A_2,A_3,…,A_n$两两互不相容(各集合之间没有交集)，且所有的集合求并集等于全集$$A_1\cup{A_2}\cup{A_3}\cup{\ldots}\cup{A_n}=\Omega$$</p>
+<h2 id="1-1-4-运算律"><a href="#1-1-4-运算律" class="headerlink" title="1.1.4 运算律"></a>1.1.4 运算律</h2><p>1、交换律<br>$$A\cup{B}=B\cup{A}$$<br>$$A\cap{B}=B\cap{A}$$<br>2、结合律<br>$$(A\cup{B})\cup{C}=A\cup{(B\cup{C})}$$<br>$$(A\cap{B})\cap{C}=A\cap{(B\cap{C})}$$<br>3、分配律<br>$$(A\cup{B})\cap{C}=(A\cap{C})\cup{(B\cap{C})}$$<br>$$(A\cap{B})\cup{C}=(A\cup{C})\cap{(B\cup{C})}$$<br>4、对偶率(长杠变短杠，符号换方向)<br>$$\overline{A\cup{B}}=\overline{A}\cap{\overline{B}}$$<br>$$\overline{A\cap{B}}=\overline{A}\cup{\overline{B}}$$</p>
+<h1 id="1-2-事件的概率"><a href="#1-2-事件的概率" class="headerlink" title="1.2 事件的概率"></a>1.2 事件的概率</h1><h2 id="1-2-1-概率的初等描述"><a href="#1-2-1-概率的初等描述" class="headerlink" title="1.2.1 概率的初等描述"></a>1.2.1 概率的初等描述</h2><p><strong>概率</strong>：事件发生的可能性大小。P(A)</p>
+<p>性质：①、$P(\Omega)=1$ ②、$P(\phi)=0$ ③、对任意事件$0\le{P(A)}\le{1}$</p>
+<h2 id="1-2-2-古典概率模型"><a href="#1-2-2-古典概率模型" class="headerlink" title="1.2.2 古典概率模型"></a>1.2.2 古典概率模型</h2><p><strong>条件</strong>：1、样本空间中有有限个样本点。（不能有无限种可能）2、等可能性，事件发生的可能性是一样的。<br>$$P(A)=\frac{A的有利样本点}{\Omega中样本点总数}=\frac{A中包含的基本事件数}{基本事件的总数}$$</p>
+<p><strong>排列组合</strong></p>
+<p><em>加法原理</em>：几种方案。加法</p>
+<p><em>乘法原理</em>：分几步。乘法</p>
+<p><strong>排列</strong>：1、不重复排列：从n个不同的元素中取出m个排列。$$P^m_n=n(n-1)(n-2)\ldots(n-m+1)=\frac{n!}{(n-m)!}$$<br><strong>全排列</strong>：$P^n_n=n(n-1)×\ldots×3×2×1=n!$</p>
+<p>$0^0$无意义; $0!=1$</p>
+<p> 2、重复排列：从n个不同的元素中取m个排列。<br> $$n×n×\ldots×n=n^m$$</p>
+<p> <strong>组合</strong>：从n个不同的元素中取出m个不同的元素。<br> $$C^m_n=\frac{P^m_n}{m!}=\frac{n(n-1)\ldots(n-m+1)}{m(m-1)×\ldots×2×1}=\frac{n!}{m!(n-m)!}$$<br> $$C_n^m=C_n^{n-m}$$<br> $$C_n^0=C_n^n=1$$</p>
+<h2 id="1-2-3-几何概率模型"><a href="#1-2-3-几何概率模型" class="headerlink" title="1.2.3 几何概率模型"></a>1.2.3 几何概率模型</h2><p><strong>线段</strong></p>
+<p><strong>平面</strong></p>
+<p><strong>立体</strong></p>
+<h2 id="1-2-4-频率与概率"><a href="#1-2-4-频率与概率" class="headerlink" title="1.2.4 频率与概率"></a>1.2.4 频率与概率</h2><p>有n次试验，事件A发生了m次，频率是$\frac{m}{n}$，试验次数越多，频率越稳定。</p>
+<p><strong>性质</strong>：</p>
+<p>1、非负性。$$0\le\omega_n(A)\le1$$<br>2、规范性。$$\omega_n(\Omega)=1,\omega_n(\Phi)=0$$<br>3、可加性。$A_1,\ldots,A_m互不相容$，有$$\omega(A_1+\ldots+A_m)=\omega_n(A_1)+\ldots+\omega(A_m)$$</p>
+<h2 id="1-2-5-公理化"><a href="#1-2-5-公理化" class="headerlink" title="1.2.5 公理化"></a>1.2.5 公理化</h2><p><strong>公理1（非负性）</strong>$$0\le{P(A)}\le{1}$$<br><strong>公理2（规范性）</strong>$$P(\Omega)=1$$<br><strong>公理3（完全可加性）</strong>$$A_1,A_2,\ldots不相容，有P(A_1+A_2+\ldots)=P(A_1)+P(A_2)+\ldots$$</p>
+<p><strong>性质1</strong>$$P(\Phi)=0$$<br><strong>性质2</strong>：有限可加性$$A_1,\ldots,A_n不相容，P(A_1+\dots+A_n)=P(A_1)+P(A_2)+\ldots+P(A_n)$$<br><strong>性质3</strong>$$P(\overline{A})=1-P(A)$$<br><strong>性质4</strong>$$①P(A-B)=P(A)-P(AB)$$<br>$$②A\supset{B},P(A-B)=P(A)-P(B),且P(A)\ge{P(B)}$$<br><strong>性质5（加法性）🔺</strong>$$P(A+B)=P(A)+P(B)-P(AB)$$<br>$$P(A+B+C)=P(A)+P(B)+P(C)-P(AB)-P(AC)-P(BC)+P(ABC)$$</p>
+<h2 id="1-3-1-条件概率"><a href="#1-3-1-条件概率" class="headerlink" title="1.3.1 条件概率"></a>1.3.1 条件概率</h2><p><strong>定义：</strong>$\Omega$是样本空间，A、B是两个事件。假设$P(B)&gt;0$在B已经发生的条件下A发生的概率，A对B的条件概率记为$P(A|B)$。</p>
+<p>$P(A)$无条件概率，样本空间$\Omega$</p>
+<p>$P(A|B)$条件概率，样本空间$B=\Omega_B$</p>
+<p>①$P(A|B)=\frac{n_{AB}}{n_B}$</p>
+<p>②$P(A|B)=\frac{\frac{n_{AB}}{n}}{\frac{n_B}{n}}=\frac{P(AB)}{P(B)}$</p>
+<p><strong>性质1:</strong>$$P(A|B)\geq{0}$$<br><strong>性质2：</strong>$$P(\Omega|B)=1$$</p>
+<h2 id="1-3-2-乘法公式"><a href="#1-3-2-乘法公式" class="headerlink" title="1.3.2 乘法公式"></a>1.3.2 乘法公式</h2><p>由$P(A|B)=\frac{P(AB)}{P(B)}$得</p>
+<p><strong>乘法公式：</strong>$$P(AB)=P(B)P(A|B)$$<br>$$P(ABC)=P(A)P(B|A)P(C|AB)$$<br>$$P(A_1A_2\dots{A_n})=P(A_1)P(A_2|A_1)P(A_3|A_1A_2)\dots{P(A_n|A_1\dots{A_{n-1}})}$$</p>
+<h2 id="1-4-1-全概率公式（知道原因推结果）"><a href="#1-4-1-全概率公式（知道原因推结果）" class="headerlink" title="1.4.1 全概率公式（知道原因推结果）"></a>1.4.1 全概率公式（知道原因推结果）</h2><p><strong>定理1:</strong>$A_1,A_2,\dots,A_n$是E的完备事件组，且$P(A_i)&gt;0$，B为任意事件。$P(B)=\sum_{1}^nP(A_i)P(B|A_i)$</p>
+<h2 id="1-4-2-贝叶斯公式（知道结果推原因）"><a href="#1-4-2-贝叶斯公式（知道结果推原因）" class="headerlink" title="1.4.2 贝叶斯公式（知道结果推原因）"></a>1.4.2 贝叶斯公式（知道结果推原因）</h2><p><strong>定理2:</strong>$A_1,A_2,\dots,A_n$是E的完备事件组，且$P(A_i)&gt;0$，B为任意事件。$P(A_i)&gt;0,P(B)&gt;0$则：<br>$$P(A_k|B)=\frac{P(A_k)P(B|A_k)}{\sum_{i=1}^{n}P(A_i)P(B|A_i)}=\frac{P(A_kB)}{P(B)}$$ </p>
+<p>$P(A_i)$:先验概率</p>
+<p>$P(A_i|B)$:后验概率</p>
+<h2 id="1-5-1-事件的独立性"><a href="#1-5-1-事件的独立性" class="headerlink" title="1.5.1 事件的独立性"></a>1.5.1 事件的独立性</h2><p><strong>定理</strong>：$P(A)&gt;0,P(B)&gt;0$<br>$${A,B独立}\leftrightarrow{P(AB)=P(A)P(B)}$$</p>
+<p><strong>定义</strong>：如果$P(AB)=P(A)P(B)$，则事件A和事件B独立。</p>
+<p>$$\phi、\Omega 与任意事件A独立$$</p>
+<p><strong>定理</strong></p>
+<p>（1）$A,B$独立，则$A$与$\overline{B}，\overline{A}与B，\overline{A}与\overline{B}独立$</p>
+<p>（2）$P(A)=0$或$P(A)=1$，则$A$与任意事件独立。</p>
+<p><strong>“独立”与“互不相容”</strong></p>
+<p>“独立”：发生的可能性，互不相关。</p>
+<p>“互不相容”：事件的交集为$\phi$，有你无我，有我无你。 $A,B$互不相容，可以得到$AB=\phi,P(AB)=0$</p>
+<p>$P(A)&gt;0$, $P(B)&gt;0$,独立与互不相容不同时成立。</p>
+<p>$A, B$独立，$P(AB)=P(A)P(B)&gt;0$</p>
+<p>事件$A,B,C$独立，①$P(AB)=P(A)P(B)$，②$P(BC)=P(B)P(C)$，③$P(AC)=P(A)P(C)$，④$P(ABC)=P(A)P(B)P(C)$</p>
+<h2 id="1-5-2-伯努利模型"><a href="#1-5-2-伯努利模型" class="headerlink" title="1.5.2 伯努利模型"></a>1.5.2 伯努利模型</h2><p>独立实验序列：$E_1,E_2,\dots,E_n$彼此相互独立。</p>
+<p>n重独立实验：把独立实验E重复做n次，$E,E,\dots,E$记作$E^n$。</p>
+<p><strong>伯努利实验</strong>：实验结果只有两种的实验。</p>
+<p><strong>n重伯努利实验</strong>：做n次独立实验，实验的结果只有两种。</p>
+<p><strong>定理</strong>：事件$A$的概率$p(0&lt;p&lt;1)$，$\overline{A}=1-p$，在n重伯努利实验中，A发生k次（二项概率公式）：$$p_n(k)=C_n^kp^k(1-p)^{n-k}=C_{n}^{k}p^{k}q^{n-k}$$</p>
+<p><strong>二项式</strong>：$(a+b)^n=(a+b)(a+b)\dots(a+b)$<br>$$C_{n}^{n}a^{n}+C_{n}^{n-1}a^{n-1}b+C_{n}^{n-2}a^{n-2}b^{2}+\dots+C_{n}^{0}b^{n}$$</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/" rel="tag"># 概率论</a>
+              <a href="/blog/tags/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/" rel="tag"># 数理统计</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2022/08/01/%E6%96%87%E7%8C%AE%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E8%AF%BB/" rel="next" title="文献应该怎么读？">
+      文献应该怎么读？ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-1-%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">1.1 引言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-1-%E9%9A%8F%E6%9C%BA%E8%AF%95%E9%AA%8C%E4%B8%8E%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">1.1.1 随机试验与随机事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-2-%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%E4%B8%8E%E4%BA%8B%E4%BB%B6%E7%9A%84%E9%9B%86%E5%90%88%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.2.</span> <span class="nav-text">1.1.2 样本空间与事件的集合表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-3-%E4%BA%8B%E4%BB%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.3.</span> <span class="nav-text">1.1.3 事件间的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-4-%E8%BF%90%E7%AE%97%E5%BE%8B"><span class="nav-number">1.4.</span> <span class="nav-text">1.1.4 运算律</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-2-%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%A6%82%E7%8E%87"><span class="nav-number">2.</span> <span class="nav-text">1.2 事件的概率</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-1-%E6%A6%82%E7%8E%87%E7%9A%84%E5%88%9D%E7%AD%89%E6%8F%8F%E8%BF%B0"><span class="nav-number">2.1.</span> <span class="nav-text">1.2.1 概率的初等描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-2-%E5%8F%A4%E5%85%B8%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.</span> <span class="nav-text">1.2.2 古典概率模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-3-%E5%87%A0%E4%BD%95%E6%A6%82%E7%8E%87%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.3.</span> <span class="nav-text">1.2.3 几何概率模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-4-%E9%A2%91%E7%8E%87%E4%B8%8E%E6%A6%82%E7%8E%87"><span class="nav-number">2.4.</span> <span class="nav-text">1.2.4 频率与概率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-5-%E5%85%AC%E7%90%86%E5%8C%96"><span class="nav-number">2.5.</span> <span class="nav-text">1.2.5 公理化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-1-%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87"><span class="nav-number">2.6.</span> <span class="nav-text">1.3.1 条件概率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-2-%E4%B9%98%E6%B3%95%E5%85%AC%E5%BC%8F"><span class="nav-number">2.7.</span> <span class="nav-text">1.3.2 乘法公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-1-%E5%85%A8%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F%EF%BC%88%E7%9F%A5%E9%81%93%E5%8E%9F%E5%9B%A0%E6%8E%A8%E7%BB%93%E6%9E%9C%EF%BC%89"><span class="nav-number">2.8.</span> <span class="nav-text">1.4.1 全概率公式（知道原因推结果）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-2-%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F%EF%BC%88%E7%9F%A5%E9%81%93%E7%BB%93%E6%9E%9C%E6%8E%A8%E5%8E%9F%E5%9B%A0%EF%BC%89"><span class="nav-number">2.9.</span> <span class="nav-text">1.4.2 贝叶斯公式（知道结果推原因）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-1-%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="nav-number">2.10.</span> <span class="nav-text">1.5.1 事件的独立性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-2-%E4%BC%AF%E5%8A%AA%E5%88%A9%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.11.</span> <span class="nav-text">1.5.2 伯努利模型</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Jason</p>
+  <div class="site-description" itemprop="description">立心 立命 继绝学 开太平</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">29</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/mrdutq" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;mrdutq" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:dutianqi9911@163.com" title="E-Mail → mailto:dutianqi9911@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      学习链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://equsky.cn/" title="https:&#x2F;&#x2F;equsky.cn" rel="noopener" target="_blank">Jason's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://51world.win/" title="https:&#x2F;&#x2F;51world.win" rel="noopener" target="_blank">时间的朋友</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://linwhitehat.github.io/Blog/about" title="https:&#x2F;&#x2F;linwhitehat.github.io&#x2F;Blog&#x2F;about" rel="noopener" target="_blank">林深时见璐</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://ebook2.lorefree.com/" title="https:&#x2F;&#x2F;ebook2.lorefree.com" rel="noopener" target="_blank">Ebook</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ethanloo.top/" title="https:&#x2F;&#x2F;www.ethanloo.top" rel="noopener" target="_blank">Ethan</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.baidu.com/" title="https:&#x2F;&#x2F;www.baidu.com" rel="noopener" target="_blank">baidu</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.google.com/" title="https:&#x2F;&#x2F;www.google.com" rel="noopener" target="_blank">google</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.youtube.com/" title="https:&#x2F;&#x2F;www.youtube.com" rel="noopener" target="_blank">youtube</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="/blog/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/muse.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+<script src="/blog/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>
