@@ -224,9 +224,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/blogs/PythonFullCourse.jpg" alt="Python"></p>
-<span id="more"></span>
-
+        <p><img src="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/blogs/PythonFullCourse.jpg" alt="Python"><br><span id="more"></span></p>
 <h3 id="Decimal-conversion"><a href="#Decimal-conversion" class="headerlink" title="Decimal conversion"></a>Decimal conversion</h3><ul>
 <li>Binary: base 2(0-1)</li>
 <li>Octal: base 8(0-7)</li>
@@ -239,7 +237,6 @@ bin(25) &#x3D;&#x3D; &#39;0b11001&#39;
 0b0101 &#x3D;&#x3D; 5<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">#Decimal to Octal 
 oct(25) &#x3D;&#x3D; &#39;0o31&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">#Decimal to HexaDecimal and HexaDecimal to Decimal
 hex(25) &#x3D;&#x3D; &#39;0x19&#39;
 hex(10) &#x3D;&#x3D; &#39;0xa&#39;
@@ -257,7 +254,6 @@ a,b &#x3D; b,a
 
 print(a)
 print(b)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Python-BitWise-Operators"><a href="#Python-BitWise-Operators" class="headerlink" title="Python BitWise Operators"></a>Python BitWise Operators</h3><ul>
 <li>Complement(~) [求补]<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># ~: tilde
 ~12 &#x3D;&#x3D; -13
@@ -296,7 +292,8 @@ print(b)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <li>Left Shift(&lt;&lt;)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bitwise left shift: 二进制左移，末尾补零。左移一位相当于乘2。</span>
 <span class="token number">10</span> <span class="token operator">&lt;&lt;</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">40</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
 <li>Right Shift(&gt;&gt;)<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># bitwise right shift: 二进制右移右移一位相当于除以2</span>
-<span class="token number">10</span> <span class="token operator">>></span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<span class="token number">10</span> <span class="token operator">>></span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
 </ul>
 <h3 id="Import-Math-Functions-in-Python"><a href="#Import-Math-Functions-in-Python" class="headerlink" title="Import Math Functions in Python"></a>Import Math Functions in Python</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># square root function: sqrt(),[开方，sqrt(25) == 5]</span>
 <span class="token keyword">import</span> math
@@ -325,28 +322,23 @@ x <span class="token operator">=</span> math<span class="token punctuation">.</s
 <span class="token keyword">from</span> math <span class="token keyword">import</span> sqrt<span class="token punctuation">,</span> <span class="token builtin">pow</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>sqrt<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 5,0</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">pow</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 1024.0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Working-with-PyCharm"><a href="#Working-with-PyCharm" class="headerlink" title="Working with PyCharm"></a>Working with PyCharm</h3><ul>
 <li>create new project</li>
 <li>Location: set the project name</li>
 <li>click finish</li>
 <li>the you can get a project</li>
-<li>file – new – file – MyCode.py</li>
+<li>file — new — file — MyCode.py</li>
 </ul>
 <h3 id="User-input-in-Python"><a href="#User-input-in-Python" class="headerlink" title="User input in Python"></a>User input in Python</h3><p><code>input() 默认是字符串格式</code></p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">x &#x3D; input(&quot;Enter 1st number: &quot;)  # input 9; type &#x3D; &lt;&#39;str&#39;&gt;
 y &#x3D; input(&quot;Enter 2nd number: &quot;)  # input 5; type &#x3D; &lt;&#39;str&#39;&gt;
 z &#x3D; x + y
 print(z)  # z &#x3D; 95<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><code>类型转换，int(input()),输入整型</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter 1st number: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># input 9</span>
+<p><code>类型转换，int(input()),输入整型</code><br><pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter 1st number: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># input 9</span>
 y <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"Enter 2nd number: "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># input 5</span>
 z <span class="token operator">=</span> x <span class="token operator">+</span> y
 <span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span>  <span class="token comment"># z = 14</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>char类型，可以用[]指定输出第几位</code></p>
-<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">ch &#x3D; input(&#39;Enter a char&#39;)  # input q
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><br><code>char类型，可以用[]指定输出第几位</code><br><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">ch &#x3D; input(&#39;Enter a char&#39;)  # input q
 print(ch)  # print: q
 
 ch &#x3D; input(&#39;Enter a char&#39;)  # input pqr
@@ -362,18 +354,14 @@ ch &#x3D; input(&#39;Enter a char&#39;)  # input 2 + 6 - 1
 print(ch)  # 2
 
 result &#x3D; eval(input(&#39;Enter an expr:&#39;))  # input 2 + 6 - 1
-print(result)  # result &#x3D; 7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><code>argv是argument valuse的缩写，可以用于执行py文件时输入数据参与运算。</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># argv: argument values</span>
+print(result)  # result &#x3D; 7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<p><code>argv是argument valuse的缩写，可以用于执行py文件时输入数据参与运算。</code><br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># argv: argument values</span>
 <span class="token keyword">import</span> sys
 x <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  
 y <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 z <span class="token operator">=</span> x <span class="token operator">+</span> y
-<span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="If-Elif-Else-Statement-in-Python"><a href="#If-Elif-Else-Statement-in-Python" class="headerlink" title="If Elif Else Statement in Python"></a>If Elif Else Statement in Python</h3><p><code>IF语句中缩进是关键，通常缩进使用四个空格，或者使用制表符Tab</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>z<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<h3 id="If-Elif-Else-Statement-in-Python"><a href="#If-Elif-Else-Statement-in-Python" class="headerlink" title="If Elif Else Statement in Python"></a>If Elif Else Statement in Python</h3><p><code>IF语句中缩进是关键，通常缩进使用四个空格，或者使用制表符Tab</code><br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">if</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I'm right"</span><span class="token punctuation">)</span>
 <span class="token keyword">else</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Bye"</span><span class="token punctuation">)</span>
@@ -382,10 +370,8 @@ z <span class="token operator">=</span> x <span class="token operator">+</span> 
     pring<span class="token punctuation">(</span><span class="token string">"I'm wrong"</span><span class="token punctuation">)</span>
 <span class="token keyword">else</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I'm right"</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><code>if elif else</code></p>
-<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">x &#x3D; 1
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<p><code>if elif else</code><br><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">x &#x3D; 1
 
 if x &#x3D;&#x3D; 1:
     print(&quot;one&quot;)
@@ -394,15 +380,11 @@ elif x &#x3D;&#x3D; 2:
 elif x &#x3D;&#x3D; 3:
     print(&quot;three&quot;)
 else:
-    print(&quot;Wrong Input&quot;) <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="While-Loop-in-Python"><a href="#While-Loop-in-Python" class="headerlink" title="While Loop in Python"></a>While Loop in Python</h3><p><code>Use While Loop print &quot;Hello&quot; five times</code></p>
-<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">i &#x3D; 1
+    print(&quot;Wrong Input&quot;) <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<h3 id="While-Loop-in-Python"><a href="#While-Loop-in-Python" class="headerlink" title="While Loop in Python"></a>While Loop in Python</h3><p><code>Use While Loop print &quot;Hello&quot; five times</code><br><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">i &#x3D; 1
 while i &lt;&#x3D; 5:
     print(&quot;Hello&quot;)
-    i &#x3D; i + 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>multiple while</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">1</span>
+    i &#x3D; i + 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><br><code>multiple while</code><br><pre class="line-numbers language-python" data-language="python"><code class="language-python">i <span class="token operator">=</span> <span class="token number">1</span>
 j <span class="token operator">=</span> <span class="token number">1</span>
 <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> <span class="token number">5</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Telusko "</span><span class="token punctuation">,</span> end <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span>
@@ -416,8 +398,7 @@ j <span class="token operator">=</span> <span class="token number">1</span>
 <span class="token comment"># Telusko Rocks Rocks Rocks Rocks </span>
 <span class="token comment"># Telusko Rocks Rocks Rocks Rocks </span>
 <span class="token comment"># Telusko Rocks Rocks Rocks Rocks </span>
-<span class="token comment"># Telusko Rocks Rocks Rocks Rocks </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token comment"># Telusko Rocks Rocks Rocks Rocks </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <h3 id="For-Loop-in-Python"><a href="#For-Loop-in-Python" class="headerlink" title="For Loop in Python"></a>For Loop in Python</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'jason'</span><span class="token punctuation">,</span> <span class="token number">65</span><span class="token punctuation">,</span> <span class="token number">2.5</span><span class="token punctuation">]</span>
 y <span class="token operator">=</span> <span class="token string">'JASON'</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> x<span class="token punctuation">:</span>
@@ -425,7 +406,6 @@ y <span class="token operator">=</span> <span class="token string">'JASON'</span
 
 <span class="token keyword">for</span> i <span class="token keyword">in</span> y<span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>range()</code></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
@@ -466,9 +446,7 @@ y <span class="token operator">=</span> <span class="token string">'JASON'</span
     <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">%</span><span class="token number">5</span><span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
 <span class="token comment"># 输出[1-20]除了5和5的倍数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="Break-Continue-Pass-in-Python"><a href="#Break-Continue-Pass-in-Python" class="headerlink" title="Break Continue Pass in Python"></a>Break Continue Pass in Python</h3><p><code>1、Break</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">available <span class="token operator">=</span> <span class="token number">10</span>
+<h3 id="Break-Continue-Pass-in-Python"><a href="#Break-Continue-Pass-in-Python" class="headerlink" title="Break Continue Pass in Python"></a>Break Continue Pass in Python</h3><p><code>1、Break</code><br><pre class="line-numbers language-python" data-language="python"><code class="language-python">available <span class="token operator">=</span> <span class="token number">10</span>
 x <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"How many Candies you want?"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 i <span class="token operator">=</span> <span class="token number">1</span>
 <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> x<span class="token punctuation">:</span>
@@ -485,23 +463,18 @@ i <span class="token operator">=</span> <span class="token number">1</span>
 <span class="token comment"># Candy</span>
 <span class="token comment"># Candy</span>
 <span class="token comment"># out of stock</span>
-<span class="token comment"># Bye</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>2、Continue</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token comment"># Bye</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br><code>2、Continue</code><br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> i <span class="token operator">%</span> <span class="token number">3</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> i <span class="token operator">%</span> <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
         <span class="token keyword">continue</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Bye"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><code>3、pass</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Bye"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<p><code>3、pass</code><br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">pass</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Bye"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Bye"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">:</span>
         <span class="token keyword">continue</span>
@@ -579,40 +552,33 @@ nums <span class="token operator">=</span> <span class="token punctuation">[</sp
 <span class="token keyword">else</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"not found!"</span><span class="token punctuation">)</span>
 <span class="token comment"># print: not found!</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="Prime-Number-in-Python"><a href="#Prime-Number-in-Python" class="headerlink" title="Prime Number in Python"></a>Prime Number in Python</h3><p><code>Prime number(素数) is a number which is divisible only by 1 and itself.</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">num <span class="token operator">=</span> <span class="token number">7</span>
+<h3 id="Prime-Number-in-Python"><a href="#Prime-Number-in-Python" class="headerlink" title="Prime Number in Python"></a>Prime Number in Python</h3><p><code>Prime number(素数) is a number which is divisible only by 1 and itself.</code><br><pre class="line-numbers language-python" data-language="python"><code class="language-python">num <span class="token operator">=</span> <span class="token number">7</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> num <span class="token operator">%</span> i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Not Prime"</span><span class="token punctuation">)</span>
         <span class="token keyword">break</span>
 <span class="token keyword">else</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Prime"</span><span class="token punctuation">)</span>
-<span class="token comment"># print: Prime</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token comment"># print: Prime</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <h3 id="Array-in-Python"><a href="#Array-in-Python" class="headerlink" title="Array in Python"></a>Array in Python</h3><p><code>Arrays are similar to list but with one difference that you need to have all the values of same type.</code></p>
 <p><code>so if you have an int array, you should be of int array</code></p>
 <p><code>if you have a float array, all the values should be float.</code></p>
-<p><code>there&#39;s one advantage here. Arrays in Python, they don&#39;t have specific size, they don&#39;t have a fixed size, which means you can expand, you can shrink it.</code><br><img src="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/blogs/PythonArray.png" alt="PythonArray"></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># import array as arr</span>
+<p><code>there&#39;s one advantage here. Arrays in Python, they don&#39;t have specific size, they don&#39;t have a fixed size, which means you can expand, you can shrink it.</code><br><img src="https://cdn.jsdelivr.net/gh/mrdutq/cdn/images/blogs/PythonArray.png" alt="PythonArray"><br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># import array as arr</span>
 <span class="token keyword">from</span> array <span class="token keyword">import</span> <span class="token operator">*</span>
 vals <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token string">'i'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 'i' means signed int</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>vals<span class="token punctuation">)</span>
-<span class="token comment"># print: array('i',[5,9,8,4,2])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token comment"># print: array('i',[5,9,8,4,2])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> array <span class="token keyword">import</span> <span class="token operator">*</span>
 vals <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token string">'I'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 'I' means unsigned int, 无符号整型数组不能存放负数</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>vals<span class="token punctuation">)</span>
 <span class="token comment"># print: array('i',[5,9,8,4,2])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p><code>buffer_info(): can give you the size of the array</code></p>
-<p><code>typecode: can print the type of the code you are working</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> array <span class="token keyword">import</span> <span class="token operator">*</span>
+<p><code>typecode: can print the type of the code you are working</code><br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> array <span class="token keyword">import</span> <span class="token operator">*</span>
 vals <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token string">'i'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
 <span class="token keyword">print</span><span class="token punctuation">(</span>vals<span class="token punctuation">.</span>buffer_info<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment"># print: (Address, size)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>vals<span class="token punctuation">.</span>typecode<span class="token punctuation">)</span>
-<span class="token comment"># print: i</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+<span class="token comment"># print: i</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <p><code>print values one by one</code></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> array <span class="token keyword">import</span> <span class="token operator">*</span>
 vals <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token string">'i'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
@@ -621,8 +587,7 @@ vals <span class="token operator">=</span> array<span class="token punctuation">
 <span class="token comment">############################</span>
 <span class="token keyword">for</span> e <span class="token keyword">in</span> vals<span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>``</p>
-<pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from array import *
+<p>``<br><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">from array import *
 
 # vals &#x3D; array(&#39;u&#39;, [&#39;a&#39;,&#39;e&#39;,&#39;i&#39;])
 vals &#x3D; ayyay(&#39;i&#39;,[5,9,-8,4,2])
@@ -637,8 +602,7 @@ for e in newarr:
 i &#x3D; 0
 while i &lt;len(newarr):
     print(newarr[i])
-    i +&#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+    i +&#x3D; 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <h3 id="Array-Values-from-Users-in-Python"><a href="#Array-Values-from-Users-in-Python" class="headerlink" title="Array Values from Users in Python"></a>Array Values from Users in Python</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># we want to get an array, and we want to take the values from the user.</span>
 <span class="token comment"># 1st, we need to get an array</span>
 <span class="token keyword">from</span> array <span class="token keyword">import</span> <span class="token operator">*</span>
@@ -664,7 +628,7 @@ k <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>index<span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span>
 
 <span class="token comment"># dimensional 一维的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="Why-Numpy-Installing-Numpy-in-Pycharm"><a href="#Why-Numpy-Installing-Numpy-in-Pycharm" class="headerlink" title="Why Numpy? Installing Numpy in Pycharm"></a>Why Numpy? Installing Numpy in Pycharm</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># dimensional 一维的   </span>
+<h3 id="Why-Numpy-Installing-Numpy-in-Pycharm"><a href="#Why-Numpy-Installing-Numpy-in-Pycharm" class="headerlink" title="Why Numpy? Installing Numpy in Pycharm"></a>Why Numpy? Installing Numpy in Pycharm</h3><h2 id=""><a href="#" class="headerlink" title=""></a><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># dimensional 一维的   </span>
 <span class="token comment"># multi-dimensional 多维的</span>
 
 <span class="token comment"># one dimensional array : 2 5 6 8 4</span>
@@ -678,9 +642,7 @@ k <span class="token operator">=</span> <span class="token number">0</span>
 
 arr <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
-<span class="token comment"># print: [1,2,3,2,5,4]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<hr>
-<p>2月11号</p>
+<span class="token comment"># print: [1,2,3,2,5,4]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></h2><p>2月11号</p>
 <h3 id="Ways-of-Creating-Arrays-in-Numpy"><a href="#Ways-of-Creating-Arrays-in-Numpy" class="headerlink" title="Ways of Creating Arrays in Numpy"></a>Ways of Creating Arrays in Numpy</h3><ul>
 <li>六种创建数组的方法：<ul>
 <li>array()</li>
@@ -743,10 +705,7 @@ arr <span class="token operator">=</span> ones<span class="token punctuation">(<
 arr <span class="token operator">=</span> ones<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token builtin">int</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
 <span class="token comment"># print: [1 1 1 1 1]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="Copying-an-Array-in-Python"><a href="#Copying-an-Array-in-Python" class="headerlink" title="Copying an Array in Python"></a>Copying an Array in Python</h3></li>
-</ul>
-</li>
-<li>how to create another array from the existing array*<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
+<h3 id="Copying-an-Array-in-Python"><a href="#Copying-an-Array-in-Python" class="headerlink" title="Copying an Array in Python"></a>Copying an Array in Python</h3><em>how to create another array from the existing array</em><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
 arr1 <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 arr2 <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
@@ -789,10 +748,12 @@ arr2 <span class="token operator">=</span> arr1<span class="token punctuation">.
 <span class="token comment"># 1710914495088</span>
 <span class="token comment"># 1710914575216</span>
 
-<span class="token comment"># 4. arr2 = arr1.copy(), deep copy</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token comment"># 4. arr2 = arr1.copy(), deep copy</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
 </ul>
-<h3 id="Working-with-Matrix-in-Python"><a href="#Working-with-Matrix-in-Python" class="headerlink" title="Working with Matrix in Python"></a>Working with Matrix in Python</h3><p><em>多维数组</em></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
+</li>
+</ul>
+<h3 id="Working-with-Matrix-in-Python"><a href="#Working-with-Matrix-in-Python" class="headerlink" title="Working with Matrix in Python"></a>Working with Matrix in Python</h3><p><em>多维数组</em><br><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> numpy <span class="token keyword">import</span> <span class="token operator">*</span>
 
 arr1 <span class="token operator">=</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span>
   <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -803,8 +764,7 @@ arr1 <span class="token operator">=</span> array<span class="token punctuation">
     <span class="token comment"># arr1.dtype: type of data; int32</span>
     <span class="token comment"># arr1.ndim :维度 dimension; 2</span>
     <span class="token comment"># arr1.shape: rows and columns; (2,3)</span>
-    <span class="token comment"># arr1.size: size of entire block; 6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
+    <span class="token comment"># arr1.size: size of entire block; 6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
 <h3 id="Function-in-Python"><a href="#Function-in-Python" class="headerlink" title="Function in Python"></a>Function in Python</h3><p>In this video we’ll talk about functions</p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python"># First you need to define a function
 # Second you will be calling the function
@@ -831,7 +791,6 @@ def add_sub(x,y):
 result1,result2 &#x3D; add_sub(5,4)
 print(result1,result2)
 # 9 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Function-Arguments-in-Python"><a href="#Function-Arguments-in-Python" class="headerlink" title="Function Arguments in Python"></a>Function Arguments in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def update(x)
     x &#x3D; 8
     print(x)
@@ -860,7 +819,6 @@ print(&quot;a &quot;,a)
 
 # In Python:
 # When you pass a variable with its value into a function, if its value is not changed by the function, reference (physical location &#x2F; address on memory) is not changed. So at this point, there is no creation of a new memory (container). But as soon as the function changes the value of the argument, a new memory is created, so now you have 2 containers holding different values. But this is only for immutable (cannot be mutated&#x2F;modified&#x2F;changed) datatypes like integers and strings. But if you pass in a mutable datatype like a list into the function and change its value, since it is mutable, the data can be updated&#x2F;changed in-situ (without the creation of a new memory). This results in still just one memory location, but with an updated value stored in it.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Types-of-Arguments-in-Python"><a href="#Types-of-Arguments-in-Python" class="headerlink" title="Types of Arguments in Python"></a>Types of Arguments in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def person(name, age):
     print(name)
     print(age)
@@ -902,7 +860,6 @@ def sum(*b):
 
 sum(5,6,34,78)  
 # 123 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Keyworded-Variable-Length-Arguments-in-Python"><a href="#Keyworded-Variable-Length-Arguments-in-Python" class="headerlink" title="Keyworded Variable Length Arguments in Python"></a>Keyworded Variable Length Arguments in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def person(name,**data):
     # **data have double stars means your values have keywords
     print(name)
@@ -924,7 +881,6 @@ person(&#39;navin&#39;,age&#x3D;28,city&#x3D;&#39;Mumbai&#39;,mob&#x3D;9865432)
 # age 28
 # city Mumbai
 # mob 9865432<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Global-Keyword-in-Python-Global-vs-Local-variable"><a href="#Global-Keyword-in-Python-Global-vs-Local-variable" class="headerlink" title="Global Keyword in Python | Global vs Local variable"></a>Global Keyword in Python | Global vs Local variable</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">a &#x3D; 10
 def something():
     a &#x3D; 15
@@ -954,7 +910,6 @@ print(&quot;outside&quot;, a)
 # in fun 15
 # outside 15
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Pass-List-to-a-Function-in-Python"><a href="#Pass-List-to-a-Function-in-Python" class="headerlink" title="Pass List to a Function in Python"></a>Pass List to a Function in Python</h3><pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">def count(lst):
     even &#x3D; 0
     odd &#x3D; 0
@@ -972,7 +927,6 @@ even, odd &#x3D; count(lst),
 # 偶数、奇数
 print(&quot;Even : &#123;&#125; and Odd: &#123;&#125;&quot;.format(even,odd))
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Object-Oriented-Programming-Introduction"><a href="#Object-Oriented-Programming-Introduction" class="headerlink" title="Object Oriented Programming | Introduction"></a>Object Oriented Programming | Introduction</h3><p><em>Python supports all different programming paradigm(模式、范例)</em><br>it supports functional programming<br>it supports object oriented programming<br>it also works with procedure oriented programming</p>
 <h4 id="procedure-oriented-programming"><a href="#procedure-oriented-programming" class="headerlink" title="procedure oriented programming"></a>procedure oriented programming</h4><p>whenever you work with Python we define functions.<br>we’ve qualification functino from a function. so if you<br>want to create a software you will break down your project into small small part and those modules small modules will be functions.</p>
 <h4 id="functional-programming"><a href="#functional-programming" class="headerlink" title="functional programming"></a>functional programming</h4><p>functional programming means if you can achieve a certain task implementing functions as ourmathematical functions where you will not manipulate a data which is instead of changing data you will accomplish a task. one of the way is you can pass a function to a function.</p>
@@ -999,7 +953,6 @@ com1.config()
 com2.config()
 # i5,16GB,1TB
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="init-method"><a href="#init-method" class="headerlink" title="init method"></a><strong>init</strong> method</h3><p>variable(变量)</p>
 <p>Special variables:<strong>name</strong><br>Special method: <strong>init</strong></p>
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">class Computer:
@@ -1016,7 +969,6 @@ com1.config()
 # i5,16GB,1TB
 com2.config()
 # i5,16GB,1TB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <pre class="line-numbers language-Python" data-language="Python"><code class="language-Python">class Computer:
     def __init__(self,CPU,RAM):
         self.CPU &#x3D; CPU
@@ -1032,7 +984,6 @@ com1.config()
 # Config is  i5 16
 com2.config()
 # Config is  AMD 8<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Types-of-Variables"><a href="#Types-of-Variables" class="headerlink" title="Types of Variables"></a>Types of Variables</h3><ul>
 <li>Class variables</li>
 <li>Instance Variables</li>
@@ -1058,7 +1009,6 @@ print(c2.com,c2.mil,c2.wheels)
 # namespace is an area where you create and store object&#x2F;variable
 # -Class namespace
 # -Object&#x2F;Instance namespace<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="Types-of-Methods"><a href="#Types-of-Methods" class="headerlink" title="Types of Methods"></a>Types of Methods</h3><ul>
 <li>Instance Methods</li>
 <li>Class Methods</li>
@@ -1100,7 +1050,6 @@ Student.info()
 # Telusko
 # This is Student class.. in abc molude
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <hr>
 
     </div>
@@ -1124,8 +1073,8 @@ Student.info()
       <i class="fa fa-chevron-left"></i> 多难兴邦
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2022/01/17/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E8%BD%AF%E4%BB%B6%E9%9C%80%E6%B1%82/" rel="next" title="软件工程-软件需求">
-      软件工程-软件需求 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2022/01/17/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B-%E9%97%AE%E9%A2%98%E5%AE%9A%E4%B9%89%E5%92%8C%E5%8F%AF%E8%A1%8C%E6%80%A7%E7%A0%94%E7%A9%B6-%E7%BB%93%E6%9E%84%E5%8C%96%E5%88%86%E6%9E%90/" rel="next" title="软件工程-问题定义和可行性研究+结构化分析">
+      软件工程-问题定义和可行性研究+结构化分析 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -1185,7 +1134,21 @@ Student.info()
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-conversion"><span class="nav-number">1.</span> <span class="nav-text">Decimal conversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-2-Variables-in-Python"><span class="nav-number">2.</span> <span class="nav-text">Swap 2 Variables in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-BitWise-Operators"><span class="nav-number">3.</span> <span class="nav-text">Python BitWise Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-Math-Functions-in-Python"><span class="nav-number">4.</span> <span class="nav-text">Import Math Functions in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-PyCharm"><span class="nav-number">5.</span> <span class="nav-text">Working with PyCharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-input-in-Python"><span class="nav-number">6.</span> <span class="nav-text">User input in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#If-Elif-Else-Statement-in-Python"><span class="nav-number">7.</span> <span class="nav-text">If Elif Else Statement in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#While-Loop-in-Python"><span class="nav-number">8.</span> <span class="nav-text">While Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Loop-in-Python"><span class="nav-number">9.</span> <span class="nav-text">For Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Break-Continue-Pass-in-Python"><span class="nav-number">10.</span> <span class="nav-text">Break Continue Pass in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Printing-Patterns-in-Python"><span class="nav-number">11.</span> <span class="nav-text">Printing Patterns in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Else-in-Python"><span class="nav-number">12.</span> <span class="nav-text">For Else in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prime-Number-in-Python"><span class="nav-number">13.</span> <span class="nav-text">Prime Number in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-in-Python"><span class="nav-number">14.</span> <span class="nav-text">Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-Values-from-Users-in-Python"><span class="nav-number">15.</span> <span class="nav-text">Array Values from Users in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Numpy-Installing-Numpy-in-Pycharm"><span class="nav-number">16.</span> <span class="nav-text">Why Numpy? Installing Numpy in Pycharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ways-of-Creating-Arrays-in-Numpy"><span class="nav-number">17.</span> <span class="nav-text">Ways of Creating Arrays in Numpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copying-an-Array-in-Python"><span class="nav-number">18.</span> <span class="nav-text">Copying an Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-Matrix-in-Python"><span class="nav-number">19.</span> <span class="nav-text">Working with Matrix in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-in-Python"><span class="nav-number">20.</span> <span class="nav-text">Function in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-Arguments-in-Python"><span class="nav-number">21.</span> <span class="nav-text">Function Arguments in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Arguments-in-Python"><span class="nav-number">22.</span> <span class="nav-text">Types of Arguments in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keyworded-Variable-Length-Arguments-in-Python"><span class="nav-number">23.</span> <span class="nav-text">Keyworded Variable Length Arguments in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Global-Keyword-in-Python-Global-vs-Local-variable"><span class="nav-number">24.</span> <span class="nav-text">Global Keyword in Python | Global vs Local variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-List-to-a-Function-in-Python"><span class="nav-number">25.</span> <span class="nav-text">Pass List to a Function in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Oriented-Programming-Introduction"><span class="nav-number">26.</span> <span class="nav-text">Object Oriented Programming | Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#procedure-oriented-programming"><span class="nav-number">26.1.</span> <span class="nav-text">procedure oriented programming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#functional-programming"><span class="nav-number">26.2.</span> <span class="nav-text">functional programming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OOPs-Object-priented-programming"><span class="nav-number">26.3.</span> <span class="nav-text">OOPs: Object priented programming</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-and-Object"><span class="nav-number">27.</span> <span class="nav-text">Class and Object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init-method"><span class="nav-number">28.</span> <span class="nav-text">init method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Variables"><span class="nav-number">29.</span> <span class="nav-text">Types of Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Methods"><span class="nav-number">30.</span> <span class="nav-text">Types of Methods</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decimal-conversion"><span class="nav-number">1.</span> <span class="nav-text">Decimal conversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swap-2-Variables-in-Python"><span class="nav-number">2.</span> <span class="nav-text">Swap 2 Variables in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-BitWise-Operators"><span class="nav-number">3.</span> <span class="nav-text">Python BitWise Operators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import-Math-Functions-in-Python"><span class="nav-number">4.</span> <span class="nav-text">Import Math Functions in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-PyCharm"><span class="nav-number">5.</span> <span class="nav-text">Working with PyCharm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#User-input-in-Python"><span class="nav-number">6.</span> <span class="nav-text">User input in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#If-Elif-Else-Statement-in-Python"><span class="nav-number">7.</span> <span class="nav-text">If Elif Else Statement in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#While-Loop-in-Python"><span class="nav-number">8.</span> <span class="nav-text">While Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Loop-in-Python"><span class="nav-number">9.</span> <span class="nav-text">For Loop in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Break-Continue-Pass-in-Python"><span class="nav-number">10.</span> <span class="nav-text">Break Continue Pass in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Printing-Patterns-in-Python"><span class="nav-number">11.</span> <span class="nav-text">Printing Patterns in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Else-in-Python"><span class="nav-number">12.</span> <span class="nav-text">For Else in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prime-Number-in-Python"><span class="nav-number">13.</span> <span class="nav-text">Prime Number in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-in-Python"><span class="nav-number">14.</span> <span class="nav-text">Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-Values-from-Users-in-Python"><span class="nav-number">15.</span> <span class="nav-text">Array Values from Users in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Numpy-Installing-Numpy-in-Pycharm"><span class="nav-number">16.</span> <span class="nav-text">Why Numpy? Installing Numpy in Pycharm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number"></span> <span class="nav-text"># dimensional 一维的   
+# multi-dimensional 多维的
+
+# one dimensional array : 2 5 6 8 4
+# two dimensional array(matrix): 2 5 6 8 4
+#                                6 8 9 8 7 
+#                                5 9 4 5 7
+#                                3 2 5 7 4
+# 安装numpy
+# pip install numpy
+from numpy import *
+
+arr &#x3D; array([1,2,3,2,5,4])
+print(arr)
+# print: [1,2,3,2,5,4]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ways-of-Creating-Arrays-in-Numpy"><span class="nav-number">1.</span> <span class="nav-text">Ways of Creating Arrays in Numpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Copying-an-Array-in-Python"><span class="nav-number">2.</span> <span class="nav-text">Copying an Array in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Working-with-Matrix-in-Python"><span class="nav-number">3.</span> <span class="nav-text">Working with Matrix in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-in-Python"><span class="nav-number">4.</span> <span class="nav-text">Function in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-Arguments-in-Python"><span class="nav-number">5.</span> <span class="nav-text">Function Arguments in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Arguments-in-Python"><span class="nav-number">6.</span> <span class="nav-text">Types of Arguments in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keyworded-Variable-Length-Arguments-in-Python"><span class="nav-number">7.</span> <span class="nav-text">Keyworded Variable Length Arguments in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Global-Keyword-in-Python-Global-vs-Local-variable"><span class="nav-number">8.</span> <span class="nav-text">Global Keyword in Python | Global vs Local variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-List-to-a-Function-in-Python"><span class="nav-number">9.</span> <span class="nav-text">Pass List to a Function in Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Oriented-Programming-Introduction"><span class="nav-number">10.</span> <span class="nav-text">Object Oriented Programming | Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#procedure-oriented-programming"><span class="nav-number">10.1.</span> <span class="nav-text">procedure oriented programming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#functional-programming"><span class="nav-number">10.2.</span> <span class="nav-text">functional programming</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OOPs-Object-priented-programming"><span class="nav-number">10.3.</span> <span class="nav-text">OOPs: Object priented programming</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-and-Object"><span class="nav-number">11.</span> <span class="nav-text">Class and Object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init-method"><span class="nav-number">12.</span> <span class="nav-text">init method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Variables"><span class="nav-number">13.</span> <span class="nav-text">Types of Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types-of-Methods"><span class="nav-number">14.</span> <span class="nav-text">Types of Methods</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
